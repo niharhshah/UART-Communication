@@ -1,0 +1,114 @@
+|Tx
+data_in[0] => Selector11.IN1
+data_in[1] => Selector10.IN1
+data_in[2] => Selector9.IN1
+data_in[3] => Selector8.IN1
+data_in[4] => Selector7.IN1
+data_in[5] => Selector6.IN1
+data_in[6] => Selector5.IN1
+data_in[7] => Selector4.IN2
+Tx <= Tx~reg0.DB_MAX_OUTPUT_PORT_TYPE
+send => Selector1.IN3
+send => Selector2.IN1
+state_show[0] <= state_show.DB_MAX_OUTPUT_PORT_TYPE
+state_show[1] <= Tx.DB_MAX_OUTPUT_PORT_TYPE
+Clock_show <= proclock:probhai.clk
+clk => proclock:probhai.inclk
+
+
+|Tx|proclock:probhai
+inclk => fullspeed:fulsped.iclk
+latch => latchedPre[0].LATCH_ENABLE
+latch => latchedPre[1].LATCH_ENABLE
+latch => latchedPre[2].LATCH_ENABLE
+prescaler[0] => latchedPre[0].DATAIN
+prescaler[1] => latchedPre[1].DATAIN
+prescaler[2] => latchedPre[2].DATAIN
+clk <= clk~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Tx|proclock:probhai|fullspeed:fulsped
+iclk => count[0].CLK
+iclk => count[1].CLK
+iclk => count[2].CLK
+iclk => count[3].CLK
+iclk => count[4].CLK
+iclk => count[5].CLK
+iclk => count[6].CLK
+iclk => count[7].CLK
+iclk => count[8].CLK
+iclk => count[9].CLK
+iclk => clk~reg0.CLK
+clk <= clk~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Tx|Counter:done
+En => done~reg0.ACLR
+En => count[31].ACLR
+En => count[30].ACLR
+En => count[29].ACLR
+En => count[28].ACLR
+En => count[27].ACLR
+En => count[26].ACLR
+En => count[25].ACLR
+En => count[24].ACLR
+En => count[23].ACLR
+En => count[22].ACLR
+En => count[21].ACLR
+En => count[20].ACLR
+En => count[19].ACLR
+En => count[18].ACLR
+En => count[17].ACLR
+En => count[16].ACLR
+En => count[15].ACLR
+En => count[14].ACLR
+En => count[13].ACLR
+En => count[12].ACLR
+En => count[11].ACLR
+En => count[10].ACLR
+En => count[9].ACLR
+En => count[8].ACLR
+En => count[7].ACLR
+En => count[6].ACLR
+En => count[5].ACLR
+En => count[4].ACLR
+En => count[3].ACLR
+En => count[2].ACLR
+En => count[1].ACLR
+En => count[0].ACLR
+clk => done~reg0.CLK
+clk => count[0].CLK
+clk => count[1].CLK
+clk => count[2].CLK
+clk => count[3].CLK
+clk => count[4].CLK
+clk => count[5].CLK
+clk => count[6].CLK
+clk => count[7].CLK
+clk => count[8].CLK
+clk => count[9].CLK
+clk => count[10].CLK
+clk => count[11].CLK
+clk => count[12].CLK
+clk => count[13].CLK
+clk => count[14].CLK
+clk => count[15].CLK
+clk => count[16].CLK
+clk => count[17].CLK
+clk => count[18].CLK
+clk => count[19].CLK
+clk => count[20].CLK
+clk => count[21].CLK
+clk => count[22].CLK
+clk => count[23].CLK
+clk => count[24].CLK
+clk => count[25].CLK
+clk => count[26].CLK
+clk => count[27].CLK
+clk => count[28].CLK
+clk => count[29].CLK
+clk => count[30].CLK
+clk => count[31].CLK
+done <= done~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+

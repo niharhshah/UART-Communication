@@ -1,0 +1,49 @@
+------------------------------------------------------------
+Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Setup 'present.Stop'
+Slack : -4.865
+TNS   : -31.676
+
+Type  : Setup 'clk'
+Slack : -4.235
+TNS   : -16.931
+
+Type  : Setup 'Counter:done|count[0]'
+Slack : -1.073
+TNS   : -1.128
+
+Type  : Hold 'Counter:done|count[0]'
+Slack : -4.699
+TNS   : -10.022
+
+Type  : Hold 'clk'
+Slack : -2.014
+TNS   : -5.238
+
+Type  : Hold 'present.Stop'
+Slack : -1.630
+TNS   : -5.937
+
+Type  : Recovery 'clk'
+Slack : -5.568
+TNS   : -22.272
+
+Type  : Removal 'clk'
+Slack : 1.052
+TNS   : 0.000
+
+Type  : Minimum Pulse Width 'clk'
+Slack : -2.289
+TNS   : -2.289
+
+Type  : Minimum Pulse Width 'Counter:done|count[0]'
+Slack : 0.500
+TNS   : 0.000
+
+Type  : Minimum Pulse Width 'present.Stop'
+Slack : 0.500
+TNS   : 0.000
+
+------------------------------------------------------------

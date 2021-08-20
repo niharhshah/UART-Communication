@@ -1,0 +1,96 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dD:/Semester2/UART/UART/RX/simulation/modelsim
+Edemo
+Z1 w1628506612
+Z2 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z3 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
+R0
+Z4 8D:/Semester2/UART/UART/RX/Testbench.vhd
+Z5 FD:/Semester2/UART/UART/RX/Testbench.vhd
+l0
+L4
+VnSPCSk3WO47THV4NNXPKQ0
+!s100 Mja3Gm7Z`bYbhMKlGM6kZ0
+Z6 OV;C;10.5b;63
+31
+Z7 !s110 1628591760
+!i10b 1
+Z8 !s108 1628591760.000000
+Z9 !s90 -reportprogress|300|-93|-work|work|D:/Semester2/UART/UART/RX/Testbench.vhd|
+Z10 !s107 D:/Semester2/UART/UART/RX/Testbench.vhd|
+!i113 1
+Z11 o-93 -work work
+Z12 tExplicit 1 CvgOpt 0
+Aone
+R2
+R3
+DEx4 work 4 demo 0 22 nSPCSk3WO47THV4NNXPKQ0
+l32
+L7
+V?_DzXzDH0nP6FdW>=H>Oc1
+!s100 3lETj=Sd;NlQ2cJTY_4z33
+R6
+31
+R7
+!i10b 1
+R8
+R9
+R10
+!i113 1
+R11
+R12
+Emodulerx
+Z13 w1628589693
+Z14 DPx4 ieee 16 vital_primitives 0 22 G>kiXP8Q9dRClKfK1Zn7j1
+Z15 DPx4 maxv 14 maxv_atom_pack 0 22 Ya8[I5bjUA7ZZa]JS8mWW1
+Z16 DPx4 ieee 12 vital_timing 0 22 J>EBealN09f8GzldA[z2>3
+Z17 DPx4 maxv 15 maxv_components 0 22 bHd;G45;WEodZXYE`bM2I1
+R2
+R3
+R0
+Z18 8Rx.vho
+Z19 FRx.vho
+l0
+L34
+VQ=HUgzVdoldGl0KnCi:@z1
+!s100 aHM_@O7NAJJDZz@I=LMke0
+R6
+31
+R7
+!i10b 1
+R8
+Z20 !s90 -reportprogress|300|-93|-work|work|Rx.vho|
+Z21 !s107 Rx.vho|
+!i113 1
+R11
+R12
+Astructure
+R14
+R15
+R16
+R17
+R2
+R3
+DEx4 work 8 modulerx 0 22 Q=HUgzVdoldGl0KnCi:@z1
+l124
+L46
+VC5Z0>Xaf`17PnNIIHeGZ]2
+!s100 MI6;XdVLVTNU>@DelNXR33
+R6
+31
+R7
+!i10b 1
+R8
+R20
+R21
+!i113 1
+R11
+R12

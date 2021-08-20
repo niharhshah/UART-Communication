@@ -1,0 +1,999 @@
+Timing Analyzer report for Tx
+Thu Aug 05 22:56:30 2021
+Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Timing Analyzer Summary
+  3. Parallel Compilation
+  4. Clocks
+  5. Fmax Summary
+  6. Setup Summary
+  7. Hold Summary
+  8. Recovery Summary
+  9. Removal Summary
+ 10. Minimum Pulse Width Summary
+ 11. Setup: 'proclock:probhai|clk'
+ 12. Setup: 'clk'
+ 13. Setup: 'proclock:probhai|fullspeed:fulsped|clk'
+ 14. Hold: 'proclock:probhai|fullspeed:fulsped|clk'
+ 15. Hold: 'clk'
+ 16. Hold: 'proclock:probhai|clk'
+ 17. Recovery: 'proclock:probhai|clk'
+ 18. Removal: 'proclock:probhai|clk'
+ 19. Setup Transfers
+ 20. Hold Transfers
+ 21. Recovery Transfers
+ 22. Removal Transfers
+ 23. Report TCCS
+ 24. Report RSKM
+ 25. Unconstrained Paths Summary
+ 26. Clock Status Summary
+ 27. Unconstrained Input Ports
+ 28. Unconstrained Output Ports
+ 29. Unconstrained Input Ports
+ 30. Unconstrained Output Ports
+ 31. Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2018  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details.
+
+
+
++-----------------------------------------------------------------------------+
+; Timing Analyzer Summary                                                     ;
++-----------------------+-----------------------------------------------------+
+; Quartus Prime Version ; Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
+; Timing Analyzer       ; Legacy Timing Analyzer                              ;
+; Revision Name         ; Tx                                                  ;
+; Device Family         ; MAX V                                               ;
+; Device Name           ; 5M1270ZT144C5                                       ;
+; Timing Models         ; Final                                               ;
+; Delay Model           ; Slow Model                                          ;
+; Rise/Fall Delays      ; Unavailable                                         ;
++-----------------------+-----------------------------------------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 8           ;
+; Maximum allowed            ; 4           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 2           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processor 2            ;   0.0%      ;
++----------------------------+-------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clocks                                                                                                                                                                                                                                         ;
++----------------------------------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+--------------------------------------------+
+; Clock Name                             ; Type ; Period ; Frequency  ; Rise  ; Fall  ; Duty Cycle ; Divide by ; Multiply by ; Phase ; Offset ; Edge List ; Edge Shift ; Inverted ; Master ; Source ; Targets                                    ;
++----------------------------------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+--------------------------------------------+
+; clk                                    ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { clk }                                    ;
+; proclock:probhai|clk                   ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { proclock:probhai|clk }                   ;
+; proclock:probhai|fullspeed:fulsped|clk ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { proclock:probhai|fullspeed:fulsped|clk } ;
++----------------------------------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+--------------------------------------------+
+
+
++------------------------------------------------------------------------------+
+; Fmax Summary                                                                 ;
++------------+-----------------+----------------------------------------+------+
+; Fmax       ; Restricted Fmax ; Clock Name                             ; Note ;
++------------+-----------------+----------------------------------------+------+
+; 120.45 MHz ; 120.45 MHz      ; proclock:probhai|clk                   ;      ;
+; 155.74 MHz ; 155.74 MHz      ; clk                                    ;      ;
+; 167.25 MHz ; 167.25 MHz      ; proclock:probhai|fullspeed:fulsped|clk ;      ;
++------------+-----------------+----------------------------------------+------+
+This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
+
+
++-----------------------------------------------------------------+
+; Setup Summary                                                   ;
++----------------------------------------+--------+---------------+
+; Clock                                  ; Slack  ; End Point TNS ;
++----------------------------------------+--------+---------------+
+; proclock:probhai|clk                   ; -7.302 ; -268.094      ;
+; clk                                    ; -5.421 ; -55.512       ;
+; proclock:probhai|fullspeed:fulsped|clk ; -4.979 ; -38.714       ;
++----------------------------------------+--------+---------------+
+
+
++-----------------------------------------------------------------+
+; Hold Summary                                                    ;
++----------------------------------------+--------+---------------+
+; Clock                                  ; Slack  ; End Point TNS ;
++----------------------------------------+--------+---------------+
+; proclock:probhai|fullspeed:fulsped|clk ; -3.930 ; -3.930        ;
+; clk                                    ; -1.968 ; -1.968        ;
+; proclock:probhai|clk                   ; 1.401  ; 0.000         ;
++----------------------------------------+--------+---------------+
+
+
++-----------------------------------------------+
+; Recovery Summary                              ;
++----------------------+--------+---------------+
+; Clock                ; Slack  ; End Point TNS ;
++----------------------+--------+---------------+
+; proclock:probhai|clk ; -6.291 ; -172.976      ;
++----------------------+--------+---------------+
+
+
++----------------------------------------------+
+; Removal Summary                              ;
++----------------------+-------+---------------+
+; Clock                ; Slack ; End Point TNS ;
++----------------------+-------+---------------+
+; proclock:probhai|clk ; 5.620 ; 0.000         ;
++----------------------+-------+---------------+
+
+
++-----------------------------------------------------------------+
+; Minimum Pulse Width Summary                                     ;
++----------------------------------------+--------+---------------+
+; Clock                                  ; Slack  ; End Point TNS ;
++----------------------------------------+--------+---------------+
+; clk                                    ; -2.289 ; -2.289        ;
+; proclock:probhai|clk                   ; 0.234  ; 0.000         ;
+; proclock:probhai|fullspeed:fulsped|clk ; 0.234  ; 0.000         ;
++----------------------------------------+--------+---------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------+
+; Setup: 'proclock:probhai|clk'                                                                                                                   ;
++--------+------------------------+------------------------+----------------------+----------------------+--------------+------------+------------+
+; Slack  ; From Node              ; To Node                ; Launch Clock         ; Latch Clock          ; Relationship ; Clock Skew ; Data Delay ;
++--------+------------------------+------------------------+----------------------+----------------------+--------------+------------+------------+
+; -7.302 ; Counter:done|count[5]  ; Counter:done|count[20] ; proclock:probhai|clk ; proclock:probhai|clk ; 1.000        ; 0.000      ; 7.969      ;
+; -7.246 ; Counter:done|count[9]  ; Counter:done|count[20] ; proclock:probhai|clk ; proclock:probhai|clk ; 1.000        ; 0.000      ; 7.913      ;
+; -7.206 ; Counter:done|count[11] ; Counter:done|count[20] ; proclock:probhai|clk ; proclock:probhai|clk ; 1.000        ; 0.000      ; 7.873      ;
+; -7.136 ; Counter:done|count[5]  ; Counter:done|count[30] ; proclock:probhai|clk ; proclock:probhai|clk ; 1.000        ; 0.000      ; 7.803      ;
+; -7.101 ; Counter:done|count[8]  ; Counter:done|count[20] ; proclock:probhai|clk ; proclock:probhai|clk ; 1.000        ; 0.000      ; 7.768      ;
+; -7.080 ; Counter:done|count[9]  ; Counter:done|count[30] ; proclock:probhai|clk ; proclock:probhai|clk ; 1.000        ; 0.000      ; 7.747      ;
+; -7.040 ; Counter:done|count[11] ; Counter:done|count[30] ; proclock:probhai|clk ; proclock:probhai|clk ; 1.000        ; 0.000      ; 7.707      ;
+; -7.038 ; Counter:done|count[12] ; Counter:done|count[20] ; proclock:probhai|clk ; proclock:probhai|clk ; 1.000        ; 0.000      ; 7.705      ;
+; -7.037 ; Counter:done|count[31] ; Counter:done|count[0]  ; proclock:probhai|clk ; proclock:probhai|clk ; 1.000        ; 0.000      ; 7.704      ;
+; -6.984 ; Counter:done|count[0]  ; Counter:done|count[20] ; proclock:probhai|clk ; proclock:probhai|clk ; 1.000        ; 0.000      ; 7.651      ;
+; -6.935 ; Counter:done|count[8]  ; Counter:done|count[30] ; proclock:probhai|clk ; proclock:probhai|clk ; 1.000        ; 0.000      ; 7.602      ;
+; -6.905 ; Counter:done|count[25] ; Counter:done|count[0]  ; proclock:probhai|clk ; proclock:probhai|clk ; 1.000        ; 0.000      ; 7.572      ;
+; -6.884 ; Counter:done|count[5]  ; Counter:done|count[28] ; proclock:probhai|clk ; proclock:probhai|clk ; 1.000        ; 0.000      ; 7.551      ;
+; -6.884 ; Counter:done|count[5]  ; Counter:done|count[29] ; proclock:probhai|clk ; proclock:probhai|clk ; 1.000        ; 0.000      ; 7.551      ;
+; -6.873 ; Counter:done|count[5]  ; Counter:done|count[21] ; proclock:probhai|clk ; proclock:probhai|clk ; 1.000        ; 0.000      ; 7.540      ;
+; -6.872 ; Counter:done|count[6]  ; Counter:done|count[20] ; proclock:probhai|clk ; proclock:probhai|clk ; 1.000        ; 0.000      ; 7.539      ;
+; -6.872 ; Counter:done|count[12] ; Counter:done|count[30] ; proclock:probhai|clk ; proclock:probhai|clk ; 1.000        ; 0.000      ; 7.539      ;
+; -6.858 ; Counter:done|count[10] ; Counter:done|count[20] ; proclock:probhai|clk ; proclock:probhai|clk ; 1.000        ; 0.000      ; 7.525      ;
+; -6.839 ; Counter:done|count[3]  ; Counter:done|count[20] ; proclock:probhai|clk ; proclock:probhai|clk ; 1.000        ; 0.000      ; 7.506      ;
+; -6.828 ; Counter:done|count[9]  ; Counter:done|count[28] ; proclock:probhai|clk ; proclock:probhai|clk ; 1.000        ; 0.000      ; 7.495      ;
+; -6.828 ; Counter:done|count[9]  ; Counter:done|count[29] ; proclock:probhai|clk ; proclock:probhai|clk ; 1.000        ; 0.000      ; 7.495      ;
+; -6.818 ; Counter:done|count[0]  ; Counter:done|count[30] ; proclock:probhai|clk ; proclock:probhai|clk ; 1.000        ; 0.000      ; 7.485      ;
+; -6.817 ; Counter:done|count[9]  ; Counter:done|count[21] ; proclock:probhai|clk ; proclock:probhai|clk ; 1.000        ; 0.000      ; 7.484      ;
+; -6.811 ; Counter:done|count[29] ; Counter:done|count[0]  ; proclock:probhai|clk ; proclock:probhai|clk ; 1.000        ; 0.000      ; 7.478      ;
+; -6.807 ; Counter:done|count[5]  ; Counter:done|count[16] ; proclock:probhai|clk ; proclock:probhai|clk ; 1.000        ; 0.000      ; 7.474      ;
+; -6.803 ; Counter:done|count[5]  ; Counter:done|count[22] ; proclock:probhai|clk ; proclock:probhai|clk ; 1.000        ; 0.000      ; 7.470      ;
+; -6.797 ; Counter:done|count[5]  ; Counter:done|count[18] ; proclock:probhai|clk ; proclock:probhai|clk ; 1.000        ; 0.000      ; 7.464      ;
+; -6.788 ; Counter:done|count[11] ; Counter:done|count[28] ; proclock:probhai|clk ; proclock:probhai|clk ; 1.000        ; 0.000      ; 7.455      ;
+; -6.788 ; Counter:done|count[11] ; Counter:done|count[29] ; proclock:probhai|clk ; proclock:probhai|clk ; 1.000        ; 0.000      ; 7.455      ;
+; -6.777 ; Counter:done|count[11] ; Counter:done|count[21] ; proclock:probhai|clk ; proclock:probhai|clk ; 1.000        ; 0.000      ; 7.444      ;
+; -6.768 ; Counter:done|count[2]  ; Counter:done|count[20] ; proclock:probhai|clk ; proclock:probhai|clk ; 1.000        ; 0.000      ; 7.435      ;
+; -6.766 ; Counter:done|count[13] ; Counter:done|count[20] ; proclock:probhai|clk ; proclock:probhai|clk ; 1.000        ; 0.000      ; 7.433      ;
+; -6.764 ; Counter:done|count[5]  ; Counter:done|count[23] ; proclock:probhai|clk ; proclock:probhai|clk ; 1.000        ; 0.000      ; 7.431      ;
+; -6.751 ; Counter:done|count[9]  ; Counter:done|count[16] ; proclock:probhai|clk ; proclock:probhai|clk ; 1.000        ; 0.000      ; 7.418      ;
+; -6.747 ; Counter:done|count[9]  ; Counter:done|count[22] ; proclock:probhai|clk ; proclock:probhai|clk ; 1.000        ; 0.000      ; 7.414      ;
+; -6.741 ; Counter:done|count[9]  ; Counter:done|count[18] ; proclock:probhai|clk ; proclock:probhai|clk ; 1.000        ; 0.000      ; 7.408      ;
+; -6.738 ; Counter:done|count[20] ; Counter:done|count[0]  ; proclock:probhai|clk ; proclock:probhai|clk ; 1.000        ; 0.000      ; 7.405      ;
+; -6.725 ; Counter:done|count[5]  ; Counter:done|count[17] ; proclock:probhai|clk ; proclock:probhai|clk ; 1.000        ; 0.000      ; 7.392      ;
+; -6.711 ; Counter:done|count[11] ; Counter:done|count[16] ; proclock:probhai|clk ; proclock:probhai|clk ; 1.000        ; 0.000      ; 7.378      ;
+; -6.710 ; Counter:done|count[4]  ; Counter:done|count[20] ; proclock:probhai|clk ; proclock:probhai|clk ; 1.000        ; 0.000      ; 7.377      ;
+; -6.708 ; Counter:done|count[9]  ; Counter:done|count[23] ; proclock:probhai|clk ; proclock:probhai|clk ; 1.000        ; 0.000      ; 7.375      ;
+; -6.707 ; Counter:done|count[11] ; Counter:done|count[22] ; proclock:probhai|clk ; proclock:probhai|clk ; 1.000        ; 0.000      ; 7.374      ;
+; -6.706 ; Counter:done|count[6]  ; Counter:done|count[30] ; proclock:probhai|clk ; proclock:probhai|clk ; 1.000        ; 0.000      ; 7.373      ;
+; -6.701 ; Counter:done|count[11] ; Counter:done|count[18] ; proclock:probhai|clk ; proclock:probhai|clk ; 1.000        ; 0.000      ; 7.368      ;
+; -6.692 ; Counter:done|count[10] ; Counter:done|count[30] ; proclock:probhai|clk ; proclock:probhai|clk ; 1.000        ; 0.000      ; 7.359      ;
+; -6.691 ; Counter:done|count[1]  ; Counter:done|count[20] ; proclock:probhai|clk ; proclock:probhai|clk ; 1.000        ; 0.000      ; 7.358      ;
+; -6.684 ; Counter:done|count[5]  ; Counter:done|count[19] ; proclock:probhai|clk ; proclock:probhai|clk ; 1.000        ; 0.000      ; 7.351      ;
+; -6.683 ; Counter:done|count[8]  ; Counter:done|count[28] ; proclock:probhai|clk ; proclock:probhai|clk ; 1.000        ; 0.000      ; 7.350      ;
+; -6.683 ; Counter:done|count[8]  ; Counter:done|count[29] ; proclock:probhai|clk ; proclock:probhai|clk ; 1.000        ; 0.000      ; 7.350      ;
+; -6.673 ; Counter:done|count[3]  ; Counter:done|count[30] ; proclock:probhai|clk ; proclock:probhai|clk ; 1.000        ; 0.000      ; 7.340      ;
+; -6.672 ; Counter:done|count[8]  ; Counter:done|count[21] ; proclock:probhai|clk ; proclock:probhai|clk ; 1.000        ; 0.000      ; 7.339      ;
+; -6.669 ; Counter:done|count[9]  ; Counter:done|count[17] ; proclock:probhai|clk ; proclock:probhai|clk ; 1.000        ; 0.000      ; 7.336      ;
+; -6.668 ; Counter:done|count[11] ; Counter:done|count[23] ; proclock:probhai|clk ; proclock:probhai|clk ; 1.000        ; 0.000      ; 7.335      ;
+; -6.662 ; Counter:done|count[14] ; Counter:done|count[20] ; proclock:probhai|clk ; proclock:probhai|clk ; 1.000        ; 0.000      ; 7.329      ;
+; -6.653 ; Counter:done|count[21] ; Counter:done|count[30] ; proclock:probhai|clk ; proclock:probhai|clk ; 1.000        ; 0.000      ; 7.320      ;
+; -6.634 ; Counter:done|count[5]  ; Counter:done|count[25] ; proclock:probhai|clk ; proclock:probhai|clk ; 1.000        ; 0.000      ; 7.301      ;
+; -6.630 ; Counter:done|count[15] ; Counter:done|count[20] ; proclock:probhai|clk ; proclock:probhai|clk ; 1.000        ; 0.000      ; 7.297      ;
+; -6.629 ; Counter:done|count[5]  ; Counter:done|count[27] ; proclock:probhai|clk ; proclock:probhai|clk ; 1.000        ; 0.000      ; 7.296      ;
+; -6.629 ; Counter:done|count[11] ; Counter:done|count[17] ; proclock:probhai|clk ; proclock:probhai|clk ; 1.000        ; 0.000      ; 7.296      ;
+; -6.628 ; Counter:done|count[9]  ; Counter:done|count[19] ; proclock:probhai|clk ; proclock:probhai|clk ; 1.000        ; 0.000      ; 7.295      ;
+; -6.623 ; Counter:done|count[18] ; Counter:done|count[0]  ; proclock:probhai|clk ; proclock:probhai|clk ; 1.000        ; 0.000      ; 7.290      ;
+; -6.620 ; Counter:done|count[12] ; Counter:done|count[28] ; proclock:probhai|clk ; proclock:probhai|clk ; 1.000        ; 0.000      ; 7.287      ;
+; -6.620 ; Counter:done|count[12] ; Counter:done|count[29] ; proclock:probhai|clk ; proclock:probhai|clk ; 1.000        ; 0.000      ; 7.287      ;
+; -6.609 ; Counter:done|count[31] ; Counter:done|count[3]  ; proclock:probhai|clk ; proclock:probhai|clk ; 1.000        ; 0.000      ; 7.276      ;
+; -6.609 ; Counter:done|count[12] ; Counter:done|count[21] ; proclock:probhai|clk ; proclock:probhai|clk ; 1.000        ; 0.000      ; 7.276      ;
+; -6.606 ; Counter:done|count[8]  ; Counter:done|count[16] ; proclock:probhai|clk ; proclock:probhai|clk ; 1.000        ; 0.000      ; 7.273      ;
+; -6.602 ; Counter:done|count[8]  ; Counter:done|count[22] ; proclock:probhai|clk ; proclock:probhai|clk ; 1.000        ; 0.000      ; 7.269      ;
+; -6.602 ; Counter:done|count[2]  ; Counter:done|count[30] ; proclock:probhai|clk ; proclock:probhai|clk ; 1.000        ; 0.000      ; 7.269      ;
+; -6.600 ; Counter:done|count[13] ; Counter:done|count[30] ; proclock:probhai|clk ; proclock:probhai|clk ; 1.000        ; 0.000      ; 7.267      ;
+; -6.596 ; Counter:done|count[8]  ; Counter:done|count[18] ; proclock:probhai|clk ; proclock:probhai|clk ; 1.000        ; 0.000      ; 7.263      ;
+; -6.588 ; Counter:done|count[11] ; Counter:done|count[19] ; proclock:probhai|clk ; proclock:probhai|clk ; 1.000        ; 0.000      ; 7.255      ;
+; -6.580 ; Counter:done|count[21] ; Counter:done|count[0]  ; proclock:probhai|clk ; proclock:probhai|clk ; 1.000        ; 0.000      ; 7.247      ;
+; -6.578 ; Counter:done|count[9]  ; Counter:done|count[25] ; proclock:probhai|clk ; proclock:probhai|clk ; 1.000        ; 0.000      ; 7.245      ;
+; -6.573 ; Counter:done|count[9]  ; Counter:done|count[27] ; proclock:probhai|clk ; proclock:probhai|clk ; 1.000        ; 0.000      ; 7.240      ;
+; -6.566 ; Counter:done|count[0]  ; Counter:done|count[28] ; proclock:probhai|clk ; proclock:probhai|clk ; 1.000        ; 0.000      ; 7.233      ;
+; -6.566 ; Counter:done|count[0]  ; Counter:done|count[29] ; proclock:probhai|clk ; proclock:probhai|clk ; 1.000        ; 0.000      ; 7.233      ;
+; -6.563 ; Counter:done|count[7]  ; Counter:done|count[20] ; proclock:probhai|clk ; proclock:probhai|clk ; 1.000        ; 0.000      ; 7.230      ;
+; -6.563 ; Counter:done|count[8]  ; Counter:done|count[23] ; proclock:probhai|clk ; proclock:probhai|clk ; 1.000        ; 0.000      ; 7.230      ;
+; -6.555 ; Counter:done|count[0]  ; Counter:done|count[21] ; proclock:probhai|clk ; proclock:probhai|clk ; 1.000        ; 0.000      ; 7.222      ;
+; -6.544 ; Counter:done|count[4]  ; Counter:done|count[30] ; proclock:probhai|clk ; proclock:probhai|clk ; 1.000        ; 0.000      ; 7.211      ;
+; -6.543 ; Counter:done|count[12] ; Counter:done|count[16] ; proclock:probhai|clk ; proclock:probhai|clk ; 1.000        ; 0.000      ; 7.210      ;
+; -6.542 ; Counter:done|count[18] ; Counter:done|count[30] ; proclock:probhai|clk ; proclock:probhai|clk ; 1.000        ; 0.000      ; 7.209      ;
+; -6.539 ; Counter:done|count[12] ; Counter:done|count[22] ; proclock:probhai|clk ; proclock:probhai|clk ; 1.000        ; 0.000      ; 7.206      ;
+; -6.538 ; Counter:done|count[11] ; Counter:done|count[25] ; proclock:probhai|clk ; proclock:probhai|clk ; 1.000        ; 0.000      ; 7.205      ;
+; -6.533 ; Counter:done|count[12] ; Counter:done|count[18] ; proclock:probhai|clk ; proclock:probhai|clk ; 1.000        ; 0.000      ; 7.200      ;
+; -6.533 ; Counter:done|count[11] ; Counter:done|count[27] ; proclock:probhai|clk ; proclock:probhai|clk ; 1.000        ; 0.000      ; 7.200      ;
+; -6.533 ; Counter:done|count[17] ; Counter:done|count[30] ; proclock:probhai|clk ; proclock:probhai|clk ; 1.000        ; 0.000      ; 7.200      ;
+; -6.531 ; Counter:done|count[16] ; Counter:done|count[30] ; proclock:probhai|clk ; proclock:probhai|clk ; 1.000        ; 0.000      ; 7.198      ;
+; -6.525 ; Counter:done|count[1]  ; Counter:done|count[30] ; proclock:probhai|clk ; proclock:probhai|clk ; 1.000        ; 0.000      ; 7.192      ;
+; -6.524 ; Counter:done|count[8]  ; Counter:done|count[17] ; proclock:probhai|clk ; proclock:probhai|clk ; 1.000        ; 0.000      ; 7.191      ;
+; -6.500 ; Counter:done|count[12] ; Counter:done|count[23] ; proclock:probhai|clk ; proclock:probhai|clk ; 1.000        ; 0.000      ; 7.167      ;
+; -6.496 ; Counter:done|count[14] ; Counter:done|count[30] ; proclock:probhai|clk ; proclock:probhai|clk ; 1.000        ; 0.000      ; 7.163      ;
+; -6.489 ; Counter:done|count[0]  ; Counter:done|count[16] ; proclock:probhai|clk ; proclock:probhai|clk ; 1.000        ; 0.000      ; 7.156      ;
+; -6.485 ; Counter:done|count[0]  ; Counter:done|count[22] ; proclock:probhai|clk ; proclock:probhai|clk ; 1.000        ; 0.000      ; 7.152      ;
+; -6.483 ; Counter:done|count[8]  ; Counter:done|count[19] ; proclock:probhai|clk ; proclock:probhai|clk ; 1.000        ; 0.000      ; 7.150      ;
+; -6.479 ; Counter:done|count[0]  ; Counter:done|count[18] ; proclock:probhai|clk ; proclock:probhai|clk ; 1.000        ; 0.000      ; 7.146      ;
+; -6.477 ; Counter:done|count[25] ; Counter:done|count[3]  ; proclock:probhai|clk ; proclock:probhai|clk ; 1.000        ; 0.000      ; 7.144      ;
+; -6.464 ; Counter:done|count[15] ; Counter:done|count[30] ; proclock:probhai|clk ; proclock:probhai|clk ; 1.000        ; 0.000      ; 7.131      ;
+; -6.464 ; Counter:done|count[24] ; Counter:done|count[0]  ; proclock:probhai|clk ; proclock:probhai|clk ; 1.000        ; 0.000      ; 7.131      ;
+; -6.461 ; Counter:done|count[12] ; Counter:done|count[17] ; proclock:probhai|clk ; proclock:probhai|clk ; 1.000        ; 0.000      ; 7.128      ;
++--------+------------------------+------------------------+----------------------+----------------------+--------------+------------+------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Setup: 'clk'                                                                                                                                                                                       ;
++--------+---------------------------------------------+---------------------------------------------+----------------------------------------+-------------+--------------+------------+------------+
+; Slack  ; From Node                                   ; To Node                                     ; Launch Clock                           ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+---------------------------------------------+---------------------------------------------+----------------------------------------+-------------+--------------+------------+------------+
+; -5.421 ; proclock:probhai|fullspeed:fulsped|count[0] ; proclock:probhai|fullspeed:fulsped|count[8] ; clk                                    ; clk         ; 1.000        ; 0.000      ; 6.088      ;
+; -5.386 ; proclock:probhai|fullspeed:fulsped|count[0] ; proclock:probhai|fullspeed:fulsped|count[2] ; clk                                    ; clk         ; 1.000        ; 0.000      ; 6.053      ;
+; -5.386 ; proclock:probhai|fullspeed:fulsped|count[2] ; proclock:probhai|fullspeed:fulsped|count[8] ; clk                                    ; clk         ; 1.000        ; 0.000      ; 6.053      ;
+; -5.334 ; proclock:probhai|fullspeed:fulsped|count[0] ; proclock:probhai|fullspeed:fulsped|count[9] ; clk                                    ; clk         ; 1.000        ; 0.000      ; 6.001      ;
+; -5.299 ; proclock:probhai|fullspeed:fulsped|count[2] ; proclock:probhai|fullspeed:fulsped|count[9] ; clk                                    ; clk         ; 1.000        ; 0.000      ; 5.966      ;
+; -5.297 ; proclock:probhai|fullspeed:fulsped|count[1] ; proclock:probhai|fullspeed:fulsped|count[8] ; clk                                    ; clk         ; 1.000        ; 0.000      ; 5.964      ;
+; -5.262 ; proclock:probhai|fullspeed:fulsped|count[1] ; proclock:probhai|fullspeed:fulsped|count[2] ; clk                                    ; clk         ; 1.000        ; 0.000      ; 5.929      ;
+; -5.210 ; proclock:probhai|fullspeed:fulsped|count[1] ; proclock:probhai|fullspeed:fulsped|count[9] ; clk                                    ; clk         ; 1.000        ; 0.000      ; 5.877      ;
+; -5.148 ; proclock:probhai|fullspeed:fulsped|count[0] ; proclock:probhai|fullspeed:fulsped|count[5] ; clk                                    ; clk         ; 1.000        ; 0.000      ; 5.815      ;
+; -5.124 ; proclock:probhai|fullspeed:fulsped|count[5] ; proclock:probhai|fullspeed:fulsped|count[9] ; clk                                    ; clk         ; 1.000        ; 0.000      ; 5.791      ;
+; -5.113 ; proclock:probhai|fullspeed:fulsped|count[2] ; proclock:probhai|fullspeed:fulsped|count[5] ; clk                                    ; clk         ; 1.000        ; 0.000      ; 5.780      ;
+; -5.103 ; proclock:probhai|fullspeed:fulsped|count[4] ; proclock:probhai|fullspeed:fulsped|count[8] ; clk                                    ; clk         ; 1.000        ; 0.000      ; 5.770      ;
+; -5.088 ; proclock:probhai|fullspeed:fulsped|count[5] ; proclock:probhai|fullspeed:fulsped|count[8] ; clk                                    ; clk         ; 1.000        ; 0.000      ; 5.755      ;
+; -5.076 ; proclock:probhai|fullspeed:fulsped|count[0] ; proclock:probhai|fullspeed:fulsped|count[7] ; clk                                    ; clk         ; 1.000        ; 0.000      ; 5.743      ;
+; -5.041 ; proclock:probhai|fullspeed:fulsped|count[2] ; proclock:probhai|fullspeed:fulsped|count[7] ; clk                                    ; clk         ; 1.000        ; 0.000      ; 5.708      ;
+; -5.032 ; proclock:probhai|fullspeed:fulsped|count[3] ; proclock:probhai|fullspeed:fulsped|count[8] ; clk                                    ; clk         ; 1.000        ; 0.000      ; 5.699      ;
+; -5.024 ; proclock:probhai|fullspeed:fulsped|count[1] ; proclock:probhai|fullspeed:fulsped|count[5] ; clk                                    ; clk         ; 1.000        ; 0.000      ; 5.691      ;
+; -5.016 ; proclock:probhai|fullspeed:fulsped|count[4] ; proclock:probhai|fullspeed:fulsped|count[9] ; clk                                    ; clk         ; 1.000        ; 0.000      ; 5.683      ;
+; -5.003 ; proclock:probhai|fullspeed:fulsped|count[6] ; proclock:probhai|fullspeed:fulsped|count[9] ; clk                                    ; clk         ; 1.000        ; 0.000      ; 5.670      ;
+; -4.967 ; proclock:probhai|fullspeed:fulsped|count[6] ; proclock:probhai|fullspeed:fulsped|count[8] ; clk                                    ; clk         ; 1.000        ; 0.000      ; 5.634      ;
+; -4.952 ; proclock:probhai|fullspeed:fulsped|count[1] ; proclock:probhai|fullspeed:fulsped|count[7] ; clk                                    ; clk         ; 1.000        ; 0.000      ; 5.619      ;
+; -4.947 ; proclock:probhai|fullspeed:fulsped|count[3] ; proclock:probhai|fullspeed:fulsped|count[0] ; clk                                    ; clk         ; 1.000        ; 0.000      ; 5.614      ;
+; -4.945 ; proclock:probhai|fullspeed:fulsped|count[3] ; proclock:probhai|fullspeed:fulsped|clk      ; clk                                    ; clk         ; 1.000        ; 0.000      ; 5.612      ;
+; -4.945 ; proclock:probhai|fullspeed:fulsped|count[3] ; proclock:probhai|fullspeed:fulsped|count[9] ; clk                                    ; clk         ; 1.000        ; 0.000      ; 5.612      ;
+; -4.941 ; proclock:probhai|fullspeed:fulsped|count[3] ; proclock:probhai|fullspeed:fulsped|count[3] ; clk                                    ; clk         ; 1.000        ; 0.000      ; 5.608      ;
+; -4.937 ; proclock:probhai|fullspeed:fulsped|count[3] ; proclock:probhai|fullspeed:fulsped|count[7] ; clk                                    ; clk         ; 1.000        ; 0.000      ; 5.604      ;
+; -4.931 ; proclock:probhai|fullspeed:fulsped|count[0] ; proclock:probhai|fullspeed:fulsped|count[4] ; clk                                    ; clk         ; 1.000        ; 0.000      ; 5.598      ;
+; -4.896 ; proclock:probhai|fullspeed:fulsped|count[2] ; proclock:probhai|fullspeed:fulsped|count[4] ; clk                                    ; clk         ; 1.000        ; 0.000      ; 5.563      ;
+; -4.830 ; proclock:probhai|fullspeed:fulsped|count[4] ; proclock:probhai|fullspeed:fulsped|count[5] ; clk                                    ; clk         ; 1.000        ; 0.000      ; 5.497      ;
+; -4.817 ; proclock:probhai|fullspeed:fulsped|count[0] ; proclock:probhai|fullspeed:fulsped|count[6] ; clk                                    ; clk         ; 1.000        ; 0.000      ; 5.484      ;
+; -4.807 ; proclock:probhai|fullspeed:fulsped|count[1] ; proclock:probhai|fullspeed:fulsped|count[4] ; clk                                    ; clk         ; 1.000        ; 0.000      ; 5.474      ;
+; -4.801 ; proclock:probhai|fullspeed:fulsped|count[1] ; proclock:probhai|fullspeed:fulsped|count[0] ; clk                                    ; clk         ; 1.000        ; 0.000      ; 5.468      ;
+; -4.799 ; proclock:probhai|fullspeed:fulsped|count[1] ; proclock:probhai|fullspeed:fulsped|clk      ; clk                                    ; clk         ; 1.000        ; 0.000      ; 5.466      ;
+; -4.795 ; proclock:probhai|fullspeed:fulsped|count[1] ; proclock:probhai|fullspeed:fulsped|count[3] ; clk                                    ; clk         ; 1.000        ; 0.000      ; 5.462      ;
+; -4.782 ; proclock:probhai|fullspeed:fulsped|count[2] ; proclock:probhai|fullspeed:fulsped|count[6] ; clk                                    ; clk         ; 1.000        ; 0.000      ; 5.449      ;
+; -4.759 ; proclock:probhai|fullspeed:fulsped|count[3] ; proclock:probhai|fullspeed:fulsped|count[5] ; clk                                    ; clk         ; 1.000        ; 0.000      ; 5.426      ;
+; -4.758 ; proclock:probhai|fullspeed:fulsped|count[4] ; proclock:probhai|fullspeed:fulsped|count[7] ; clk                                    ; clk         ; 1.000        ; 0.000      ; 5.425      ;
+; -4.693 ; proclock:probhai|fullspeed:fulsped|count[1] ; proclock:probhai|fullspeed:fulsped|count[6] ; clk                                    ; clk         ; 1.000        ; 0.000      ; 5.360      ;
+; -4.676 ; proclock:probhai|fullspeed:fulsped|count[7] ; proclock:probhai|fullspeed:fulsped|count[9] ; clk                                    ; clk         ; 1.000        ; 0.000      ; 5.343      ;
+; -4.640 ; proclock:probhai|fullspeed:fulsped|count[7] ; proclock:probhai|fullspeed:fulsped|count[8] ; clk                                    ; clk         ; 1.000        ; 0.000      ; 5.307      ;
+; -4.620 ; proclock:probhai|fullspeed:fulsped|count[5] ; proclock:probhai|fullspeed:fulsped|count[7] ; clk                                    ; clk         ; 1.000        ; 0.000      ; 5.287      ;
+; -4.595 ; proclock:probhai|fullspeed:fulsped|count[2] ; proclock:probhai|fullspeed:fulsped|count[2] ; clk                                    ; clk         ; 1.000        ; 0.000      ; 5.262      ;
+; -4.566 ; proclock:probhai|fullspeed:fulsped|count[0] ; proclock:probhai|fullspeed:fulsped|count[1] ; clk                                    ; clk         ; 1.000        ; 0.000      ; 5.233      ;
+; -4.542 ; proclock:probhai|fullspeed:fulsped|count[8] ; proclock:probhai|fullspeed:fulsped|count[9] ; clk                                    ; clk         ; 1.000        ; 0.000      ; 5.209      ;
+; -4.542 ; proclock:probhai|fullspeed:fulsped|count[3] ; proclock:probhai|fullspeed:fulsped|count[4] ; clk                                    ; clk         ; 1.000        ; 0.000      ; 5.209      ;
+; -4.519 ; proclock:probhai|fullspeed:fulsped|count[0] ; proclock:probhai|fullspeed:fulsped|count[3] ; clk                                    ; clk         ; 1.000        ; 0.000      ; 5.186      ;
+; -4.499 ; proclock:probhai|fullspeed:fulsped|count[4] ; proclock:probhai|fullspeed:fulsped|count[6] ; clk                                    ; clk         ; 1.000        ; 0.000      ; 5.166      ;
+; -4.499 ; proclock:probhai|fullspeed:fulsped|count[6] ; proclock:probhai|fullspeed:fulsped|count[7] ; clk                                    ; clk         ; 1.000        ; 0.000      ; 5.166      ;
+; -4.484 ; proclock:probhai|fullspeed:fulsped|count[2] ; proclock:probhai|fullspeed:fulsped|count[3] ; clk                                    ; clk         ; 1.000        ; 0.000      ; 5.151      ;
+; -4.478 ; proclock:probhai|fullspeed:fulsped|count[9] ; proclock:probhai|fullspeed:fulsped|count[0] ; clk                                    ; clk         ; 1.000        ; 0.000      ; 5.145      ;
+; -4.476 ; proclock:probhai|fullspeed:fulsped|count[9] ; proclock:probhai|fullspeed:fulsped|clk      ; clk                                    ; clk         ; 1.000        ; 0.000      ; 5.143      ;
+; -4.472 ; proclock:probhai|fullspeed:fulsped|count[9] ; proclock:probhai|fullspeed:fulsped|count[3] ; clk                                    ; clk         ; 1.000        ; 0.000      ; 5.139      ;
+; -4.468 ; proclock:probhai|fullspeed:fulsped|count[9] ; proclock:probhai|fullspeed:fulsped|count[7] ; clk                                    ; clk         ; 1.000        ; 0.000      ; 5.135      ;
+; -4.439 ; proclock:probhai|fullspeed:fulsped|count[7] ; proclock:probhai|fullspeed:fulsped|count[0] ; clk                                    ; clk         ; 1.000        ; 0.000      ; 5.106      ;
+; -4.437 ; proclock:probhai|fullspeed:fulsped|count[7] ; proclock:probhai|fullspeed:fulsped|clk      ; clk                                    ; clk         ; 1.000        ; 0.000      ; 5.104      ;
+; -4.433 ; proclock:probhai|fullspeed:fulsped|count[7] ; proclock:probhai|fullspeed:fulsped|count[3] ; clk                                    ; clk         ; 1.000        ; 0.000      ; 5.100      ;
+; -4.429 ; proclock:probhai|fullspeed:fulsped|count[7] ; proclock:probhai|fullspeed:fulsped|count[7] ; clk                                    ; clk         ; 1.000        ; 0.000      ; 5.096      ;
+; -4.428 ; proclock:probhai|fullspeed:fulsped|count[3] ; proclock:probhai|fullspeed:fulsped|count[6] ; clk                                    ; clk         ; 1.000        ; 0.000      ; 5.095      ;
+; -4.280 ; proclock:probhai|fullspeed:fulsped|count[5] ; proclock:probhai|fullspeed:fulsped|count[0] ; clk                                    ; clk         ; 1.000        ; 0.000      ; 4.947      ;
+; -4.278 ; proclock:probhai|fullspeed:fulsped|count[5] ; proclock:probhai|fullspeed:fulsped|clk      ; clk                                    ; clk         ; 1.000        ; 0.000      ; 4.945      ;
+; -4.274 ; proclock:probhai|fullspeed:fulsped|count[5] ; proclock:probhai|fullspeed:fulsped|count[3] ; clk                                    ; clk         ; 1.000        ; 0.000      ; 4.941      ;
+; -4.259 ; proclock:probhai|fullspeed:fulsped|count[0] ; proclock:probhai|fullspeed:fulsped|count[0] ; clk                                    ; clk         ; 1.000        ; 0.000      ; 4.926      ;
+; -4.257 ; proclock:probhai|fullspeed:fulsped|count[0] ; proclock:probhai|fullspeed:fulsped|clk      ; clk                                    ; clk         ; 1.000        ; 0.000      ; 4.924      ;
+; -4.238 ; proclock:probhai|fullspeed:fulsped|count[5] ; proclock:probhai|fullspeed:fulsped|count[6] ; clk                                    ; clk         ; 1.000        ; 0.000      ; 4.905      ;
+; -4.156 ; proclock:probhai|fullspeed:fulsped|count[6] ; proclock:probhai|fullspeed:fulsped|count[0] ; clk                                    ; clk         ; 1.000        ; 0.000      ; 4.823      ;
+; -4.154 ; proclock:probhai|fullspeed:fulsped|count[6] ; proclock:probhai|fullspeed:fulsped|clk      ; clk                                    ; clk         ; 1.000        ; 0.000      ; 4.821      ;
+; -4.150 ; proclock:probhai|fullspeed:fulsped|count[6] ; proclock:probhai|fullspeed:fulsped|count[3] ; clk                                    ; clk         ; 1.000        ; 0.000      ; 4.817      ;
+; -3.910 ; proclock:probhai|fullspeed:fulsped|count[9] ; proclock:probhai|fullspeed:fulsped|count[9] ; clk                                    ; clk         ; 1.000        ; 0.000      ; 4.577      ;
+; -3.896 ; proclock:probhai|fullspeed:fulsped|count[4] ; proclock:probhai|fullspeed:fulsped|count[4] ; clk                                    ; clk         ; 1.000        ; 0.000      ; 4.563      ;
+; -3.877 ; proclock:probhai|fullspeed:fulsped|count[3] ; proclock:probhai|fullspeed:fulsped|count[1] ; clk                                    ; clk         ; 1.000        ; 0.000      ; 4.544      ;
+; -3.807 ; proclock:probhai|fullspeed:fulsped|count[8] ; proclock:probhai|fullspeed:fulsped|count[8] ; clk                                    ; clk         ; 1.000        ; 0.000      ; 4.474      ;
+; -3.743 ; proclock:probhai|fullspeed:fulsped|count[1] ; proclock:probhai|fullspeed:fulsped|count[1] ; clk                                    ; clk         ; 1.000        ; 0.000      ; 4.410      ;
+; -3.741 ; proclock:probhai|fullspeed:fulsped|count[2] ; proclock:probhai|fullspeed:fulsped|count[0] ; clk                                    ; clk         ; 1.000        ; 0.000      ; 4.408      ;
+; -3.739 ; proclock:probhai|fullspeed:fulsped|count[2] ; proclock:probhai|fullspeed:fulsped|clk      ; clk                                    ; clk         ; 1.000        ; 0.000      ; 4.406      ;
+; -3.690 ; proclock:probhai|fullspeed:fulsped|count[5] ; proclock:probhai|fullspeed:fulsped|count[5] ; clk                                    ; clk         ; 1.000        ; 0.000      ; 4.357      ;
+; -3.408 ; proclock:probhai|fullspeed:fulsped|count[9] ; proclock:probhai|fullspeed:fulsped|count[1] ; clk                                    ; clk         ; 1.000        ; 0.000      ; 4.075      ;
+; -3.369 ; proclock:probhai|fullspeed:fulsped|count[7] ; proclock:probhai|fullspeed:fulsped|count[1] ; clk                                    ; clk         ; 1.000        ; 0.000      ; 4.036      ;
+; -3.361 ; proclock:probhai|fullspeed:fulsped|count[6] ; proclock:probhai|fullspeed:fulsped|count[6] ; clk                                    ; clk         ; 1.000        ; 0.000      ; 4.028      ;
+; -3.229 ; proclock:probhai|fullspeed:fulsped|count[4] ; proclock:probhai|fullspeed:fulsped|count[0] ; clk                                    ; clk         ; 1.000        ; 0.000      ; 3.896      ;
+; -3.227 ; proclock:probhai|fullspeed:fulsped|count[4] ; proclock:probhai|fullspeed:fulsped|clk      ; clk                                    ; clk         ; 1.000        ; 0.000      ; 3.894      ;
+; -3.223 ; proclock:probhai|fullspeed:fulsped|count[4] ; proclock:probhai|fullspeed:fulsped|count[3] ; clk                                    ; clk         ; 1.000        ; 0.000      ; 3.890      ;
+; -3.210 ; proclock:probhai|fullspeed:fulsped|count[5] ; proclock:probhai|fullspeed:fulsped|count[1] ; clk                                    ; clk         ; 1.000        ; 0.000      ; 3.877      ;
+; -3.086 ; proclock:probhai|fullspeed:fulsped|count[6] ; proclock:probhai|fullspeed:fulsped|count[1] ; clk                                    ; clk         ; 1.000        ; 0.000      ; 3.753      ;
+; -2.671 ; proclock:probhai|fullspeed:fulsped|count[2] ; proclock:probhai|fullspeed:fulsped|count[1] ; clk                                    ; clk         ; 1.000        ; 0.000      ; 3.338      ;
+; -2.270 ; proclock:probhai|fullspeed:fulsped|count[8] ; proclock:probhai|fullspeed:fulsped|count[0] ; clk                                    ; clk         ; 1.000        ; 0.000      ; 2.937      ;
+; -2.268 ; proclock:probhai|fullspeed:fulsped|count[8] ; proclock:probhai|fullspeed:fulsped|clk      ; clk                                    ; clk         ; 1.000        ; 0.000      ; 2.935      ;
+; -2.264 ; proclock:probhai|fullspeed:fulsped|count[8] ; proclock:probhai|fullspeed:fulsped|count[3] ; clk                                    ; clk         ; 1.000        ; 0.000      ; 2.931      ;
+; -2.260 ; proclock:probhai|fullspeed:fulsped|count[8] ; proclock:probhai|fullspeed:fulsped|count[7] ; clk                                    ; clk         ; 1.000        ; 0.000      ; 2.927      ;
+; -2.159 ; proclock:probhai|fullspeed:fulsped|count[4] ; proclock:probhai|fullspeed:fulsped|count[1] ; clk                                    ; clk         ; 1.000        ; 0.000      ; 2.826      ;
+; -1.200 ; proclock:probhai|fullspeed:fulsped|count[8] ; proclock:probhai|fullspeed:fulsped|count[1] ; clk                                    ; clk         ; 1.000        ; 0.000      ; 1.867      ;
+; 1.914  ; proclock:probhai|fullspeed:fulsped|clk      ; proclock:probhai|fullspeed:fulsped|clk      ; proclock:probhai|fullspeed:fulsped|clk ; clk         ; 0.500        ; 3.699      ; 2.328      ;
+; 2.414  ; proclock:probhai|fullspeed:fulsped|clk      ; proclock:probhai|fullspeed:fulsped|clk      ; proclock:probhai|fullspeed:fulsped|clk ; clk         ; 1.000        ; 3.699      ; 2.328      ;
++--------+---------------------------------------------+---------------------------------------------+----------------------------------------+-------------+--------------+------------+------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Setup: 'proclock:probhai|fullspeed:fulsped|clk'                                                                                                                                           ;
++--------+---------------------------+---------------------------+----------------------------------------+----------------------------------------+--------------+------------+------------+
+; Slack  ; From Node                 ; To Node                   ; Launch Clock                           ; Latch Clock                            ; Relationship ; Clock Skew ; Data Delay ;
++--------+---------------------------+---------------------------+----------------------------------------+----------------------------------------+--------------+------------+------------+
+; -4.979 ; proclock:probhai|count[1] ; proclock:probhai|count[6] ; proclock:probhai|fullspeed:fulsped|clk ; proclock:probhai|fullspeed:fulsped|clk ; 1.000        ; 0.000      ; 5.646      ;
+; -4.979 ; proclock:probhai|count[1] ; proclock:probhai|count[5] ; proclock:probhai|fullspeed:fulsped|clk ; proclock:probhai|fullspeed:fulsped|clk ; 1.000        ; 0.000      ; 5.646      ;
+; -4.979 ; proclock:probhai|count[1] ; proclock:probhai|count[4] ; proclock:probhai|fullspeed:fulsped|clk ; proclock:probhai|fullspeed:fulsped|clk ; 1.000        ; 0.000      ; 5.646      ;
+; -4.979 ; proclock:probhai|count[1] ; proclock:probhai|count[3] ; proclock:probhai|fullspeed:fulsped|clk ; proclock:probhai|fullspeed:fulsped|clk ; 1.000        ; 0.000      ; 5.646      ;
+; -4.979 ; proclock:probhai|count[1] ; proclock:probhai|count[2] ; proclock:probhai|fullspeed:fulsped|clk ; proclock:probhai|fullspeed:fulsped|clk ; 1.000        ; 0.000      ; 5.646      ;
+; -4.979 ; proclock:probhai|count[1] ; proclock:probhai|count[1] ; proclock:probhai|fullspeed:fulsped|clk ; proclock:probhai|fullspeed:fulsped|clk ; 1.000        ; 0.000      ; 5.646      ;
+; -4.979 ; proclock:probhai|count[1] ; proclock:probhai|count[0] ; proclock:probhai|fullspeed:fulsped|clk ; proclock:probhai|fullspeed:fulsped|clk ; 1.000        ; 0.000      ; 5.646      ;
+; -4.934 ; proclock:probhai|count[3] ; proclock:probhai|count[6] ; proclock:probhai|fullspeed:fulsped|clk ; proclock:probhai|fullspeed:fulsped|clk ; 1.000        ; 0.000      ; 5.601      ;
+; -4.934 ; proclock:probhai|count[3] ; proclock:probhai|count[5] ; proclock:probhai|fullspeed:fulsped|clk ; proclock:probhai|fullspeed:fulsped|clk ; 1.000        ; 0.000      ; 5.601      ;
+; -4.934 ; proclock:probhai|count[3] ; proclock:probhai|count[4] ; proclock:probhai|fullspeed:fulsped|clk ; proclock:probhai|fullspeed:fulsped|clk ; 1.000        ; 0.000      ; 5.601      ;
+; -4.934 ; proclock:probhai|count[3] ; proclock:probhai|count[3] ; proclock:probhai|fullspeed:fulsped|clk ; proclock:probhai|fullspeed:fulsped|clk ; 1.000        ; 0.000      ; 5.601      ;
+; -4.934 ; proclock:probhai|count[3] ; proclock:probhai|count[2] ; proclock:probhai|fullspeed:fulsped|clk ; proclock:probhai|fullspeed:fulsped|clk ; 1.000        ; 0.000      ; 5.601      ;
+; -4.934 ; proclock:probhai|count[3] ; proclock:probhai|count[1] ; proclock:probhai|fullspeed:fulsped|clk ; proclock:probhai|fullspeed:fulsped|clk ; 1.000        ; 0.000      ; 5.601      ;
+; -4.934 ; proclock:probhai|count[3] ; proclock:probhai|count[0] ; proclock:probhai|fullspeed:fulsped|clk ; proclock:probhai|fullspeed:fulsped|clk ; 1.000        ; 0.000      ; 5.601      ;
+; -4.781 ; proclock:probhai|count[0] ; proclock:probhai|count[6] ; proclock:probhai|fullspeed:fulsped|clk ; proclock:probhai|fullspeed:fulsped|clk ; 1.000        ; 0.000      ; 5.448      ;
+; -4.781 ; proclock:probhai|count[0] ; proclock:probhai|count[5] ; proclock:probhai|fullspeed:fulsped|clk ; proclock:probhai|fullspeed:fulsped|clk ; 1.000        ; 0.000      ; 5.448      ;
+; -4.781 ; proclock:probhai|count[0] ; proclock:probhai|count[4] ; proclock:probhai|fullspeed:fulsped|clk ; proclock:probhai|fullspeed:fulsped|clk ; 1.000        ; 0.000      ; 5.448      ;
+; -4.781 ; proclock:probhai|count[0] ; proclock:probhai|count[3] ; proclock:probhai|fullspeed:fulsped|clk ; proclock:probhai|fullspeed:fulsped|clk ; 1.000        ; 0.000      ; 5.448      ;
+; -4.781 ; proclock:probhai|count[0] ; proclock:probhai|count[2] ; proclock:probhai|fullspeed:fulsped|clk ; proclock:probhai|fullspeed:fulsped|clk ; 1.000        ; 0.000      ; 5.448      ;
+; -4.781 ; proclock:probhai|count[0] ; proclock:probhai|count[1] ; proclock:probhai|fullspeed:fulsped|clk ; proclock:probhai|fullspeed:fulsped|clk ; 1.000        ; 0.000      ; 5.448      ;
+; -4.781 ; proclock:probhai|count[0] ; proclock:probhai|count[0] ; proclock:probhai|fullspeed:fulsped|clk ; proclock:probhai|fullspeed:fulsped|clk ; 1.000        ; 0.000      ; 5.448      ;
+; -4.243 ; proclock:probhai|count[2] ; proclock:probhai|count[6] ; proclock:probhai|fullspeed:fulsped|clk ; proclock:probhai|fullspeed:fulsped|clk ; 1.000        ; 0.000      ; 4.910      ;
+; -4.243 ; proclock:probhai|count[2] ; proclock:probhai|count[5] ; proclock:probhai|fullspeed:fulsped|clk ; proclock:probhai|fullspeed:fulsped|clk ; 1.000        ; 0.000      ; 4.910      ;
+; -4.243 ; proclock:probhai|count[2] ; proclock:probhai|count[4] ; proclock:probhai|fullspeed:fulsped|clk ; proclock:probhai|fullspeed:fulsped|clk ; 1.000        ; 0.000      ; 4.910      ;
+; -4.243 ; proclock:probhai|count[2] ; proclock:probhai|count[3] ; proclock:probhai|fullspeed:fulsped|clk ; proclock:probhai|fullspeed:fulsped|clk ; 1.000        ; 0.000      ; 4.910      ;
+; -4.243 ; proclock:probhai|count[2] ; proclock:probhai|count[2] ; proclock:probhai|fullspeed:fulsped|clk ; proclock:probhai|fullspeed:fulsped|clk ; 1.000        ; 0.000      ; 4.910      ;
+; -4.243 ; proclock:probhai|count[2] ; proclock:probhai|count[1] ; proclock:probhai|fullspeed:fulsped|clk ; proclock:probhai|fullspeed:fulsped|clk ; 1.000        ; 0.000      ; 4.910      ;
+; -4.243 ; proclock:probhai|count[2] ; proclock:probhai|count[0] ; proclock:probhai|fullspeed:fulsped|clk ; proclock:probhai|fullspeed:fulsped|clk ; 1.000        ; 0.000      ; 4.910      ;
+; -4.010 ; proclock:probhai|count[5] ; proclock:probhai|count[6] ; proclock:probhai|fullspeed:fulsped|clk ; proclock:probhai|fullspeed:fulsped|clk ; 1.000        ; 0.000      ; 4.677      ;
+; -4.010 ; proclock:probhai|count[5] ; proclock:probhai|count[5] ; proclock:probhai|fullspeed:fulsped|clk ; proclock:probhai|fullspeed:fulsped|clk ; 1.000        ; 0.000      ; 4.677      ;
+; -4.010 ; proclock:probhai|count[5] ; proclock:probhai|count[4] ; proclock:probhai|fullspeed:fulsped|clk ; proclock:probhai|fullspeed:fulsped|clk ; 1.000        ; 0.000      ; 4.677      ;
+; -4.010 ; proclock:probhai|count[5] ; proclock:probhai|count[3] ; proclock:probhai|fullspeed:fulsped|clk ; proclock:probhai|fullspeed:fulsped|clk ; 1.000        ; 0.000      ; 4.677      ;
+; -4.010 ; proclock:probhai|count[5] ; proclock:probhai|count[2] ; proclock:probhai|fullspeed:fulsped|clk ; proclock:probhai|fullspeed:fulsped|clk ; 1.000        ; 0.000      ; 4.677      ;
+; -4.010 ; proclock:probhai|count[5] ; proclock:probhai|count[1] ; proclock:probhai|fullspeed:fulsped|clk ; proclock:probhai|fullspeed:fulsped|clk ; 1.000        ; 0.000      ; 4.677      ;
+; -4.010 ; proclock:probhai|count[5] ; proclock:probhai|count[0] ; proclock:probhai|fullspeed:fulsped|clk ; proclock:probhai|fullspeed:fulsped|clk ; 1.000        ; 0.000      ; 4.677      ;
+; -3.861 ; proclock:probhai|count[1] ; proclock:probhai|clk      ; proclock:probhai|fullspeed:fulsped|clk ; proclock:probhai|fullspeed:fulsped|clk ; 1.000        ; 0.000      ; 4.528      ;
+; -3.830 ; proclock:probhai|count[6] ; proclock:probhai|count[6] ; proclock:probhai|fullspeed:fulsped|clk ; proclock:probhai|fullspeed:fulsped|clk ; 1.000        ; 0.000      ; 4.497      ;
+; -3.830 ; proclock:probhai|count[6] ; proclock:probhai|count[5] ; proclock:probhai|fullspeed:fulsped|clk ; proclock:probhai|fullspeed:fulsped|clk ; 1.000        ; 0.000      ; 4.497      ;
+; -3.830 ; proclock:probhai|count[6] ; proclock:probhai|count[4] ; proclock:probhai|fullspeed:fulsped|clk ; proclock:probhai|fullspeed:fulsped|clk ; 1.000        ; 0.000      ; 4.497      ;
+; -3.830 ; proclock:probhai|count[6] ; proclock:probhai|count[3] ; proclock:probhai|fullspeed:fulsped|clk ; proclock:probhai|fullspeed:fulsped|clk ; 1.000        ; 0.000      ; 4.497      ;
+; -3.830 ; proclock:probhai|count[6] ; proclock:probhai|count[2] ; proclock:probhai|fullspeed:fulsped|clk ; proclock:probhai|fullspeed:fulsped|clk ; 1.000        ; 0.000      ; 4.497      ;
+; -3.830 ; proclock:probhai|count[6] ; proclock:probhai|count[1] ; proclock:probhai|fullspeed:fulsped|clk ; proclock:probhai|fullspeed:fulsped|clk ; 1.000        ; 0.000      ; 4.497      ;
+; -3.830 ; proclock:probhai|count[6] ; proclock:probhai|count[0] ; proclock:probhai|fullspeed:fulsped|clk ; proclock:probhai|fullspeed:fulsped|clk ; 1.000        ; 0.000      ; 4.497      ;
+; -3.816 ; proclock:probhai|count[3] ; proclock:probhai|clk      ; proclock:probhai|fullspeed:fulsped|clk ; proclock:probhai|fullspeed:fulsped|clk ; 1.000        ; 0.000      ; 4.483      ;
+; -3.672 ; proclock:probhai|count[4] ; proclock:probhai|count[6] ; proclock:probhai|fullspeed:fulsped|clk ; proclock:probhai|fullspeed:fulsped|clk ; 1.000        ; 0.000      ; 4.339      ;
+; -3.672 ; proclock:probhai|count[4] ; proclock:probhai|count[5] ; proclock:probhai|fullspeed:fulsped|clk ; proclock:probhai|fullspeed:fulsped|clk ; 1.000        ; 0.000      ; 4.339      ;
+; -3.672 ; proclock:probhai|count[4] ; proclock:probhai|count[4] ; proclock:probhai|fullspeed:fulsped|clk ; proclock:probhai|fullspeed:fulsped|clk ; 1.000        ; 0.000      ; 4.339      ;
+; -3.672 ; proclock:probhai|count[4] ; proclock:probhai|count[3] ; proclock:probhai|fullspeed:fulsped|clk ; proclock:probhai|fullspeed:fulsped|clk ; 1.000        ; 0.000      ; 4.339      ;
+; -3.672 ; proclock:probhai|count[4] ; proclock:probhai|count[2] ; proclock:probhai|fullspeed:fulsped|clk ; proclock:probhai|fullspeed:fulsped|clk ; 1.000        ; 0.000      ; 4.339      ;
+; -3.672 ; proclock:probhai|count[4] ; proclock:probhai|count[1] ; proclock:probhai|fullspeed:fulsped|clk ; proclock:probhai|fullspeed:fulsped|clk ; 1.000        ; 0.000      ; 4.339      ;
+; -3.672 ; proclock:probhai|count[4] ; proclock:probhai|count[0] ; proclock:probhai|fullspeed:fulsped|clk ; proclock:probhai|fullspeed:fulsped|clk ; 1.000        ; 0.000      ; 4.339      ;
+; -3.663 ; proclock:probhai|count[0] ; proclock:probhai|clk      ; proclock:probhai|fullspeed:fulsped|clk ; proclock:probhai|fullspeed:fulsped|clk ; 1.000        ; 0.000      ; 4.330      ;
+; -3.125 ; proclock:probhai|count[2] ; proclock:probhai|clk      ; proclock:probhai|fullspeed:fulsped|clk ; proclock:probhai|fullspeed:fulsped|clk ; 1.000        ; 0.000      ; 3.792      ;
+; -2.892 ; proclock:probhai|count[5] ; proclock:probhai|clk      ; proclock:probhai|fullspeed:fulsped|clk ; proclock:probhai|fullspeed:fulsped|clk ; 1.000        ; 0.000      ; 3.559      ;
+; -2.712 ; proclock:probhai|count[6] ; proclock:probhai|clk      ; proclock:probhai|fullspeed:fulsped|clk ; proclock:probhai|fullspeed:fulsped|clk ; 1.000        ; 0.000      ; 3.379      ;
+; -2.554 ; proclock:probhai|count[4] ; proclock:probhai|clk      ; proclock:probhai|fullspeed:fulsped|clk ; proclock:probhai|fullspeed:fulsped|clk ; 1.000        ; 0.000      ; 3.221      ;
+; 3.876  ; proclock:probhai|clk      ; proclock:probhai|clk      ; proclock:probhai|clk                   ; proclock:probhai|fullspeed:fulsped|clk ; 0.500        ; 5.470      ; 2.137      ;
+; 4.376  ; proclock:probhai|clk      ; proclock:probhai|clk      ; proclock:probhai|clk                   ; proclock:probhai|fullspeed:fulsped|clk ; 1.000        ; 5.470      ; 2.137      ;
++--------+---------------------------+---------------------------+----------------------------------------+----------------------------------------+--------------+------------+------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Hold: 'proclock:probhai|fullspeed:fulsped|clk'                                                                                                                                            ;
++--------+---------------------------+---------------------------+----------------------------------------+----------------------------------------+--------------+------------+------------+
+; Slack  ; From Node                 ; To Node                   ; Launch Clock                           ; Latch Clock                            ; Relationship ; Clock Skew ; Data Delay ;
++--------+---------------------------+---------------------------+----------------------------------------+----------------------------------------+--------------+------------+------------+
+; -3.930 ; proclock:probhai|clk      ; proclock:probhai|clk      ; proclock:probhai|clk                   ; proclock:probhai|fullspeed:fulsped|clk ; 0.000        ; 5.470      ; 2.137      ;
+; -3.430 ; proclock:probhai|clk      ; proclock:probhai|clk      ; proclock:probhai|clk                   ; proclock:probhai|fullspeed:fulsped|clk ; -0.500       ; 5.470      ; 2.137      ;
+; 2.135  ; proclock:probhai|count[1] ; proclock:probhai|count[1] ; proclock:probhai|fullspeed:fulsped|clk ; proclock:probhai|fullspeed:fulsped|clk ; 0.000        ; 0.000      ; 2.356      ;
+; 2.136  ; proclock:probhai|count[6] ; proclock:probhai|count[6] ; proclock:probhai|fullspeed:fulsped|clk ; proclock:probhai|fullspeed:fulsped|clk ; 0.000        ; 0.000      ; 2.357      ;
+; 2.143  ; proclock:probhai|count[0] ; proclock:probhai|count[0] ; proclock:probhai|fullspeed:fulsped|clk ; proclock:probhai|fullspeed:fulsped|clk ; 0.000        ; 0.000      ; 2.364      ;
+; 2.250  ; proclock:probhai|count[2] ; proclock:probhai|count[2] ; proclock:probhai|fullspeed:fulsped|clk ; proclock:probhai|fullspeed:fulsped|clk ; 0.000        ; 0.000      ; 2.471      ;
+; 2.260  ; proclock:probhai|count[4] ; proclock:probhai|count[4] ; proclock:probhai|fullspeed:fulsped|clk ; proclock:probhai|fullspeed:fulsped|clk ; 0.000        ; 0.000      ; 2.481      ;
+; 2.262  ; proclock:probhai|count[5] ; proclock:probhai|count[5] ; proclock:probhai|fullspeed:fulsped|clk ; proclock:probhai|fullspeed:fulsped|clk ; 0.000        ; 0.000      ; 2.483      ;
+; 2.505  ; proclock:probhai|count[3] ; proclock:probhai|count[3] ; proclock:probhai|fullspeed:fulsped|clk ; proclock:probhai|fullspeed:fulsped|clk ; 0.000        ; 0.000      ; 2.726      ;
+; 2.967  ; proclock:probhai|count[1] ; proclock:probhai|count[2] ; proclock:probhai|fullspeed:fulsped|clk ; proclock:probhai|fullspeed:fulsped|clk ; 0.000        ; 0.000      ; 3.188      ;
+; 2.975  ; proclock:probhai|count[0] ; proclock:probhai|count[1] ; proclock:probhai|fullspeed:fulsped|clk ; proclock:probhai|fullspeed:fulsped|clk ; 0.000        ; 0.000      ; 3.196      ;
+; 3.000  ; proclock:probhai|count[4] ; proclock:probhai|clk      ; proclock:probhai|fullspeed:fulsped|clk ; proclock:probhai|fullspeed:fulsped|clk ; 0.000        ; 0.000      ; 3.221      ;
+; 3.078  ; proclock:probhai|count[1] ; proclock:probhai|count[3] ; proclock:probhai|fullspeed:fulsped|clk ; proclock:probhai|fullspeed:fulsped|clk ; 0.000        ; 0.000      ; 3.299      ;
+; 3.086  ; proclock:probhai|count[0] ; proclock:probhai|count[2] ; proclock:probhai|fullspeed:fulsped|clk ; proclock:probhai|fullspeed:fulsped|clk ; 0.000        ; 0.000      ; 3.307      ;
+; 3.158  ; proclock:probhai|count[6] ; proclock:probhai|clk      ; proclock:probhai|fullspeed:fulsped|clk ; proclock:probhai|fullspeed:fulsped|clk ; 0.000        ; 0.000      ; 3.379      ;
+; 3.190  ; proclock:probhai|count[2] ; proclock:probhai|count[3] ; proclock:probhai|fullspeed:fulsped|clk ; proclock:probhai|fullspeed:fulsped|clk ; 0.000        ; 0.000      ; 3.411      ;
+; 3.197  ; proclock:probhai|count[0] ; proclock:probhai|count[3] ; proclock:probhai|fullspeed:fulsped|clk ; proclock:probhai|fullspeed:fulsped|clk ; 0.000        ; 0.000      ; 3.418      ;
+; 3.200  ; proclock:probhai|count[4] ; proclock:probhai|count[5] ; proclock:probhai|fullspeed:fulsped|clk ; proclock:probhai|fullspeed:fulsped|clk ; 0.000        ; 0.000      ; 3.421      ;
+; 3.202  ; proclock:probhai|count[5] ; proclock:probhai|count[6] ; proclock:probhai|fullspeed:fulsped|clk ; proclock:probhai|fullspeed:fulsped|clk ; 0.000        ; 0.000      ; 3.423      ;
+; 3.311  ; proclock:probhai|count[4] ; proclock:probhai|count[6] ; proclock:probhai|fullspeed:fulsped|clk ; proclock:probhai|fullspeed:fulsped|clk ; 0.000        ; 0.000      ; 3.532      ;
+; 3.338  ; proclock:probhai|count[5] ; proclock:probhai|clk      ; proclock:probhai|fullspeed:fulsped|clk ; proclock:probhai|fullspeed:fulsped|clk ; 0.000        ; 0.000      ; 3.559      ;
+; 3.547  ; proclock:probhai|count[1] ; proclock:probhai|count[6] ; proclock:probhai|fullspeed:fulsped|clk ; proclock:probhai|fullspeed:fulsped|clk ; 0.000        ; 0.000      ; 3.768      ;
+; 3.547  ; proclock:probhai|count[1] ; proclock:probhai|count[5] ; proclock:probhai|fullspeed:fulsped|clk ; proclock:probhai|fullspeed:fulsped|clk ; 0.000        ; 0.000      ; 3.768      ;
+; 3.547  ; proclock:probhai|count[1] ; proclock:probhai|count[4] ; proclock:probhai|fullspeed:fulsped|clk ; proclock:probhai|fullspeed:fulsped|clk ; 0.000        ; 0.000      ; 3.768      ;
+; 3.571  ; proclock:probhai|count[2] ; proclock:probhai|clk      ; proclock:probhai|fullspeed:fulsped|clk ; proclock:probhai|fullspeed:fulsped|clk ; 0.000        ; 0.000      ; 3.792      ;
+; 3.659  ; proclock:probhai|count[2] ; proclock:probhai|count[6] ; proclock:probhai|fullspeed:fulsped|clk ; proclock:probhai|fullspeed:fulsped|clk ; 0.000        ; 0.000      ; 3.880      ;
+; 3.659  ; proclock:probhai|count[2] ; proclock:probhai|count[5] ; proclock:probhai|fullspeed:fulsped|clk ; proclock:probhai|fullspeed:fulsped|clk ; 0.000        ; 0.000      ; 3.880      ;
+; 3.659  ; proclock:probhai|count[2] ; proclock:probhai|count[4] ; proclock:probhai|fullspeed:fulsped|clk ; proclock:probhai|fullspeed:fulsped|clk ; 0.000        ; 0.000      ; 3.880      ;
+; 3.666  ; proclock:probhai|count[0] ; proclock:probhai|count[6] ; proclock:probhai|fullspeed:fulsped|clk ; proclock:probhai|fullspeed:fulsped|clk ; 0.000        ; 0.000      ; 3.887      ;
+; 3.666  ; proclock:probhai|count[0] ; proclock:probhai|count[5] ; proclock:probhai|fullspeed:fulsped|clk ; proclock:probhai|fullspeed:fulsped|clk ; 0.000        ; 0.000      ; 3.887      ;
+; 3.666  ; proclock:probhai|count[0] ; proclock:probhai|count[4] ; proclock:probhai|fullspeed:fulsped|clk ; proclock:probhai|fullspeed:fulsped|clk ; 0.000        ; 0.000      ; 3.887      ;
+; 3.765  ; proclock:probhai|count[3] ; proclock:probhai|count[6] ; proclock:probhai|fullspeed:fulsped|clk ; proclock:probhai|fullspeed:fulsped|clk ; 0.000        ; 0.000      ; 3.986      ;
+; 3.765  ; proclock:probhai|count[3] ; proclock:probhai|count[5] ; proclock:probhai|fullspeed:fulsped|clk ; proclock:probhai|fullspeed:fulsped|clk ; 0.000        ; 0.000      ; 3.986      ;
+; 3.765  ; proclock:probhai|count[3] ; proclock:probhai|count[4] ; proclock:probhai|fullspeed:fulsped|clk ; proclock:probhai|fullspeed:fulsped|clk ; 0.000        ; 0.000      ; 3.986      ;
+; 4.109  ; proclock:probhai|count[0] ; proclock:probhai|clk      ; proclock:probhai|fullspeed:fulsped|clk ; proclock:probhai|fullspeed:fulsped|clk ; 0.000        ; 0.000      ; 4.330      ;
+; 4.118  ; proclock:probhai|count[4] ; proclock:probhai|count[3] ; proclock:probhai|fullspeed:fulsped|clk ; proclock:probhai|fullspeed:fulsped|clk ; 0.000        ; 0.000      ; 4.339      ;
+; 4.118  ; proclock:probhai|count[4] ; proclock:probhai|count[2] ; proclock:probhai|fullspeed:fulsped|clk ; proclock:probhai|fullspeed:fulsped|clk ; 0.000        ; 0.000      ; 4.339      ;
+; 4.118  ; proclock:probhai|count[4] ; proclock:probhai|count[1] ; proclock:probhai|fullspeed:fulsped|clk ; proclock:probhai|fullspeed:fulsped|clk ; 0.000        ; 0.000      ; 4.339      ;
+; 4.118  ; proclock:probhai|count[4] ; proclock:probhai|count[0] ; proclock:probhai|fullspeed:fulsped|clk ; proclock:probhai|fullspeed:fulsped|clk ; 0.000        ; 0.000      ; 4.339      ;
+; 4.262  ; proclock:probhai|count[3] ; proclock:probhai|clk      ; proclock:probhai|fullspeed:fulsped|clk ; proclock:probhai|fullspeed:fulsped|clk ; 0.000        ; 0.000      ; 4.483      ;
+; 4.276  ; proclock:probhai|count[6] ; proclock:probhai|count[5] ; proclock:probhai|fullspeed:fulsped|clk ; proclock:probhai|fullspeed:fulsped|clk ; 0.000        ; 0.000      ; 4.497      ;
+; 4.276  ; proclock:probhai|count[6] ; proclock:probhai|count[4] ; proclock:probhai|fullspeed:fulsped|clk ; proclock:probhai|fullspeed:fulsped|clk ; 0.000        ; 0.000      ; 4.497      ;
+; 4.276  ; proclock:probhai|count[6] ; proclock:probhai|count[3] ; proclock:probhai|fullspeed:fulsped|clk ; proclock:probhai|fullspeed:fulsped|clk ; 0.000        ; 0.000      ; 4.497      ;
+; 4.276  ; proclock:probhai|count[6] ; proclock:probhai|count[2] ; proclock:probhai|fullspeed:fulsped|clk ; proclock:probhai|fullspeed:fulsped|clk ; 0.000        ; 0.000      ; 4.497      ;
+; 4.276  ; proclock:probhai|count[6] ; proclock:probhai|count[1] ; proclock:probhai|fullspeed:fulsped|clk ; proclock:probhai|fullspeed:fulsped|clk ; 0.000        ; 0.000      ; 4.497      ;
+; 4.276  ; proclock:probhai|count[6] ; proclock:probhai|count[0] ; proclock:probhai|fullspeed:fulsped|clk ; proclock:probhai|fullspeed:fulsped|clk ; 0.000        ; 0.000      ; 4.497      ;
+; 4.307  ; proclock:probhai|count[1] ; proclock:probhai|clk      ; proclock:probhai|fullspeed:fulsped|clk ; proclock:probhai|fullspeed:fulsped|clk ; 0.000        ; 0.000      ; 4.528      ;
+; 4.456  ; proclock:probhai|count[5] ; proclock:probhai|count[4] ; proclock:probhai|fullspeed:fulsped|clk ; proclock:probhai|fullspeed:fulsped|clk ; 0.000        ; 0.000      ; 4.677      ;
+; 4.456  ; proclock:probhai|count[5] ; proclock:probhai|count[3] ; proclock:probhai|fullspeed:fulsped|clk ; proclock:probhai|fullspeed:fulsped|clk ; 0.000        ; 0.000      ; 4.677      ;
+; 4.456  ; proclock:probhai|count[5] ; proclock:probhai|count[2] ; proclock:probhai|fullspeed:fulsped|clk ; proclock:probhai|fullspeed:fulsped|clk ; 0.000        ; 0.000      ; 4.677      ;
+; 4.456  ; proclock:probhai|count[5] ; proclock:probhai|count[1] ; proclock:probhai|fullspeed:fulsped|clk ; proclock:probhai|fullspeed:fulsped|clk ; 0.000        ; 0.000      ; 4.677      ;
+; 4.456  ; proclock:probhai|count[5] ; proclock:probhai|count[0] ; proclock:probhai|fullspeed:fulsped|clk ; proclock:probhai|fullspeed:fulsped|clk ; 0.000        ; 0.000      ; 4.677      ;
+; 4.689  ; proclock:probhai|count[2] ; proclock:probhai|count[1] ; proclock:probhai|fullspeed:fulsped|clk ; proclock:probhai|fullspeed:fulsped|clk ; 0.000        ; 0.000      ; 4.910      ;
+; 4.689  ; proclock:probhai|count[2] ; proclock:probhai|count[0] ; proclock:probhai|fullspeed:fulsped|clk ; proclock:probhai|fullspeed:fulsped|clk ; 0.000        ; 0.000      ; 4.910      ;
+; 5.380  ; proclock:probhai|count[3] ; proclock:probhai|count[2] ; proclock:probhai|fullspeed:fulsped|clk ; proclock:probhai|fullspeed:fulsped|clk ; 0.000        ; 0.000      ; 5.601      ;
+; 5.380  ; proclock:probhai|count[3] ; proclock:probhai|count[1] ; proclock:probhai|fullspeed:fulsped|clk ; proclock:probhai|fullspeed:fulsped|clk ; 0.000        ; 0.000      ; 5.601      ;
+; 5.380  ; proclock:probhai|count[3] ; proclock:probhai|count[0] ; proclock:probhai|fullspeed:fulsped|clk ; proclock:probhai|fullspeed:fulsped|clk ; 0.000        ; 0.000      ; 5.601      ;
+; 5.425  ; proclock:probhai|count[1] ; proclock:probhai|count[0] ; proclock:probhai|fullspeed:fulsped|clk ; proclock:probhai|fullspeed:fulsped|clk ; 0.000        ; 0.000      ; 5.646      ;
++--------+---------------------------+---------------------------+----------------------------------------+----------------------------------------+--------------+------------+------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Hold: 'clk'                                                                                                                                                                                        ;
++--------+---------------------------------------------+---------------------------------------------+----------------------------------------+-------------+--------------+------------+------------+
+; Slack  ; From Node                                   ; To Node                                     ; Launch Clock                           ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+---------------------------------------------+---------------------------------------------+----------------------------------------+-------------+--------------+------------+------------+
+; -1.968 ; proclock:probhai|fullspeed:fulsped|clk      ; proclock:probhai|fullspeed:fulsped|clk      ; proclock:probhai|fullspeed:fulsped|clk ; clk         ; 0.000        ; 3.699      ; 2.328      ;
+; -1.468 ; proclock:probhai|fullspeed:fulsped|clk      ; proclock:probhai|fullspeed:fulsped|clk      ; proclock:probhai|fullspeed:fulsped|clk ; clk         ; -0.500       ; 3.699      ; 2.328      ;
+; 1.646  ; proclock:probhai|fullspeed:fulsped|count[8] ; proclock:probhai|fullspeed:fulsped|count[1] ; clk                                    ; clk         ; 0.000        ; 0.000      ; 1.867      ;
+; 2.139  ; proclock:probhai|fullspeed:fulsped|count[8] ; proclock:probhai|fullspeed:fulsped|count[9] ; clk                                    ; clk         ; 0.000        ; 0.000      ; 2.360      ;
+; 2.605  ; proclock:probhai|fullspeed:fulsped|count[4] ; proclock:probhai|fullspeed:fulsped|count[1] ; clk                                    ; clk         ; 0.000        ; 0.000      ; 2.826      ;
+; 2.706  ; proclock:probhai|fullspeed:fulsped|count[8] ; proclock:probhai|fullspeed:fulsped|count[7] ; clk                                    ; clk         ; 0.000        ; 0.000      ; 2.927      ;
+; 2.710  ; proclock:probhai|fullspeed:fulsped|count[8] ; proclock:probhai|fullspeed:fulsped|count[3] ; clk                                    ; clk         ; 0.000        ; 0.000      ; 2.931      ;
+; 2.714  ; proclock:probhai|fullspeed:fulsped|count[8] ; proclock:probhai|fullspeed:fulsped|clk      ; clk                                    ; clk         ; 0.000        ; 0.000      ; 2.935      ;
+; 2.716  ; proclock:probhai|fullspeed:fulsped|count[8] ; proclock:probhai|fullspeed:fulsped|count[0] ; clk                                    ; clk         ; 0.000        ; 0.000      ; 2.937      ;
+; 3.098  ; proclock:probhai|fullspeed:fulsped|count[4] ; proclock:probhai|fullspeed:fulsped|count[9] ; clk                                    ; clk         ; 0.000        ; 0.000      ; 3.319      ;
+; 3.117  ; proclock:probhai|fullspeed:fulsped|count[2] ; proclock:probhai|fullspeed:fulsped|count[1] ; clk                                    ; clk         ; 0.000        ; 0.000      ; 3.338      ;
+; 3.532  ; proclock:probhai|fullspeed:fulsped|count[6] ; proclock:probhai|fullspeed:fulsped|count[1] ; clk                                    ; clk         ; 0.000        ; 0.000      ; 3.753      ;
+; 3.610  ; proclock:probhai|fullspeed:fulsped|count[2] ; proclock:probhai|fullspeed:fulsped|count[9] ; clk                                    ; clk         ; 0.000        ; 0.000      ; 3.831      ;
+; 3.635  ; proclock:probhai|fullspeed:fulsped|count[0] ; proclock:probhai|fullspeed:fulsped|count[1] ; clk                                    ; clk         ; 0.000        ; 0.000      ; 3.856      ;
+; 3.656  ; proclock:probhai|fullspeed:fulsped|count[5] ; proclock:probhai|fullspeed:fulsped|count[1] ; clk                                    ; clk         ; 0.000        ; 0.000      ; 3.877      ;
+; 3.665  ; proclock:probhai|fullspeed:fulsped|count[4] ; proclock:probhai|fullspeed:fulsped|count[7] ; clk                                    ; clk         ; 0.000        ; 0.000      ; 3.886      ;
+; 3.669  ; proclock:probhai|fullspeed:fulsped|count[4] ; proclock:probhai|fullspeed:fulsped|count[3] ; clk                                    ; clk         ; 0.000        ; 0.000      ; 3.890      ;
+; 3.673  ; proclock:probhai|fullspeed:fulsped|count[4] ; proclock:probhai|fullspeed:fulsped|clk      ; clk                                    ; clk         ; 0.000        ; 0.000      ; 3.894      ;
+; 3.675  ; proclock:probhai|fullspeed:fulsped|count[4] ; proclock:probhai|fullspeed:fulsped|count[0] ; clk                                    ; clk         ; 0.000        ; 0.000      ; 3.896      ;
+; 3.807  ; proclock:probhai|fullspeed:fulsped|count[6] ; proclock:probhai|fullspeed:fulsped|count[6] ; clk                                    ; clk         ; 0.000        ; 0.000      ; 4.028      ;
+; 3.815  ; proclock:probhai|fullspeed:fulsped|count[7] ; proclock:probhai|fullspeed:fulsped|count[1] ; clk                                    ; clk         ; 0.000        ; 0.000      ; 4.036      ;
+; 3.854  ; proclock:probhai|fullspeed:fulsped|count[9] ; proclock:probhai|fullspeed:fulsped|count[1] ; clk                                    ; clk         ; 0.000        ; 0.000      ; 4.075      ;
+; 3.877  ; proclock:probhai|fullspeed:fulsped|count[3] ; proclock:probhai|fullspeed:fulsped|count[3] ; clk                                    ; clk         ; 0.000        ; 0.000      ; 4.098      ;
+; 3.915  ; proclock:probhai|fullspeed:fulsped|count[0] ; proclock:probhai|fullspeed:fulsped|count[0] ; clk                                    ; clk         ; 0.000        ; 0.000      ; 4.136      ;
+; 3.919  ; proclock:probhai|fullspeed:fulsped|count[7] ; proclock:probhai|fullspeed:fulsped|count[7] ; clk                                    ; clk         ; 0.000        ; 0.000      ; 4.140      ;
+; 4.025  ; proclock:probhai|fullspeed:fulsped|count[6] ; proclock:probhai|fullspeed:fulsped|count[9] ; clk                                    ; clk         ; 0.000        ; 0.000      ; 4.246      ;
+; 4.128  ; proclock:probhai|fullspeed:fulsped|count[0] ; proclock:probhai|fullspeed:fulsped|count[9] ; clk                                    ; clk         ; 0.000        ; 0.000      ; 4.349      ;
+; 4.136  ; proclock:probhai|fullspeed:fulsped|count[5] ; proclock:probhai|fullspeed:fulsped|count[5] ; clk                                    ; clk         ; 0.000        ; 0.000      ; 4.357      ;
+; 4.149  ; proclock:probhai|fullspeed:fulsped|count[5] ; proclock:probhai|fullspeed:fulsped|count[9] ; clk                                    ; clk         ; 0.000        ; 0.000      ; 4.370      ;
+; 4.177  ; proclock:probhai|fullspeed:fulsped|count[2] ; proclock:probhai|fullspeed:fulsped|count[7] ; clk                                    ; clk         ; 0.000        ; 0.000      ; 4.398      ;
+; 4.177  ; proclock:probhai|fullspeed:fulsped|count[1] ; proclock:probhai|fullspeed:fulsped|count[1] ; clk                                    ; clk         ; 0.000        ; 0.000      ; 4.398      ;
+; 4.181  ; proclock:probhai|fullspeed:fulsped|count[2] ; proclock:probhai|fullspeed:fulsped|count[3] ; clk                                    ; clk         ; 0.000        ; 0.000      ; 4.402      ;
+; 4.185  ; proclock:probhai|fullspeed:fulsped|count[2] ; proclock:probhai|fullspeed:fulsped|clk      ; clk                                    ; clk         ; 0.000        ; 0.000      ; 4.406      ;
+; 4.187  ; proclock:probhai|fullspeed:fulsped|count[2] ; proclock:probhai|fullspeed:fulsped|count[0] ; clk                                    ; clk         ; 0.000        ; 0.000      ; 4.408      ;
+; 4.253  ; proclock:probhai|fullspeed:fulsped|count[8] ; proclock:probhai|fullspeed:fulsped|count[8] ; clk                                    ; clk         ; 0.000        ; 0.000      ; 4.474      ;
+; 4.308  ; proclock:probhai|fullspeed:fulsped|count[7] ; proclock:probhai|fullspeed:fulsped|count[9] ; clk                                    ; clk         ; 0.000        ; 0.000      ; 4.529      ;
+; 4.323  ; proclock:probhai|fullspeed:fulsped|count[3] ; proclock:probhai|fullspeed:fulsped|count[1] ; clk                                    ; clk         ; 0.000        ; 0.000      ; 4.544      ;
+; 4.342  ; proclock:probhai|fullspeed:fulsped|count[4] ; proclock:probhai|fullspeed:fulsped|count[4] ; clk                                    ; clk         ; 0.000        ; 0.000      ; 4.563      ;
+; 4.347  ; proclock:probhai|fullspeed:fulsped|count[9] ; proclock:probhai|fullspeed:fulsped|count[9] ; clk                                    ; clk         ; 0.000        ; 0.000      ; 4.568      ;
+; 4.592  ; proclock:probhai|fullspeed:fulsped|count[6] ; proclock:probhai|fullspeed:fulsped|count[7] ; clk                                    ; clk         ; 0.000        ; 0.000      ; 4.813      ;
+; 4.596  ; proclock:probhai|fullspeed:fulsped|count[6] ; proclock:probhai|fullspeed:fulsped|count[3] ; clk                                    ; clk         ; 0.000        ; 0.000      ; 4.817      ;
+; 4.600  ; proclock:probhai|fullspeed:fulsped|count[6] ; proclock:probhai|fullspeed:fulsped|clk      ; clk                                    ; clk         ; 0.000        ; 0.000      ; 4.821      ;
+; 4.602  ; proclock:probhai|fullspeed:fulsped|count[6] ; proclock:probhai|fullspeed:fulsped|count[0] ; clk                                    ; clk         ; 0.000        ; 0.000      ; 4.823      ;
+; 4.668  ; proclock:probhai|fullspeed:fulsped|count[5] ; proclock:probhai|fullspeed:fulsped|count[6] ; clk                                    ; clk         ; 0.000        ; 0.000      ; 4.889      ;
+; 4.670  ; proclock:probhai|fullspeed:fulsped|count[1] ; proclock:probhai|fullspeed:fulsped|count[9] ; clk                                    ; clk         ; 0.000        ; 0.000      ; 4.891      ;
+; 4.695  ; proclock:probhai|fullspeed:fulsped|count[0] ; proclock:probhai|fullspeed:fulsped|count[7] ; clk                                    ; clk         ; 0.000        ; 0.000      ; 4.916      ;
+; 4.699  ; proclock:probhai|fullspeed:fulsped|count[0] ; proclock:probhai|fullspeed:fulsped|count[3] ; clk                                    ; clk         ; 0.000        ; 0.000      ; 4.920      ;
+; 4.703  ; proclock:probhai|fullspeed:fulsped|count[0] ; proclock:probhai|fullspeed:fulsped|clk      ; clk                                    ; clk         ; 0.000        ; 0.000      ; 4.924      ;
+; 4.716  ; proclock:probhai|fullspeed:fulsped|count[5] ; proclock:probhai|fullspeed:fulsped|count[7] ; clk                                    ; clk         ; 0.000        ; 0.000      ; 4.937      ;
+; 4.720  ; proclock:probhai|fullspeed:fulsped|count[5] ; proclock:probhai|fullspeed:fulsped|count[3] ; clk                                    ; clk         ; 0.000        ; 0.000      ; 4.941      ;
+; 4.724  ; proclock:probhai|fullspeed:fulsped|count[5] ; proclock:probhai|fullspeed:fulsped|clk      ; clk                                    ; clk         ; 0.000        ; 0.000      ; 4.945      ;
+; 4.726  ; proclock:probhai|fullspeed:fulsped|count[5] ; proclock:probhai|fullspeed:fulsped|count[0] ; clk                                    ; clk         ; 0.000        ; 0.000      ; 4.947      ;
+; 4.814  ; proclock:probhai|fullspeed:fulsped|count[1] ; proclock:probhai|fullspeed:fulsped|count[3] ; clk                                    ; clk         ; 0.000        ; 0.000      ; 5.035      ;
+; 4.816  ; proclock:probhai|fullspeed:fulsped|count[3] ; proclock:probhai|fullspeed:fulsped|count[9] ; clk                                    ; clk         ; 0.000        ; 0.000      ; 5.037      ;
+; 4.861  ; proclock:probhai|fullspeed:fulsped|count[3] ; proclock:probhai|fullspeed:fulsped|count[6] ; clk                                    ; clk         ; 0.000        ; 0.000      ; 5.082      ;
+; 4.879  ; proclock:probhai|fullspeed:fulsped|count[7] ; proclock:probhai|fullspeed:fulsped|count[3] ; clk                                    ; clk         ; 0.000        ; 0.000      ; 5.100      ;
+; 4.883  ; proclock:probhai|fullspeed:fulsped|count[7] ; proclock:probhai|fullspeed:fulsped|clk      ; clk                                    ; clk         ; 0.000        ; 0.000      ; 5.104      ;
+; 4.885  ; proclock:probhai|fullspeed:fulsped|count[7] ; proclock:probhai|fullspeed:fulsped|count[0] ; clk                                    ; clk         ; 0.000        ; 0.000      ; 5.106      ;
+; 4.914  ; proclock:probhai|fullspeed:fulsped|count[9] ; proclock:probhai|fullspeed:fulsped|count[7] ; clk                                    ; clk         ; 0.000        ; 0.000      ; 5.135      ;
+; 4.918  ; proclock:probhai|fullspeed:fulsped|count[9] ; proclock:probhai|fullspeed:fulsped|count[3] ; clk                                    ; clk         ; 0.000        ; 0.000      ; 5.139      ;
+; 4.922  ; proclock:probhai|fullspeed:fulsped|count[9] ; proclock:probhai|fullspeed:fulsped|clk      ; clk                                    ; clk         ; 0.000        ; 0.000      ; 5.143      ;
+; 4.924  ; proclock:probhai|fullspeed:fulsped|count[9] ; proclock:probhai|fullspeed:fulsped|count[0] ; clk                                    ; clk         ; 0.000        ; 0.000      ; 5.145      ;
+; 4.945  ; proclock:probhai|fullspeed:fulsped|count[4] ; proclock:probhai|fullspeed:fulsped|count[6] ; clk                                    ; clk         ; 0.000        ; 0.000      ; 5.166      ;
+; 4.973  ; proclock:probhai|fullspeed:fulsped|count[3] ; proclock:probhai|fullspeed:fulsped|count[4] ; clk                                    ; clk         ; 0.000        ; 0.000      ; 5.194      ;
+; 5.041  ; proclock:probhai|fullspeed:fulsped|count[2] ; proclock:probhai|fullspeed:fulsped|count[2] ; clk                                    ; clk         ; 0.000        ; 0.000      ; 5.262      ;
+; 5.071  ; proclock:probhai|fullspeed:fulsped|count[7] ; proclock:probhai|fullspeed:fulsped|count[8] ; clk                                    ; clk         ; 0.000        ; 0.000      ; 5.292      ;
+; 5.102  ; proclock:probhai|fullspeed:fulsped|count[1] ; proclock:probhai|fullspeed:fulsped|count[6] ; clk                                    ; clk         ; 0.000        ; 0.000      ; 5.323      ;
+; 5.120  ; proclock:probhai|fullspeed:fulsped|count[3] ; proclock:probhai|fullspeed:fulsped|count[7] ; clk                                    ; clk         ; 0.000        ; 0.000      ; 5.341      ;
+; 5.192  ; proclock:probhai|fullspeed:fulsped|count[3] ; proclock:probhai|fullspeed:fulsped|count[5] ; clk                                    ; clk         ; 0.000        ; 0.000      ; 5.413      ;
+; 5.202  ; proclock:probhai|fullspeed:fulsped|count[2] ; proclock:probhai|fullspeed:fulsped|count[6] ; clk                                    ; clk         ; 0.000        ; 0.000      ; 5.423      ;
+; 5.214  ; proclock:probhai|fullspeed:fulsped|count[1] ; proclock:probhai|fullspeed:fulsped|count[4] ; clk                                    ; clk         ; 0.000        ; 0.000      ; 5.435      ;
+; 5.214  ; proclock:probhai|fullspeed:fulsped|count[0] ; proclock:probhai|fullspeed:fulsped|count[6] ; clk                                    ; clk         ; 0.000        ; 0.000      ; 5.435      ;
+; 5.237  ; proclock:probhai|fullspeed:fulsped|count[1] ; proclock:probhai|fullspeed:fulsped|count[7] ; clk                                    ; clk         ; 0.000        ; 0.000      ; 5.458      ;
+; 5.245  ; proclock:probhai|fullspeed:fulsped|count[1] ; proclock:probhai|fullspeed:fulsped|clk      ; clk                                    ; clk         ; 0.000        ; 0.000      ; 5.466      ;
+; 5.247  ; proclock:probhai|fullspeed:fulsped|count[1] ; proclock:probhai|fullspeed:fulsped|count[0] ; clk                                    ; clk         ; 0.000        ; 0.000      ; 5.468      ;
+; 5.276  ; proclock:probhai|fullspeed:fulsped|count[4] ; proclock:probhai|fullspeed:fulsped|count[5] ; clk                                    ; clk         ; 0.000        ; 0.000      ; 5.497      ;
+; 5.314  ; proclock:probhai|fullspeed:fulsped|count[2] ; proclock:probhai|fullspeed:fulsped|count[4] ; clk                                    ; clk         ; 0.000        ; 0.000      ; 5.535      ;
+; 5.326  ; proclock:probhai|fullspeed:fulsped|count[0] ; proclock:probhai|fullspeed:fulsped|count[4] ; clk                                    ; clk         ; 0.000        ; 0.000      ; 5.547      ;
+; 5.385  ; proclock:probhai|fullspeed:fulsped|count[6] ; proclock:probhai|fullspeed:fulsped|count[8] ; clk                                    ; clk         ; 0.000        ; 0.000      ; 5.606      ;
+; 5.391  ; proclock:probhai|fullspeed:fulsped|count[3] ; proclock:probhai|fullspeed:fulsped|clk      ; clk                                    ; clk         ; 0.000        ; 0.000      ; 5.612      ;
+; 5.393  ; proclock:probhai|fullspeed:fulsped|count[3] ; proclock:probhai|fullspeed:fulsped|count[0] ; clk                                    ; clk         ; 0.000        ; 0.000      ; 5.614      ;
+; 5.433  ; proclock:probhai|fullspeed:fulsped|count[1] ; proclock:probhai|fullspeed:fulsped|count[5] ; clk                                    ; clk         ; 0.000        ; 0.000      ; 5.654      ;
+; 5.465  ; proclock:probhai|fullspeed:fulsped|count[3] ; proclock:probhai|fullspeed:fulsped|count[8] ; clk                                    ; clk         ; 0.000        ; 0.000      ; 5.686      ;
+; 5.494  ; proclock:probhai|fullspeed:fulsped|count[5] ; proclock:probhai|fullspeed:fulsped|count[8] ; clk                                    ; clk         ; 0.000        ; 0.000      ; 5.715      ;
+; 5.533  ; proclock:probhai|fullspeed:fulsped|count[2] ; proclock:probhai|fullspeed:fulsped|count[5] ; clk                                    ; clk         ; 0.000        ; 0.000      ; 5.754      ;
+; 5.545  ; proclock:probhai|fullspeed:fulsped|count[0] ; proclock:probhai|fullspeed:fulsped|count[5] ; clk                                    ; clk         ; 0.000        ; 0.000      ; 5.766      ;
+; 5.549  ; proclock:probhai|fullspeed:fulsped|count[4] ; proclock:probhai|fullspeed:fulsped|count[8] ; clk                                    ; clk         ; 0.000        ; 0.000      ; 5.770      ;
+; 5.693  ; proclock:probhai|fullspeed:fulsped|count[1] ; proclock:probhai|fullspeed:fulsped|count[2] ; clk                                    ; clk         ; 0.000        ; 0.000      ; 5.914      ;
+; 5.706  ; proclock:probhai|fullspeed:fulsped|count[1] ; proclock:probhai|fullspeed:fulsped|count[8] ; clk                                    ; clk         ; 0.000        ; 0.000      ; 5.927      ;
+; 5.805  ; proclock:probhai|fullspeed:fulsped|count[0] ; proclock:probhai|fullspeed:fulsped|count[2] ; clk                                    ; clk         ; 0.000        ; 0.000      ; 6.026      ;
+; 5.806  ; proclock:probhai|fullspeed:fulsped|count[2] ; proclock:probhai|fullspeed:fulsped|count[8] ; clk                                    ; clk         ; 0.000        ; 0.000      ; 6.027      ;
+; 5.818  ; proclock:probhai|fullspeed:fulsped|count[0] ; proclock:probhai|fullspeed:fulsped|count[8] ; clk                                    ; clk         ; 0.000        ; 0.000      ; 6.039      ;
++--------+---------------------------------------------+---------------------------------------------+----------------------------------------+-------------+--------------+------------+------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------+
+; Hold: 'proclock:probhai|clk'                                                                                                                   ;
++-------+------------------------+------------------------+----------------------+----------------------+--------------+------------+------------+
+; Slack ; From Node              ; To Node                ; Launch Clock         ; Latch Clock          ; Relationship ; Clock Skew ; Data Delay ;
++-------+------------------------+------------------------+----------------------+----------------------+--------------+------------+------------+
+; 1.401 ; nxt.Transmit           ; present.Transmit       ; proclock:probhai|clk ; proclock:probhai|clk ; 0.000        ; 0.000      ; 1.622      ;
+; 1.407 ; nxt.Load               ; present.Load           ; proclock:probhai|clk ; proclock:probhai|clk ; 0.000        ; 0.000      ; 1.628      ;
+; 1.646 ; present.Transmit       ; nxt.Load               ; proclock:probhai|clk ; proclock:probhai|clk ; 0.000        ; 0.000      ; 1.867      ;
+; 1.649 ; nxt.Whait              ; nxt.Whait              ; proclock:probhai|clk ; proclock:probhai|clk ; 0.000        ; 0.000      ; 1.870      ;
+; 1.749 ; nxt.Stop               ; present.Stop           ; proclock:probhai|clk ; proclock:probhai|clk ; 0.000        ; 0.000      ; 1.970      ;
+; 1.912 ; data[1]                ; data[0]                ; proclock:probhai|clk ; proclock:probhai|clk ; 0.000        ; 0.000      ; 2.133      ;
+; 1.919 ; nxt.Transmit           ; nxt.Transmit           ; proclock:probhai|clk ; proclock:probhai|clk ; 0.000        ; 0.000      ; 2.140      ;
+; 1.921 ; data[5]                ; data[4]                ; proclock:probhai|clk ; proclock:probhai|clk ; 0.000        ; 0.000      ; 2.142      ;
+; 1.921 ; data[2]                ; data[1]                ; proclock:probhai|clk ; proclock:probhai|clk ; 0.000        ; 0.000      ; 2.142      ;
+; 1.929 ; nxt.Load               ; nxt.Load               ; proclock:probhai|clk ; proclock:probhai|clk ; 0.000        ; 0.000      ; 2.150      ;
+; 2.073 ; Counter:done|count[13] ; Counter:done|done      ; proclock:probhai|clk ; proclock:probhai|clk ; 0.000        ; 0.000      ; 2.294      ;
+; 2.096 ; present.Load           ; Tx~reg0                ; proclock:probhai|clk ; proclock:probhai|clk ; 0.000        ; 0.000      ; 2.317      ;
+; 2.107 ; ien                    ; ien                    ; proclock:probhai|clk ; proclock:probhai|clk ; 0.000        ; 0.000      ; 2.328      ;
+; 2.123 ; data[7]                ; data[6]                ; proclock:probhai|clk ; proclock:probhai|clk ; 0.000        ; 0.000      ; 2.344      ;
+; 2.138 ; data[4]                ; data[3]                ; proclock:probhai|clk ; proclock:probhai|clk ; 0.000        ; 0.000      ; 2.359      ;
+; 2.141 ; data[8]                ; data[8]                ; proclock:probhai|clk ; proclock:probhai|clk ; 0.000        ; 0.000      ; 2.362      ;
+; 2.143 ; data[6]                ; data[5]                ; proclock:probhai|clk ; proclock:probhai|clk ; 0.000        ; 0.000      ; 2.364      ;
+; 2.144 ; nxt.Stop               ; nxt.Stop               ; proclock:probhai|clk ; proclock:probhai|clk ; 0.000        ; 0.000      ; 2.365      ;
+; 2.153 ; data[8]                ; data[7]                ; proclock:probhai|clk ; proclock:probhai|clk ; 0.000        ; 0.000      ; 2.374      ;
+; 2.166 ; present.Stop           ; nxt.Load               ; proclock:probhai|clk ; proclock:probhai|clk ; 0.000        ; 0.000      ; 2.387      ;
+; 2.212 ; data[0]                ; data[0]                ; proclock:probhai|clk ; proclock:probhai|clk ; 0.000        ; 0.000      ; 2.433      ;
+; 2.220 ; Counter:done|count[0]  ; Counter:done|count[0]  ; proclock:probhai|clk ; proclock:probhai|clk ; 0.000        ; 0.000      ; 2.441      ;
+; 2.229 ; Tx~reg0                ; Tx~reg0                ; proclock:probhai|clk ; proclock:probhai|clk ; 0.000        ; 0.000      ; 2.450      ;
+; 2.236 ; data[3]                ; data[2]                ; proclock:probhai|clk ; proclock:probhai|clk ; 0.000        ; 0.000      ; 2.457      ;
+; 2.420 ; present.Transmit       ; Tx~reg0                ; proclock:probhai|clk ; proclock:probhai|clk ; 0.000        ; 0.000      ; 2.641      ;
+; 2.530 ; nxt.Whait              ; present.Whait          ; proclock:probhai|clk ; proclock:probhai|clk ; 0.000        ; 0.000      ; 2.751      ;
+; 2.578 ; Counter:done|count[13] ; Counter:done|count[3]  ; proclock:probhai|clk ; proclock:probhai|clk ; 0.000        ; 0.000      ; 2.799      ;
+; 2.635 ; present.Transmit       ; nxt.Stop               ; proclock:probhai|clk ; proclock:probhai|clk ; 0.000        ; 0.000      ; 2.856      ;
+; 2.648 ; present.Stop           ; Tx~reg0                ; proclock:probhai|clk ; proclock:probhai|clk ; 0.000        ; 0.000      ; 2.869      ;
+; 2.728 ; present.Transmit       ; nxt.Whait              ; proclock:probhai|clk ; proclock:probhai|clk ; 0.000        ; 0.000      ; 2.949      ;
+; 2.728 ; present.Whait          ; nxt.Stop               ; proclock:probhai|clk ; proclock:probhai|clk ; 0.000        ; 0.000      ; 2.949      ;
+; 2.729 ; present.Transmit       ; nxt.Transmit           ; proclock:probhai|clk ; proclock:probhai|clk ; 0.000        ; 0.000      ; 2.950      ;
+; 2.768 ; present.Load           ; nxt.Transmit           ; proclock:probhai|clk ; proclock:probhai|clk ; 0.000        ; 0.000      ; 2.989      ;
+; 2.771 ; present.Stop           ; nxt.Stop               ; proclock:probhai|clk ; proclock:probhai|clk ; 0.000        ; 0.000      ; 2.992      ;
+; 2.839 ; Counter:done|count[31] ; Counter:done|count[31] ; proclock:probhai|clk ; proclock:probhai|clk ; 0.000        ; 0.000      ; 3.060      ;
+; 2.867 ; Counter:done|count[1]  ; Counter:done|count[1]  ; proclock:probhai|clk ; proclock:probhai|clk ; 0.000        ; 0.000      ; 3.088      ;
+; 2.886 ; Counter:done|count[26] ; Counter:done|count[26] ; proclock:probhai|clk ; proclock:probhai|clk ; 0.000        ; 0.000      ; 3.107      ;
+; 2.890 ; present.Transmit       ; data[1]                ; proclock:probhai|clk ; proclock:probhai|clk ; 0.000        ; 0.000      ; 3.111      ;
+; 2.900 ; present.Transmit       ; data[6]                ; proclock:probhai|clk ; proclock:probhai|clk ; 0.000        ; 0.000      ; 3.121      ;
+; 2.904 ; present.Transmit       ; data[0]                ; proclock:probhai|clk ; proclock:probhai|clk ; 0.000        ; 0.000      ; 3.125      ;
+; 2.907 ; present.Transmit       ; data[2]                ; proclock:probhai|clk ; proclock:probhai|clk ; 0.000        ; 0.000      ; 3.128      ;
+; 2.913 ; present.Transmit       ; data[4]                ; proclock:probhai|clk ; proclock:probhai|clk ; 0.000        ; 0.000      ; 3.134      ;
+; 2.917 ; present.Transmit       ; data[7]                ; proclock:probhai|clk ; proclock:probhai|clk ; 0.000        ; 0.000      ; 3.138      ;
+; 2.918 ; present.Transmit       ; data[3]                ; proclock:probhai|clk ; proclock:probhai|clk ; 0.000        ; 0.000      ; 3.139      ;
+; 2.919 ; present.Transmit       ; data[5]                ; proclock:probhai|clk ; proclock:probhai|clk ; 0.000        ; 0.000      ; 3.140      ;
+; 2.942 ; Counter:done|count[7]  ; Counter:done|done      ; proclock:probhai|clk ; proclock:probhai|clk ; 0.000        ; 0.000      ; 3.163      ;
+; 3.006 ; Counter:done|count[13] ; Counter:done|count[0]  ; proclock:probhai|clk ; proclock:probhai|clk ; 0.000        ; 0.000      ; 3.227      ;
+; 3.008 ; Counter:done|count[2]  ; Counter:done|count[2]  ; proclock:probhai|clk ; proclock:probhai|clk ; 0.000        ; 0.000      ; 3.229      ;
+; 3.046 ; Counter:done|count[2]  ; Counter:done|done      ; proclock:probhai|clk ; proclock:probhai|clk ; 0.000        ; 0.000      ; 3.267      ;
+; 3.067 ; data[0]                ; Tx~reg0                ; proclock:probhai|clk ; proclock:probhai|clk ; 0.000        ; 0.000      ; 3.288      ;
+; 3.164 ; present.Whait          ; data[8]                ; proclock:probhai|clk ; proclock:probhai|clk ; 0.000        ; 0.000      ; 3.385      ;
+; 3.240 ; Counter:done|count[27] ; Counter:done|count[27] ; proclock:probhai|clk ; proclock:probhai|clk ; 0.000        ; 0.000      ; 3.461      ;
+; 3.269 ; present.Load           ; ien                    ; proclock:probhai|clk ; proclock:probhai|clk ; 0.000        ; 0.000      ; 3.490      ;
+; 3.346 ; present.Load           ; data[8]                ; proclock:probhai|clk ; proclock:probhai|clk ; 0.000        ; 0.000      ; 3.567      ;
+; 3.393 ; Counter:done|count[11] ; Counter:done|done      ; proclock:probhai|clk ; proclock:probhai|clk ; 0.000        ; 0.000      ; 3.614      ;
+; 3.517 ; Counter:done|count[7]  ; Counter:done|count[3]  ; proclock:probhai|clk ; proclock:probhai|clk ; 0.000        ; 0.000      ; 3.738      ;
+; 3.565 ; Counter:done|count[1]  ; Counter:done|done      ; proclock:probhai|clk ; proclock:probhai|clk ; 0.000        ; 0.000      ; 3.786      ;
+; 3.633 ; present.Whait          ; data[0]                ; proclock:probhai|clk ; proclock:probhai|clk ; 0.000        ; 0.000      ; 3.854      ;
+; 3.641 ; Counter:done|count[24] ; Counter:done|count[24] ; proclock:probhai|clk ; proclock:probhai|clk ; 0.000        ; 0.000      ; 3.862      ;
+; 3.672 ; Counter:done|count[1]  ; Counter:done|count[2]  ; proclock:probhai|clk ; proclock:probhai|clk ; 0.000        ; 0.000      ; 3.893      ;
+; 3.673 ; Counter:done|count[2]  ; Counter:done|count[3]  ; proclock:probhai|clk ; proclock:probhai|clk ; 0.000        ; 0.000      ; 3.894      ;
+; 3.727 ; present.Stop           ; data[8]                ; proclock:probhai|clk ; proclock:probhai|clk ; 0.000        ; 0.000      ; 3.948      ;
+; 3.773 ; present.Whait          ; data[7]                ; proclock:probhai|clk ; proclock:probhai|clk ; 0.000        ; 0.000      ; 3.994      ;
+; 3.773 ; present.Whait          ; data[6]                ; proclock:probhai|clk ; proclock:probhai|clk ; 0.000        ; 0.000      ; 3.994      ;
+; 3.773 ; present.Whait          ; data[5]                ; proclock:probhai|clk ; proclock:probhai|clk ; 0.000        ; 0.000      ; 3.994      ;
+; 3.773 ; present.Whait          ; data[4]                ; proclock:probhai|clk ; proclock:probhai|clk ; 0.000        ; 0.000      ; 3.994      ;
+; 3.773 ; present.Whait          ; data[3]                ; proclock:probhai|clk ; proclock:probhai|clk ; 0.000        ; 0.000      ; 3.994      ;
+; 3.773 ; present.Whait          ; data[2]                ; proclock:probhai|clk ; proclock:probhai|clk ; 0.000        ; 0.000      ; 3.994      ;
+; 3.773 ; present.Whait          ; data[1]                ; proclock:probhai|clk ; proclock:probhai|clk ; 0.000        ; 0.000      ; 3.994      ;
+; 3.786 ; Counter:done|count[19] ; Counter:done|done      ; proclock:probhai|clk ; proclock:probhai|clk ; 0.000        ; 0.000      ; 4.007      ;
+; 3.802 ; Counter:done|count[6]  ; Counter:done|count[6]  ; proclock:probhai|clk ; proclock:probhai|clk ; 0.000        ; 0.000      ; 4.023      ;
+; 3.850 ; Counter:done|count[4]  ; Counter:done|done      ; proclock:probhai|clk ; proclock:probhai|clk ; 0.000        ; 0.000      ; 4.071      ;
+; 3.893 ; Counter:done|done      ; nxt.Load               ; proclock:probhai|clk ; proclock:probhai|clk ; 0.000        ; 0.000      ; 4.114      ;
+; 3.894 ; Counter:done|count[10] ; Counter:done|done      ; proclock:probhai|clk ; proclock:probhai|clk ; 0.000        ; 0.000      ; 4.115      ;
+; 3.898 ; Counter:done|count[11] ; Counter:done|count[3]  ; proclock:probhai|clk ; proclock:probhai|clk ; 0.000        ; 0.000      ; 4.119      ;
+; 3.901 ; Counter:done|done      ; nxt.Whait              ; proclock:probhai|clk ; proclock:probhai|clk ; 0.000        ; 0.000      ; 4.122      ;
+; 3.902 ; Counter:done|count[28] ; Counter:done|count[28] ; proclock:probhai|clk ; proclock:probhai|clk ; 0.000        ; 0.000      ; 4.123      ;
+; 3.902 ; Counter:done|done      ; nxt.Transmit           ; proclock:probhai|clk ; proclock:probhai|clk ; 0.000        ; 0.000      ; 4.123      ;
+; 3.945 ; Counter:done|count[7]  ; Counter:done|count[0]  ; proclock:probhai|clk ; proclock:probhai|clk ; 0.000        ; 0.000      ; 4.166      ;
+; 3.981 ; Counter:done|count[6]  ; Counter:done|done      ; proclock:probhai|clk ; proclock:probhai|clk ; 0.000        ; 0.000      ; 4.202      ;
+; 4.045 ; Counter:done|count[29] ; Counter:done|count[29] ; proclock:probhai|clk ; proclock:probhai|clk ; 0.000        ; 0.000      ; 4.266      ;
+; 4.080 ; Counter:done|count[26] ; Counter:done|count[27] ; proclock:probhai|clk ; proclock:probhai|clk ; 0.000        ; 0.000      ; 4.301      ;
+; 4.101 ; Counter:done|count[2]  ; Counter:done|count[0]  ; proclock:probhai|clk ; proclock:probhai|clk ; 0.000        ; 0.000      ; 4.322      ;
+; 4.114 ; Counter:done|count[15] ; Counter:done|done      ; proclock:probhai|clk ; proclock:probhai|clk ; 0.000        ; 0.000      ; 4.335      ;
+; 4.132 ; present.Transmit       ; ien                    ; proclock:probhai|clk ; proclock:probhai|clk ; 0.000        ; 0.000      ; 4.353      ;
+; 4.138 ; Counter:done|count[27] ; Counter:done|count[31] ; proclock:probhai|clk ; proclock:probhai|clk ; 0.000        ; 0.000      ; 4.359      ;
+; 4.192 ; Counter:done|count[1]  ; Counter:done|count[3]  ; proclock:probhai|clk ; proclock:probhai|clk ; 0.000        ; 0.000      ; 4.413      ;
+; 4.196 ; present.Stop           ; data[0]                ; proclock:probhai|clk ; proclock:probhai|clk ; 0.000        ; 0.000      ; 4.417      ;
+; 4.248 ; Counter:done|count[7]  ; Counter:done|count[7]  ; proclock:probhai|clk ; proclock:probhai|clk ; 0.000        ; 0.000      ; 4.469      ;
+; 4.282 ; Counter:done|count[26] ; Counter:done|count[31] ; proclock:probhai|clk ; proclock:probhai|clk ; 0.000        ; 0.000      ; 4.503      ;
+; 4.299 ; Counter:done|count[16] ; Counter:done|done      ; proclock:probhai|clk ; proclock:probhai|clk ; 0.000        ; 0.000      ; 4.520      ;
+; 4.302 ; Counter:done|count[27] ; Counter:done|count[28] ; proclock:probhai|clk ; proclock:probhai|clk ; 0.000        ; 0.000      ; 4.523      ;
+; 4.326 ; Counter:done|count[11] ; Counter:done|count[0]  ; proclock:probhai|clk ; proclock:probhai|clk ; 0.000        ; 0.000      ; 4.547      ;
+; 4.336 ; present.Stop           ; data[7]                ; proclock:probhai|clk ; proclock:probhai|clk ; 0.000        ; 0.000      ; 4.557      ;
+; 4.336 ; present.Stop           ; data[6]                ; proclock:probhai|clk ; proclock:probhai|clk ; 0.000        ; 0.000      ; 4.557      ;
+; 4.336 ; present.Stop           ; data[5]                ; proclock:probhai|clk ; proclock:probhai|clk ; 0.000        ; 0.000      ; 4.557      ;
+; 4.336 ; present.Stop           ; data[4]                ; proclock:probhai|clk ; proclock:probhai|clk ; 0.000        ; 0.000      ; 4.557      ;
+; 4.336 ; present.Stop           ; data[3]                ; proclock:probhai|clk ; proclock:probhai|clk ; 0.000        ; 0.000      ; 4.557      ;
+; 4.336 ; present.Stop           ; data[2]                ; proclock:probhai|clk ; proclock:probhai|clk ; 0.000        ; 0.000      ; 4.557      ;
+; 4.336 ; present.Stop           ; data[1]                ; proclock:probhai|clk ; proclock:probhai|clk ; 0.000        ; 0.000      ; 4.557      ;
++-------+------------------------+------------------------+----------------------+----------------------+--------------+------------+------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------+
+; Recovery: 'proclock:probhai|clk'                                                                                                   ;
++--------+-----------+------------------------+----------------------+----------------------+--------------+------------+------------+
+; Slack  ; From Node ; To Node                ; Launch Clock         ; Latch Clock          ; Relationship ; Clock Skew ; Data Delay ;
++--------+-----------+------------------------+----------------------+----------------------+--------------+------------+------------+
+; -6.291 ; ien       ; Counter:done|count[0]  ; proclock:probhai|clk ; proclock:probhai|clk ; 1.000        ; 0.000      ; 6.958      ;
+; -6.291 ; ien       ; Counter:done|count[31] ; proclock:probhai|clk ; proclock:probhai|clk ; 1.000        ; 0.000      ; 6.958      ;
+; -5.174 ; ien       ; Counter:done|count[2]  ; proclock:probhai|clk ; proclock:probhai|clk ; 1.000        ; 0.000      ; 5.841      ;
+; -5.174 ; ien       ; Counter:done|count[1]  ; proclock:probhai|clk ; proclock:probhai|clk ; 1.000        ; 0.000      ; 5.841      ;
+; -5.174 ; ien       ; Counter:done|count[3]  ; proclock:probhai|clk ; proclock:probhai|clk ; 1.000        ; 0.000      ; 5.841      ;
+; -5.174 ; ien       ; Counter:done|count[7]  ; proclock:probhai|clk ; proclock:probhai|clk ; 1.000        ; 0.000      ; 5.841      ;
+; -5.174 ; ien       ; Counter:done|count[4]  ; proclock:probhai|clk ; proclock:probhai|clk ; 1.000        ; 0.000      ; 5.841      ;
+; -5.174 ; ien       ; Counter:done|count[5]  ; proclock:probhai|clk ; proclock:probhai|clk ; 1.000        ; 0.000      ; 5.841      ;
+; -5.174 ; ien       ; Counter:done|count[6]  ; proclock:probhai|clk ; proclock:probhai|clk ; 1.000        ; 0.000      ; 5.841      ;
+; -5.174 ; ien       ; Counter:done|count[13] ; proclock:probhai|clk ; proclock:probhai|clk ; 1.000        ; 0.000      ; 5.841      ;
+; -5.174 ; ien       ; Counter:done|count[12] ; proclock:probhai|clk ; proclock:probhai|clk ; 1.000        ; 0.000      ; 5.841      ;
+; -5.174 ; ien       ; Counter:done|count[11] ; proclock:probhai|clk ; proclock:probhai|clk ; 1.000        ; 0.000      ; 5.841      ;
+; -5.174 ; ien       ; Counter:done|count[8]  ; proclock:probhai|clk ; proclock:probhai|clk ; 1.000        ; 0.000      ; 5.841      ;
+; -5.174 ; ien       ; Counter:done|count[9]  ; proclock:probhai|clk ; proclock:probhai|clk ; 1.000        ; 0.000      ; 5.841      ;
+; -5.174 ; ien       ; Counter:done|count[10] ; proclock:probhai|clk ; proclock:probhai|clk ; 1.000        ; 0.000      ; 5.841      ;
+; -5.174 ; ien       ; Counter:done|count[15] ; proclock:probhai|clk ; proclock:probhai|clk ; 1.000        ; 0.000      ; 5.841      ;
+; -5.174 ; ien       ; Counter:done|count[14] ; proclock:probhai|clk ; proclock:probhai|clk ; 1.000        ; 0.000      ; 5.841      ;
+; -5.174 ; ien       ; Counter:done|count[19] ; proclock:probhai|clk ; proclock:probhai|clk ; 1.000        ; 0.000      ; 5.841      ;
+; -5.174 ; ien       ; Counter:done|count[16] ; proclock:probhai|clk ; proclock:probhai|clk ; 1.000        ; 0.000      ; 5.841      ;
+; -5.174 ; ien       ; Counter:done|count[17] ; proclock:probhai|clk ; proclock:probhai|clk ; 1.000        ; 0.000      ; 5.841      ;
+; -5.174 ; ien       ; Counter:done|count[18] ; proclock:probhai|clk ; proclock:probhai|clk ; 1.000        ; 0.000      ; 5.841      ;
+; -5.174 ; ien       ; Counter:done|count[23] ; proclock:probhai|clk ; proclock:probhai|clk ; 1.000        ; 0.000      ; 5.841      ;
+; -5.174 ; ien       ; Counter:done|count[20] ; proclock:probhai|clk ; proclock:probhai|clk ; 1.000        ; 0.000      ; 5.841      ;
+; -5.174 ; ien       ; Counter:done|count[21] ; proclock:probhai|clk ; proclock:probhai|clk ; 1.000        ; 0.000      ; 5.841      ;
+; -5.174 ; ien       ; Counter:done|count[22] ; proclock:probhai|clk ; proclock:probhai|clk ; 1.000        ; 0.000      ; 5.841      ;
+; -5.174 ; ien       ; Counter:done|count[27] ; proclock:probhai|clk ; proclock:probhai|clk ; 1.000        ; 0.000      ; 5.841      ;
+; -5.174 ; ien       ; Counter:done|count[24] ; proclock:probhai|clk ; proclock:probhai|clk ; 1.000        ; 0.000      ; 5.841      ;
+; -5.174 ; ien       ; Counter:done|count[25] ; proclock:probhai|clk ; proclock:probhai|clk ; 1.000        ; 0.000      ; 5.841      ;
+; -5.174 ; ien       ; Counter:done|count[26] ; proclock:probhai|clk ; proclock:probhai|clk ; 1.000        ; 0.000      ; 5.841      ;
+; -5.174 ; ien       ; Counter:done|count[30] ; proclock:probhai|clk ; proclock:probhai|clk ; 1.000        ; 0.000      ; 5.841      ;
+; -5.174 ; ien       ; Counter:done|count[28] ; proclock:probhai|clk ; proclock:probhai|clk ; 1.000        ; 0.000      ; 5.841      ;
+; -5.174 ; ien       ; Counter:done|count[29] ; proclock:probhai|clk ; proclock:probhai|clk ; 1.000        ; 0.000      ; 5.841      ;
+; -5.174 ; ien       ; Counter:done|done      ; proclock:probhai|clk ; proclock:probhai|clk ; 1.000        ; 0.000      ; 5.841      ;
++--------+-----------+------------------------+----------------------+----------------------+--------------+------------+------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------+
+; Removal: 'proclock:probhai|clk'                                                                                                   ;
++-------+-----------+------------------------+----------------------+----------------------+--------------+------------+------------+
+; Slack ; From Node ; To Node                ; Launch Clock         ; Latch Clock          ; Relationship ; Clock Skew ; Data Delay ;
++-------+-----------+------------------------+----------------------+----------------------+--------------+------------+------------+
+; 5.620 ; ien       ; Counter:done|count[2]  ; proclock:probhai|clk ; proclock:probhai|clk ; 0.000        ; 0.000      ; 5.841      ;
+; 5.620 ; ien       ; Counter:done|count[1]  ; proclock:probhai|clk ; proclock:probhai|clk ; 0.000        ; 0.000      ; 5.841      ;
+; 5.620 ; ien       ; Counter:done|count[3]  ; proclock:probhai|clk ; proclock:probhai|clk ; 0.000        ; 0.000      ; 5.841      ;
+; 5.620 ; ien       ; Counter:done|count[7]  ; proclock:probhai|clk ; proclock:probhai|clk ; 0.000        ; 0.000      ; 5.841      ;
+; 5.620 ; ien       ; Counter:done|count[4]  ; proclock:probhai|clk ; proclock:probhai|clk ; 0.000        ; 0.000      ; 5.841      ;
+; 5.620 ; ien       ; Counter:done|count[5]  ; proclock:probhai|clk ; proclock:probhai|clk ; 0.000        ; 0.000      ; 5.841      ;
+; 5.620 ; ien       ; Counter:done|count[6]  ; proclock:probhai|clk ; proclock:probhai|clk ; 0.000        ; 0.000      ; 5.841      ;
+; 5.620 ; ien       ; Counter:done|count[13] ; proclock:probhai|clk ; proclock:probhai|clk ; 0.000        ; 0.000      ; 5.841      ;
+; 5.620 ; ien       ; Counter:done|count[12] ; proclock:probhai|clk ; proclock:probhai|clk ; 0.000        ; 0.000      ; 5.841      ;
+; 5.620 ; ien       ; Counter:done|count[11] ; proclock:probhai|clk ; proclock:probhai|clk ; 0.000        ; 0.000      ; 5.841      ;
+; 5.620 ; ien       ; Counter:done|count[8]  ; proclock:probhai|clk ; proclock:probhai|clk ; 0.000        ; 0.000      ; 5.841      ;
+; 5.620 ; ien       ; Counter:done|count[9]  ; proclock:probhai|clk ; proclock:probhai|clk ; 0.000        ; 0.000      ; 5.841      ;
+; 5.620 ; ien       ; Counter:done|count[10] ; proclock:probhai|clk ; proclock:probhai|clk ; 0.000        ; 0.000      ; 5.841      ;
+; 5.620 ; ien       ; Counter:done|count[15] ; proclock:probhai|clk ; proclock:probhai|clk ; 0.000        ; 0.000      ; 5.841      ;
+; 5.620 ; ien       ; Counter:done|count[14] ; proclock:probhai|clk ; proclock:probhai|clk ; 0.000        ; 0.000      ; 5.841      ;
+; 5.620 ; ien       ; Counter:done|count[19] ; proclock:probhai|clk ; proclock:probhai|clk ; 0.000        ; 0.000      ; 5.841      ;
+; 5.620 ; ien       ; Counter:done|count[16] ; proclock:probhai|clk ; proclock:probhai|clk ; 0.000        ; 0.000      ; 5.841      ;
+; 5.620 ; ien       ; Counter:done|count[17] ; proclock:probhai|clk ; proclock:probhai|clk ; 0.000        ; 0.000      ; 5.841      ;
+; 5.620 ; ien       ; Counter:done|count[18] ; proclock:probhai|clk ; proclock:probhai|clk ; 0.000        ; 0.000      ; 5.841      ;
+; 5.620 ; ien       ; Counter:done|count[23] ; proclock:probhai|clk ; proclock:probhai|clk ; 0.000        ; 0.000      ; 5.841      ;
+; 5.620 ; ien       ; Counter:done|count[20] ; proclock:probhai|clk ; proclock:probhai|clk ; 0.000        ; 0.000      ; 5.841      ;
+; 5.620 ; ien       ; Counter:done|count[21] ; proclock:probhai|clk ; proclock:probhai|clk ; 0.000        ; 0.000      ; 5.841      ;
+; 5.620 ; ien       ; Counter:done|count[22] ; proclock:probhai|clk ; proclock:probhai|clk ; 0.000        ; 0.000      ; 5.841      ;
+; 5.620 ; ien       ; Counter:done|count[27] ; proclock:probhai|clk ; proclock:probhai|clk ; 0.000        ; 0.000      ; 5.841      ;
+; 5.620 ; ien       ; Counter:done|count[24] ; proclock:probhai|clk ; proclock:probhai|clk ; 0.000        ; 0.000      ; 5.841      ;
+; 5.620 ; ien       ; Counter:done|count[25] ; proclock:probhai|clk ; proclock:probhai|clk ; 0.000        ; 0.000      ; 5.841      ;
+; 5.620 ; ien       ; Counter:done|count[26] ; proclock:probhai|clk ; proclock:probhai|clk ; 0.000        ; 0.000      ; 5.841      ;
+; 5.620 ; ien       ; Counter:done|count[30] ; proclock:probhai|clk ; proclock:probhai|clk ; 0.000        ; 0.000      ; 5.841      ;
+; 5.620 ; ien       ; Counter:done|count[28] ; proclock:probhai|clk ; proclock:probhai|clk ; 0.000        ; 0.000      ; 5.841      ;
+; 5.620 ; ien       ; Counter:done|count[29] ; proclock:probhai|clk ; proclock:probhai|clk ; 0.000        ; 0.000      ; 5.841      ;
+; 5.620 ; ien       ; Counter:done|done      ; proclock:probhai|clk ; proclock:probhai|clk ; 0.000        ; 0.000      ; 5.841      ;
+; 6.737 ; ien       ; Counter:done|count[0]  ; proclock:probhai|clk ; proclock:probhai|clk ; 0.000        ; 0.000      ; 6.958      ;
+; 6.737 ; ien       ; Counter:done|count[31] ; proclock:probhai|clk ; proclock:probhai|clk ; 0.000        ; 0.000      ; 6.958      ;
++-------+-----------+------------------------+----------------------+----------------------+--------------+------------+------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------+
+; Setup Transfers                                                                                                             ;
++----------------------------------------+----------------------------------------+----------+----------+----------+----------+
+; From Clock                             ; To Clock                               ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++----------------------------------------+----------------------------------------+----------+----------+----------+----------+
+; clk                                    ; clk                                    ; 155      ; 0        ; 0        ; 0        ;
+; proclock:probhai|fullspeed:fulsped|clk ; clk                                    ; 1        ; 1        ; 0        ; 0        ;
+; proclock:probhai|clk                   ; proclock:probhai|clk                   ; 1074     ; 0        ; 0        ; 0        ;
+; proclock:probhai|clk                   ; proclock:probhai|fullspeed:fulsped|clk ; 1        ; 1        ; 0        ; 0        ;
+; proclock:probhai|fullspeed:fulsped|clk ; proclock:probhai|fullspeed:fulsped|clk ; 102      ; 0        ; 0        ; 0        ;
++----------------------------------------+----------------------------------------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++-----------------------------------------------------------------------------------------------------------------------------+
+; Hold Transfers                                                                                                              ;
++----------------------------------------+----------------------------------------+----------+----------+----------+----------+
+; From Clock                             ; To Clock                               ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++----------------------------------------+----------------------------------------+----------+----------+----------+----------+
+; clk                                    ; clk                                    ; 155      ; 0        ; 0        ; 0        ;
+; proclock:probhai|fullspeed:fulsped|clk ; clk                                    ; 1        ; 1        ; 0        ; 0        ;
+; proclock:probhai|clk                   ; proclock:probhai|clk                   ; 1074     ; 0        ; 0        ; 0        ;
+; proclock:probhai|clk                   ; proclock:probhai|fullspeed:fulsped|clk ; 1        ; 1        ; 0        ; 0        ;
+; proclock:probhai|fullspeed:fulsped|clk ; proclock:probhai|fullspeed:fulsped|clk ; 102      ; 0        ; 0        ; 0        ;
++----------------------------------------+----------------------------------------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++-----------------------------------------------------------------------------------------+
+; Recovery Transfers                                                                      ;
++----------------------+----------------------+----------+----------+----------+----------+
+; From Clock           ; To Clock             ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++----------------------+----------------------+----------+----------+----------+----------+
+; proclock:probhai|clk ; proclock:probhai|clk ; 33       ; 0        ; 0        ; 0        ;
++----------------------+----------------------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++-----------------------------------------------------------------------------------------+
+; Removal Transfers                                                                       ;
++----------------------+----------------------+----------+----------+----------+----------+
+; From Clock           ; To Clock             ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++----------------------+----------------------+----------+----------+----------+----------+
+; proclock:probhai|clk ; proclock:probhai|clk ; 33       ; 0        ; 0        ; 0        ;
++----------------------+----------------------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
+---------------
+; Report TCCS ;
+---------------
+No dedicated SERDES Transmitter circuitry present in device or used in design
+
+
+---------------
+; Report RSKM ;
+---------------
+No non-DPA dedicated SERDES Receiver circuitry present in device or used in design
+
+
++------------------------------------------------+
+; Unconstrained Paths Summary                    ;
++---------------------------------+-------+------+
+; Property                        ; Setup ; Hold ;
++---------------------------------+-------+------+
+; Illegal Clocks                  ; 0     ; 0    ;
+; Unconstrained Clocks            ; 0     ; 0    ;
+; Unconstrained Input Ports       ; 9     ; 9    ;
+; Unconstrained Input Port Paths  ; 10    ; 10   ;
+; Unconstrained Output Ports      ; 4     ; 4    ;
+; Unconstrained Output Port Paths ; 6     ; 6    ;
++---------------------------------+-------+------+
+
+
++------------------------------------------------------------------------------------------------------+
+; Clock Status Summary                                                                                 ;
++----------------------------------------+----------------------------------------+------+-------------+
+; Target                                 ; Clock                                  ; Type ; Status      ;
++----------------------------------------+----------------------------------------+------+-------------+
+; clk                                    ; clk                                    ; Base ; Constrained ;
+; proclock:probhai|clk                   ; proclock:probhai|clk                   ; Base ; Constrained ;
+; proclock:probhai|fullspeed:fulsped|clk ; proclock:probhai|fullspeed:fulsped|clk ; Base ; Constrained ;
++----------------------------------------+----------------------------------------+------+-------------+
+
+
++---------------------------------------------------------------------------------------------------+
+; Unconstrained Input Ports                                                                         ;
++------------+--------------------------------------------------------------------------------------+
+; Input Port ; Comment                                                                              ;
++------------+--------------------------------------------------------------------------------------+
+; data_in[0] ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; data_in[1] ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; data_in[2] ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; data_in[3] ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; data_in[4] ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; data_in[5] ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; data_in[6] ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; data_in[7] ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; send       ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
++------------+--------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------+
+; Unconstrained Output Ports                                                                            ;
++---------------+---------------------------------------------------------------------------------------+
+; Output Port   ; Comment                                                                               ;
++---------------+---------------------------------------------------------------------------------------+
+; Clock_show    ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; Tx            ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; state_show[0] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; state_show[1] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
++---------------+---------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------+
+; Unconstrained Input Ports                                                                         ;
++------------+--------------------------------------------------------------------------------------+
+; Input Port ; Comment                                                                              ;
++------------+--------------------------------------------------------------------------------------+
+; data_in[0] ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; data_in[1] ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; data_in[2] ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; data_in[3] ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; data_in[4] ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; data_in[5] ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; data_in[6] ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; data_in[7] ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; send       ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
++------------+--------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------+
+; Unconstrained Output Ports                                                                            ;
++---------------+---------------------------------------------------------------------------------------+
+; Output Port   ; Comment                                                                               ;
++---------------+---------------------------------------------------------------------------------------+
+; Clock_show    ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; Tx            ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; state_show[0] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; state_show[1] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
++---------------+---------------------------------------------------------------------------------------+
+
+
++--------------------------+
+; Timing Analyzer Messages ;
++--------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Timing Analyzer
+    Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
+    Info: Processing started: Thu Aug 05 22:56:27 2021
+Info: Command: quartus_sta Tx -c Tx
+Info: qsta_default_script.tcl version: #1
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
+Info (21077): Low junction temperature is 0 degrees C
+Info (21077): High junction temperature is 85 degrees C
+Info (334003): Started post-fitting delay annotation
+Info (334004): Delay annotation completed successfully
+Critical Warning (332012): Synopsys Design Constraints File file not found: 'Tx.sdc'. A Synopsys Design Constraints File is required by the Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
+Info (332142): No user constrained base clocks found in the design. Calling "derive_clocks -period 1.0"
+Info (332105): Deriving Clocks
+    Info (332105): create_clock -period 1.000 -name proclock:probhai|clk proclock:probhai|clk
+    Info (332105): create_clock -period 1.000 -name proclock:probhai|fullspeed:fulsped|clk proclock:probhai|fullspeed:fulsped|clk
+    Info (332105): create_clock -period 1.000 -name clk clk
+Info: Found TIMING_ANALYZER_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
+Info: Can't run Report Timing Closure Recommendations. The current device family is not supported.
+Critical Warning (332148): Timing requirements not met
+Info (332146): Worst-case setup slack is -7.302
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -7.302            -268.094 proclock:probhai|clk 
+    Info (332119):    -5.421             -55.512 clk 
+    Info (332119):    -4.979             -38.714 proclock:probhai|fullspeed:fulsped|clk 
+Info (332146): Worst-case hold slack is -3.930
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -3.930              -3.930 proclock:probhai|fullspeed:fulsped|clk 
+    Info (332119):    -1.968              -1.968 clk 
+    Info (332119):     1.401               0.000 proclock:probhai|clk 
+Info (332146): Worst-case recovery slack is -6.291
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -6.291            -172.976 proclock:probhai|clk 
+Info (332146): Worst-case removal slack is 5.620
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):     5.620               0.000 proclock:probhai|clk 
+Info (332146): Worst-case minimum pulse width slack is -2.289
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -2.289              -2.289 clk 
+    Info (332119):     0.234               0.000 proclock:probhai|clk 
+    Info (332119):     0.234               0.000 proclock:probhai|fullspeed:fulsped|clk 
+Info (332001): The selected device family is not supported by the report_metastability command.
+Info (332102): Design is not fully constrained for setup requirements
+Info (332102): Design is not fully constrained for hold requirements
+Info: Quartus Prime Timing Analyzer was successful. 0 errors, 3 warnings
+    Info: Peak virtual memory: 4670 megabytes
+    Info: Processing ended: Thu Aug 05 22:56:30 2021
+    Info: Elapsed time: 00:00:03
+    Info: Total CPU time (on all processors): 00:00:02
+
+

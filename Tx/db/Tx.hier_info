@@ -1,0 +1,28 @@
+|Tx
+data_in[0] => Selector6.IN0
+data_in[1] => Selector7.IN0
+data_in[2] => Selector8.IN0
+data_in[3] => Selector9.IN0
+data_in[4] => Selector10.IN0
+data_in[5] => Selector11.IN0
+data_in[6] => Selector12.IN0
+data_in[7] => Selector13.IN1
+Tx << Tx$latch.DB_MAX_OUTPUT_PORT_TYPE
+send => Selector18.IN3
+send => Selector16.IN0
+clock_show << clk.DB_MAX_OUTPUT_PORT_TYPE
+clk => Counter:done.clk
+clk => clock_show.DATAIN
+clk => present~1.DATAIN
+
+
+|Tx|Counter:done
+En => done.OUTPUTSELECT
+En => count[0].IN1
+clk => count[0].CLK
+clk => count[1].CLK
+clk => count[2].CLK
+clk => count[3].CLK
+done <= done.DB_MAX_OUTPUT_PORT_TYPE
+
+

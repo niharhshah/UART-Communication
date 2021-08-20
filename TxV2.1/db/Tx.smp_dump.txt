@@ -1,0 +1,14 @@
+
+State Machine - |Tx|nxt
+Name nxt.Whait nxt.Transmit nxt.Load nxt.Stop 
+nxt.Stop 0 0 0 0 
+nxt.Load 0 0 1 1 
+nxt.Transmit 0 1 0 1 
+nxt.Whait 1 0 0 1 
+
+State Machine - |Tx|present
+Name present.Whait present.Transmit present.Load present.Stop 
+present.Stop 0 0 0 0 
+present.Load 0 0 1 1 
+present.Transmit 0 1 0 1 
+present.Whait 1 0 0 1 

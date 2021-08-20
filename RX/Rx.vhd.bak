@@ -1,0 +1,75 @@
+Library IEEE;
+use IEEE.std_logic_1164.all;
+
+entity Rx is
+  port (Rx : IN std_logic;
+    clk: IN std_logic;
+    mode: IN std_logic_vector(2 downto 0);
+    data_out : OUT std_logic_vector(7 downto 0);
+    valid: OUT Std_logic
+  ) ;
+end Rx;
+
+architecture RxFSM of Rx is
+
+component proclock is
+    port (inclk : in std_logic ; 
+            latch : in std_logic ; 
+            prescaler : IN std_logic_vector(2 downto 0);
+            clk : buffer std_logic);
+    end component;
+    
+    component Counter is
+    port (En,clk :IN Std_logic;
+        done : OUT std_logic);
+    end component;
+    
+    signal 
+
+    type state is (whait,Reead,vallid);
+
+    signal InternalClk : std_logic;
+    signal mode : std_logic_vector(2 downto 0);
+    signal InternalData : std_logic_vector(7 downto 0);
+    signal ilatch : std_logic := '0';
+    signal idone,ien: std_logic;
+    signal present,nxt : state;
+    signal count : integer := 0;
+begin
+    probhaiRx : proclock port map (clk,ilatch,mode,InternalClk);
+
+    update_process: process 
+    begin
+        wait until (rising_edge(InternalClk));
+        present <= nxt;
+    end process;
+
+    Receive_process : process(Rx,InternalClk)
+    begin
+        if(rising_edge(InternalClk)) then 
+        case present is
+            when whait => 
+                if(falling_edge(Rx)) then nxt <= reead;
+                else nxt <= whait;
+                end if;
+                valid <= '0';
+                data_out<= "00000000";
+                count <= 0;
+            when reead =>
+                valid <= '0';
+                data_out<= "00000000";
+                InternalData <= Rx&InternalData(7 downto 1);
+                count <= count+1;
+                if(count = 8) then nxt <= vallid;
+                else nxt <= reead;
+                end if;
+            when vallid =>
+                valid <= '1';
+                data_out <= Internal_data;
+                nxt <= whait;
+                count <= 0;
+        end case;
+        end if;        
+    end process ;
+
+    end RxFSM ; -- RxFSM

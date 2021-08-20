@@ -1,0 +1,131 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 d/home/nihar/Projects/UART/Tx/simulation/modelsim
+Ecounter
+Z1 w1578654569
+Z2 DPx4 ieee 11 numeric_std 0 22 :ASDNFgHXf_ih3J@9F3Ze1
+Z3 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z4 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
+R0
+Z5 8/home/nihar/Projects/UART/Tx/Counter.vhd
+Z6 F/home/nihar/Projects/UART/Tx/Counter.vhd
+l0
+L5
+VcAzCBM@5I9lWj?PjSCl9j1
+!s100 >[:l0JLo1md>FzDneXKPm0
+Z7 OV;C;10.5b;63
+31
+Z8 !s110 1578664371
+!i10b 1
+Z9 !s108 1578664371.000000
+Z10 !s90 -reportprogress|300|-93|-work|work|/home/nihar/Projects/UART/Tx/Counter.vhd|
+Z11 !s107 /home/nihar/Projects/UART/Tx/Counter.vhd|
+!i113 1
+Z12 o-93 -work work
+Z13 tExplicit 1 CvgOpt 0
+Aone
+R2
+R3
+R4
+DEx4 work 7 counter 0 22 cAzCBM@5I9lWj?PjSCl9j1
+l12
+L10
+VV@@3NiPO`PVFdmKKFg0Y]1
+!s100 zjkK<EYJ5G5?LL=bOmbf@2
+R7
+31
+R8
+!i10b 1
+R9
+R10
+R11
+!i113 1
+R12
+R13
+Edemo
+Z14 w1578664350
+R3
+R4
+R0
+Z15 8/home/nihar/Projects/UART/Tx/Testbench.vhd
+Z16 F/home/nihar/Projects/UART/Tx/Testbench.vhd
+l0
+L3
+V@mj0;i9lnKiZBD07Ii1]m0
+!s100 >4Gnoh@LJSXg3RW?o4C4d0
+R7
+31
+R8
+!i10b 1
+R9
+Z17 !s90 -reportprogress|300|-93|-work|work|/home/nihar/Projects/UART/Tx/Testbench.vhd|
+Z18 !s107 /home/nihar/Projects/UART/Tx/Testbench.vhd|
+!i113 1
+R12
+R13
+Aone
+R3
+R4
+DEx4 work 4 demo 0 22 @mj0;i9lnKiZBD07Ii1]m0
+l17
+L4
+VDF;H0KT[2_jncz6DXa34R3
+!s100 iRc6^RZ7nl?V8l=K;Y18B1
+R7
+31
+R8
+!i10b 1
+R9
+R17
+R18
+!i113 1
+R12
+R13
+Etx
+Z19 w1578663503
+R2
+R3
+R4
+R0
+Z20 8/home/nihar/Projects/UART/Tx/TxV2.vhd
+Z21 F/home/nihar/Projects/UART/Tx/TxV2.vhd
+l0
+L5
+VRYPG^V5g``L[D>UF5<ZNP1
+!s100 2a7=fcPEPl[LUL^;`W?Zm1
+R7
+31
+R8
+!i10b 1
+R9
+Z22 !s90 -reportprogress|300|-93|-work|work|/home/nihar/Projects/UART/Tx/TxV2.vhd|
+Z23 !s107 /home/nihar/Projects/UART/Tx/TxV2.vhd|
+!i113 1
+R12
+R13
+Aversion2_transmit
+R2
+R3
+R4
+DEx4 work 2 tx 0 22 RYPG^V5g``L[D>UF5<ZNP1
+l31
+L14
+VKJzNc?88O;?D25m;GEC?@0
+!s100 3F[jX2ga22oPHT6?l`>4R3
+R7
+31
+R8
+!i10b 1
+R9
+R22
+R23
+!i113 1
+R12
+R13

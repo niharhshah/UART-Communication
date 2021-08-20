@@ -1,0 +1,11 @@
+transcript on
+if {[file exists rtl_work]} {
+	vdel -lib rtl_work -all
+}
+vlib rtl_work
+vmap work rtl_work
+
+vcom -93 -work work {/home/nihar/Projects/UART/Tx/proclock.vhd}
+vcom -93 -work work {/home/nihar/Projects/UART/Tx/Counter.vhd}
+vcom -93 -work work {/home/nihar/Projects/UART/Tx/TxV2.vhd}
+

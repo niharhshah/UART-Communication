@@ -1,0 +1,11 @@
+Fitter Status : Successful - Thu Aug 05 22:56:22 2021
+Quartus Prime Version : 18.1.0 Build 625 09/12/2018 SJ Lite Edition
+Revision Name : Tx
+Top-level Entity Name : Tx
+Family : MAX V
+Device : 5M1270ZT144C5
+Timing Models : Final
+Total logic elements : 117 / 1,270 ( 9 % )
+Total pins : 14 / 114 ( 12 % )
+Total virtual pins : 0
+UFM blocks : 0 / 1 ( 0 % )

@@ -1,0 +1,19 @@
+transcript on
+if {[file exists rtl_work]} {
+	vdel -lib rtl_work -all
+}
+vlib rtl_work
+vmap work rtl_work
+
+vcom -93 -work work {D:/Semester2/UART/UART/TxV2.1/proclock.vhd}
+vcom -93 -work work {D:/Semester2/UART/UART/TxV2.1/Counter.vhd}
+vcom -93 -work work {D:/Semester2/UART/UART/TxV2.1/TxV2.vhd}
+
+vcom -93 -work work {D:/Semester2/UART/UART/TxV2.1/Testbench.vhd}
+
+vsim -t 1ps -L altera -L lpm -L sgate -L altera_mf -L altera_lnsim -L maxv -L rtl_work -L work -voptargs="+acc"  demo
+
+add wave *
+view structure
+view signals
+run 5 ms

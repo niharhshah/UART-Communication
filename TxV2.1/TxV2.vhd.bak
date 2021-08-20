@@ -1,0 +1,51 @@
+library IEEE;
+Use IEEE.std_logic_1164.all;
+use IEEE.numeric_std.all;
+
+entity Tx is 
+port(data_in : IN std_logic_vector(7 downto 0);
+--     mode : IN std_logic_vector(2 downto 0);
+     Tx : OUT std_logic;
+     send: IN std_logic;
+     clock_show: OUT : std_logic;
+     clk: IN std_logic);
+end Tx;
+
+Architecture Version2_transmit of Tx is
+component
+-- enter proclock here
+end component;
+type state is (Stop,Load,Transmit,Whait)
+signal InternalClk : std_logic;
+signal mode : std_logic_vector(2 downto 0);
+signal data : std_logic_vector(8 downto 0);
+signal ilatch: std_logic;
+signal present,nxt : state;
+begin
+probhai : proclock (clk,mode,ilatch,InternalClk);
+
+update_process: process 
+begin
+wait until (rising_edge(InternalClk));
+present <= nxt;
+end process;
+
+Transmit_process: process begin
+case present is
+
+	when stop =>
+		if (send = '0') then nxt <= Load;
+		else nxt <= Stop;
+		end if;
+	when Load =>
+		data <= data_in & '0';
+		nxt <= Transmit;
+	when Transmit =>
+		data <= '1' & data(8 downto 1);
+		Tx <= data(0);	
+-- this thing has errors please solve as this will work for ASCII but not for numbers
+-- please for god's sake put a fucking counter 
+		if (data = "111111111") then nxt <= Stop; end if;
+	end case;
+end process;
+end Version2_transmit;

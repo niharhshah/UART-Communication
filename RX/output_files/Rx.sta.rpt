@@ -1,0 +1,802 @@
+Timing Analyzer report for Rx
+Tue Aug 10 15:31:30 2021
+Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Timing Analyzer Summary
+  3. Parallel Compilation
+  4. Clocks
+  5. Fmax Summary
+  6. Setup Summary
+  7. Hold Summary
+  8. Recovery Summary
+  9. Removal Summary
+ 10. Minimum Pulse Width Summary
+ 11. Setup: 'clk'
+ 12. Setup: 'proclock:probhaiRx|fullspeed:fulsped|clk'
+ 13. Setup: 'proclock:probhaiRx|clk'
+ 14. Hold: 'proclock:probhaiRx|fullspeed:fulsped|clk'
+ 15. Hold: 'clk'
+ 16. Hold: 'proclock:probhaiRx|clk'
+ 17. Recovery: 'proclock:probhaiRx|clk'
+ 18. Removal: 'proclock:probhaiRx|clk'
+ 19. Setup Transfers
+ 20. Hold Transfers
+ 21. Recovery Transfers
+ 22. Removal Transfers
+ 23. Report TCCS
+ 24. Report RSKM
+ 25. Unconstrained Paths Summary
+ 26. Clock Status Summary
+ 27. Unconstrained Input Ports
+ 28. Unconstrained Output Ports
+ 29. Unconstrained Input Ports
+ 30. Unconstrained Output Ports
+ 31. Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2018  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details.
+
+
+
++-----------------------------------------------------------------------------+
+; Timing Analyzer Summary                                                     ;
++-----------------------+-----------------------------------------------------+
+; Quartus Prime Version ; Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
+; Timing Analyzer       ; Legacy Timing Analyzer                              ;
+; Revision Name         ; Rx                                                  ;
+; Device Family         ; MAX V                                               ;
+; Device Name           ; 5M1270ZT144C5                                       ;
+; Timing Models         ; Final                                               ;
+; Delay Model           ; Slow Model                                          ;
+; Rise/Fall Delays      ; Unavailable                                         ;
++-----------------------+-----------------------------------------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 8           ;
+; Maximum allowed            ; 4           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 1           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
++----------------------------+-------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clocks                                                                                                                                                                                                                                             ;
++------------------------------------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+----------------------------------------------+
+; Clock Name                               ; Type ; Period ; Frequency  ; Rise  ; Fall  ; Duty Cycle ; Divide by ; Multiply by ; Phase ; Offset ; Edge List ; Edge Shift ; Inverted ; Master ; Source ; Targets                                      ;
++------------------------------------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+----------------------------------------------+
+; clk                                      ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { clk }                                      ;
+; proclock:probhaiRx|clk                   ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { proclock:probhaiRx|clk }                   ;
+; proclock:probhaiRx|fullspeed:fulsped|clk ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { proclock:probhaiRx|fullspeed:fulsped|clk } ;
++------------------------------------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+----------------------------------------------+
+
+
++--------------------------------------------------------------------------------+
+; Fmax Summary                                                                   ;
++------------+-----------------+------------------------------------------+------+
+; Fmax       ; Restricted Fmax ; Clock Name                               ; Note ;
++------------+-----------------+------------------------------------------+------+
+; 154.54 MHz ; 154.54 MHz      ; clk                                      ;      ;
+; 179.89 MHz ; 179.89 MHz      ; proclock:probhaiRx|fullspeed:fulsped|clk ;      ;
+; 323.0 MHz  ; 323.0 MHz       ; proclock:probhaiRx|clk                   ;      ;
++------------+-----------------+------------------------------------------+------+
+This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
+
+
++-------------------------------------------------------------------+
+; Setup Summary                                                     ;
++------------------------------------------+--------+---------------+
+; Clock                                    ; Slack  ; End Point TNS ;
++------------------------------------------+--------+---------------+
+; clk                                      ; -5.471 ; -54.863       ;
+; proclock:probhaiRx|fullspeed:fulsped|clk ; -4.559 ; -35.352       ;
+; proclock:probhaiRx|clk                   ; -2.096 ; -28.413       ;
++------------------------------------------+--------+---------------+
+
+
++-------------------------------------------------------------------+
+; Hold Summary                                                      ;
++------------------------------------------+--------+---------------+
+; Clock                                    ; Slack  ; End Point TNS ;
++------------------------------------------+--------+---------------+
+; proclock:probhaiRx|fullspeed:fulsped|clk ; -4.312 ; -4.312        ;
+; clk                                      ; -2.426 ; -2.426        ;
+; proclock:probhaiRx|clk                   ; 1.394  ; 0.000         ;
++------------------------------------------+--------+---------------+
+
+
++-------------------------------------------------+
+; Recovery Summary                                ;
++------------------------+--------+---------------+
+; Clock                  ; Slack  ; End Point TNS ;
++------------------------+--------+---------------+
+; proclock:probhaiRx|clk ; -5.988 ; -23.952       ;
++------------------------+--------+---------------+
+
+
++------------------------------------------------+
+; Removal Summary                                ;
++------------------------+-------+---------------+
+; Clock                  ; Slack ; End Point TNS ;
++------------------------+-------+---------------+
+; proclock:probhaiRx|clk ; 6.434 ; 0.000         ;
++------------------------+-------+---------------+
+
+
++-------------------------------------------------------------------+
+; Minimum Pulse Width Summary                                       ;
++------------------------------------------+--------+---------------+
+; Clock                                    ; Slack  ; End Point TNS ;
++------------------------------------------+--------+---------------+
+; clk                                      ; -2.289 ; -2.289        ;
+; proclock:probhaiRx|clk                   ; 0.234  ; 0.000         ;
+; proclock:probhaiRx|fullspeed:fulsped|clk ; 0.234  ; 0.000         ;
++------------------------------------------+--------+---------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Setup: 'clk'                                                                                                                                                                                             ;
++--------+-----------------------------------------------+-----------------------------------------------+------------------------------------------+-------------+--------------+------------+------------+
+; Slack  ; From Node                                     ; To Node                                       ; Launch Clock                             ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+-----------------------------------------------+-----------------------------------------------+------------------------------------------+-------------+--------------+------------+------------+
+; -5.471 ; proclock:probhaiRx|fullspeed:fulsped|count[0] ; proclock:probhaiRx|fullspeed:fulsped|count[8] ; clk                                      ; clk         ; 1.000        ; 0.000      ; 6.138      ;
+; -5.450 ; proclock:probhaiRx|fullspeed:fulsped|count[2] ; proclock:probhaiRx|fullspeed:fulsped|count[8] ; clk                                      ; clk         ; 1.000        ; 0.000      ; 6.117      ;
+; -5.344 ; proclock:probhaiRx|fullspeed:fulsped|count[1] ; proclock:probhaiRx|fullspeed:fulsped|count[8] ; clk                                      ; clk         ; 1.000        ; 0.000      ; 6.011      ;
+; -5.328 ; proclock:probhaiRx|fullspeed:fulsped|count[0] ; proclock:probhaiRx|fullspeed:fulsped|count[9] ; clk                                      ; clk         ; 1.000        ; 0.000      ; 5.995      ;
+; -5.316 ; proclock:probhaiRx|fullspeed:fulsped|count[3] ; proclock:probhaiRx|fullspeed:fulsped|count[8] ; clk                                      ; clk         ; 1.000        ; 0.000      ; 5.983      ;
+; -5.307 ; proclock:probhaiRx|fullspeed:fulsped|count[2] ; proclock:probhaiRx|fullspeed:fulsped|count[9] ; clk                                      ; clk         ; 1.000        ; 0.000      ; 5.974      ;
+; -5.201 ; proclock:probhaiRx|fullspeed:fulsped|count[1] ; proclock:probhaiRx|fullspeed:fulsped|count[9] ; clk                                      ; clk         ; 1.000        ; 0.000      ; 5.868      ;
+; -5.173 ; proclock:probhaiRx|fullspeed:fulsped|count[3] ; proclock:probhaiRx|fullspeed:fulsped|count[9] ; clk                                      ; clk         ; 1.000        ; 0.000      ; 5.840      ;
+; -5.086 ; proclock:probhaiRx|fullspeed:fulsped|count[0] ; proclock:probhaiRx|fullspeed:fulsped|count[5] ; clk                                      ; clk         ; 1.000        ; 0.000      ; 5.753      ;
+; -5.077 ; proclock:probhaiRx|fullspeed:fulsped|count[0] ; proclock:probhaiRx|fullspeed:fulsped|count[7] ; clk                                      ; clk         ; 1.000        ; 0.000      ; 5.744      ;
+; -5.065 ; proclock:probhaiRx|fullspeed:fulsped|count[2] ; proclock:probhaiRx|fullspeed:fulsped|count[5] ; clk                                      ; clk         ; 1.000        ; 0.000      ; 5.732      ;
+; -5.062 ; proclock:probhaiRx|fullspeed:fulsped|count[4] ; proclock:probhaiRx|fullspeed:fulsped|count[8] ; clk                                      ; clk         ; 1.000        ; 0.000      ; 5.729      ;
+; -5.056 ; proclock:probhaiRx|fullspeed:fulsped|count[2] ; proclock:probhaiRx|fullspeed:fulsped|count[7] ; clk                                      ; clk         ; 1.000        ; 0.000      ; 5.723      ;
+; -4.983 ; proclock:probhaiRx|fullspeed:fulsped|count[0] ; proclock:probhaiRx|fullspeed:fulsped|count[3] ; clk                                      ; clk         ; 1.000        ; 0.000      ; 5.650      ;
+; -4.962 ; proclock:probhaiRx|fullspeed:fulsped|count[2] ; proclock:probhaiRx|fullspeed:fulsped|count[3] ; clk                                      ; clk         ; 1.000        ; 0.000      ; 5.629      ;
+; -4.959 ; proclock:probhaiRx|fullspeed:fulsped|count[1] ; proclock:probhaiRx|fullspeed:fulsped|count[5] ; clk                                      ; clk         ; 1.000        ; 0.000      ; 5.626      ;
+; -4.950 ; proclock:probhaiRx|fullspeed:fulsped|count[1] ; proclock:probhaiRx|fullspeed:fulsped|count[7] ; clk                                      ; clk         ; 1.000        ; 0.000      ; 5.617      ;
+; -4.947 ; proclock:probhaiRx|fullspeed:fulsped|count[0] ; proclock:probhaiRx|fullspeed:fulsped|count[4] ; clk                                      ; clk         ; 1.000        ; 0.000      ; 5.614      ;
+; -4.931 ; proclock:probhaiRx|fullspeed:fulsped|count[3] ; proclock:probhaiRx|fullspeed:fulsped|count[5] ; clk                                      ; clk         ; 1.000        ; 0.000      ; 5.598      ;
+; -4.926 ; proclock:probhaiRx|fullspeed:fulsped|count[2] ; proclock:probhaiRx|fullspeed:fulsped|count[4] ; clk                                      ; clk         ; 1.000        ; 0.000      ; 5.593      ;
+; -4.922 ; proclock:probhaiRx|fullspeed:fulsped|count[3] ; proclock:probhaiRx|fullspeed:fulsped|count[7] ; clk                                      ; clk         ; 1.000        ; 0.000      ; 5.589      ;
+; -4.919 ; proclock:probhaiRx|fullspeed:fulsped|count[4] ; proclock:probhaiRx|fullspeed:fulsped|count[9] ; clk                                      ; clk         ; 1.000        ; 0.000      ; 5.586      ;
+; -4.916 ; proclock:probhaiRx|fullspeed:fulsped|count[5] ; proclock:probhaiRx|fullspeed:fulsped|count[8] ; clk                                      ; clk         ; 1.000        ; 0.000      ; 5.583      ;
+; -4.896 ; proclock:probhaiRx|fullspeed:fulsped|count[5] ; proclock:probhaiRx|fullspeed:fulsped|count[9] ; clk                                      ; clk         ; 1.000        ; 0.000      ; 5.563      ;
+; -4.856 ; proclock:probhaiRx|fullspeed:fulsped|count[1] ; proclock:probhaiRx|fullspeed:fulsped|count[3] ; clk                                      ; clk         ; 1.000        ; 0.000      ; 5.523      ;
+; -4.851 ; proclock:probhaiRx|fullspeed:fulsped|count[0] ; proclock:probhaiRx|fullspeed:fulsped|count[1] ; clk                                      ; clk         ; 1.000        ; 0.000      ; 5.518      ;
+; -4.820 ; proclock:probhaiRx|fullspeed:fulsped|count[1] ; proclock:probhaiRx|fullspeed:fulsped|count[4] ; clk                                      ; clk         ; 1.000        ; 0.000      ; 5.487      ;
+; -4.819 ; proclock:probhaiRx|fullspeed:fulsped|count[0] ; proclock:probhaiRx|fullspeed:fulsped|count[6] ; clk                                      ; clk         ; 1.000        ; 0.000      ; 5.486      ;
+; -4.819 ; proclock:probhaiRx|fullspeed:fulsped|count[6] ; proclock:probhaiRx|fullspeed:fulsped|count[8] ; clk                                      ; clk         ; 1.000        ; 0.000      ; 5.486      ;
+; -4.802 ; proclock:probhaiRx|fullspeed:fulsped|count[0] ; proclock:probhaiRx|fullspeed:fulsped|count[2] ; clk                                      ; clk         ; 1.000        ; 0.000      ; 5.469      ;
+; -4.799 ; proclock:probhaiRx|fullspeed:fulsped|count[6] ; proclock:probhaiRx|fullspeed:fulsped|count[9] ; clk                                      ; clk         ; 1.000        ; 0.000      ; 5.466      ;
+; -4.798 ; proclock:probhaiRx|fullspeed:fulsped|count[2] ; proclock:probhaiRx|fullspeed:fulsped|count[6] ; clk                                      ; clk         ; 1.000        ; 0.000      ; 5.465      ;
+; -4.792 ; proclock:probhaiRx|fullspeed:fulsped|count[3] ; proclock:probhaiRx|fullspeed:fulsped|count[4] ; clk                                      ; clk         ; 1.000        ; 0.000      ; 5.459      ;
+; -4.750 ; proclock:probhaiRx|fullspeed:fulsped|count[7] ; proclock:probhaiRx|fullspeed:fulsped|clk      ; clk                                      ; clk         ; 1.000        ; 0.000      ; 5.417      ;
+; -4.749 ; proclock:probhaiRx|fullspeed:fulsped|count[7] ; proclock:probhaiRx|fullspeed:fulsped|count[0] ; clk                                      ; clk         ; 1.000        ; 0.000      ; 5.416      ;
+; -4.747 ; proclock:probhaiRx|fullspeed:fulsped|count[7] ; proclock:probhaiRx|fullspeed:fulsped|count[3] ; clk                                      ; clk         ; 1.000        ; 0.000      ; 5.414      ;
+; -4.745 ; proclock:probhaiRx|fullspeed:fulsped|count[7] ; proclock:probhaiRx|fullspeed:fulsped|count[1] ; clk                                      ; clk         ; 1.000        ; 0.000      ; 5.412      ;
+; -4.738 ; proclock:probhaiRx|fullspeed:fulsped|count[7] ; proclock:probhaiRx|fullspeed:fulsped|count[7] ; clk                                      ; clk         ; 1.000        ; 0.000      ; 5.405      ;
+; -4.738 ; proclock:probhaiRx|fullspeed:fulsped|count[8] ; proclock:probhaiRx|fullspeed:fulsped|count[9] ; clk                                      ; clk         ; 1.000        ; 0.000      ; 5.405      ;
+; -4.705 ; proclock:probhaiRx|fullspeed:fulsped|count[7] ; proclock:probhaiRx|fullspeed:fulsped|count[8] ; clk                                      ; clk         ; 1.000        ; 0.000      ; 5.372      ;
+; -4.692 ; proclock:probhaiRx|fullspeed:fulsped|count[1] ; proclock:probhaiRx|fullspeed:fulsped|count[6] ; clk                                      ; clk         ; 1.000        ; 0.000      ; 5.359      ;
+; -4.685 ; proclock:probhaiRx|fullspeed:fulsped|count[7] ; proclock:probhaiRx|fullspeed:fulsped|count[9] ; clk                                      ; clk         ; 1.000        ; 0.000      ; 5.352      ;
+; -4.677 ; proclock:probhaiRx|fullspeed:fulsped|count[4] ; proclock:probhaiRx|fullspeed:fulsped|count[5] ; clk                                      ; clk         ; 1.000        ; 0.000      ; 5.344      ;
+; -4.675 ; proclock:probhaiRx|fullspeed:fulsped|count[1] ; proclock:probhaiRx|fullspeed:fulsped|count[2] ; clk                                      ; clk         ; 1.000        ; 0.000      ; 5.342      ;
+; -4.668 ; proclock:probhaiRx|fullspeed:fulsped|count[4] ; proclock:probhaiRx|fullspeed:fulsped|count[7] ; clk                                      ; clk         ; 1.000        ; 0.000      ; 5.335      ;
+; -4.664 ; proclock:probhaiRx|fullspeed:fulsped|count[3] ; proclock:probhaiRx|fullspeed:fulsped|count[6] ; clk                                      ; clk         ; 1.000        ; 0.000      ; 5.331      ;
+; -4.663 ; proclock:probhaiRx|fullspeed:fulsped|count[1] ; proclock:probhaiRx|fullspeed:fulsped|clk      ; clk                                      ; clk         ; 1.000        ; 0.000      ; 5.330      ;
+; -4.662 ; proclock:probhaiRx|fullspeed:fulsped|count[1] ; proclock:probhaiRx|fullspeed:fulsped|count[0] ; clk                                      ; clk         ; 1.000        ; 0.000      ; 5.329      ;
+; -4.658 ; proclock:probhaiRx|fullspeed:fulsped|count[1] ; proclock:probhaiRx|fullspeed:fulsped|count[1] ; clk                                      ; clk         ; 1.000        ; 0.000      ; 5.325      ;
+; -4.469 ; proclock:probhaiRx|fullspeed:fulsped|count[0] ; proclock:probhaiRx|fullspeed:fulsped|clk      ; clk                                      ; clk         ; 1.000        ; 0.000      ; 5.136      ;
+; -4.468 ; proclock:probhaiRx|fullspeed:fulsped|count[0] ; proclock:probhaiRx|fullspeed:fulsped|count[0] ; clk                                      ; clk         ; 1.000        ; 0.000      ; 5.135      ;
+; -4.410 ; proclock:probhaiRx|fullspeed:fulsped|count[4] ; proclock:probhaiRx|fullspeed:fulsped|count[6] ; clk                                      ; clk         ; 1.000        ; 0.000      ; 5.077      ;
+; -4.399 ; proclock:probhaiRx|fullspeed:fulsped|count[5] ; proclock:probhaiRx|fullspeed:fulsped|count[7] ; clk                                      ; clk         ; 1.000        ; 0.000      ; 5.066      ;
+; -4.302 ; proclock:probhaiRx|fullspeed:fulsped|count[6] ; proclock:probhaiRx|fullspeed:fulsped|count[7] ; clk                                      ; clk         ; 1.000        ; 0.000      ; 4.969      ;
+; -4.072 ; proclock:probhaiRx|fullspeed:fulsped|count[3] ; proclock:probhaiRx|fullspeed:fulsped|count[3] ; clk                                      ; clk         ; 1.000        ; 0.000      ; 4.739      ;
+; -4.025 ; proclock:probhaiRx|fullspeed:fulsped|count[2] ; proclock:probhaiRx|fullspeed:fulsped|count[2] ; clk                                      ; clk         ; 1.000        ; 0.000      ; 4.692      ;
+; -4.018 ; proclock:probhaiRx|fullspeed:fulsped|count[5] ; proclock:probhaiRx|fullspeed:fulsped|count[6] ; clk                                      ; clk         ; 1.000        ; 0.000      ; 4.685      ;
+; -4.012 ; proclock:probhaiRx|fullspeed:fulsped|count[5] ; proclock:probhaiRx|fullspeed:fulsped|clk      ; clk                                      ; clk         ; 1.000        ; 0.000      ; 4.679      ;
+; -4.011 ; proclock:probhaiRx|fullspeed:fulsped|count[5] ; proclock:probhaiRx|fullspeed:fulsped|count[0] ; clk                                      ; clk         ; 1.000        ; 0.000      ; 4.678      ;
+; -4.009 ; proclock:probhaiRx|fullspeed:fulsped|count[5] ; proclock:probhaiRx|fullspeed:fulsped|count[3] ; clk                                      ; clk         ; 1.000        ; 0.000      ; 4.676      ;
+; -4.007 ; proclock:probhaiRx|fullspeed:fulsped|count[5] ; proclock:probhaiRx|fullspeed:fulsped|count[1] ; clk                                      ; clk         ; 1.000        ; 0.000      ; 4.674      ;
+; -4.002 ; proclock:probhaiRx|fullspeed:fulsped|count[8] ; proclock:probhaiRx|fullspeed:fulsped|count[8] ; clk                                      ; clk         ; 1.000        ; 0.000      ; 4.669      ;
+; -3.932 ; proclock:probhaiRx|fullspeed:fulsped|count[3] ; proclock:probhaiRx|fullspeed:fulsped|clk      ; clk                                      ; clk         ; 1.000        ; 0.000      ; 4.599      ;
+; -3.931 ; proclock:probhaiRx|fullspeed:fulsped|count[3] ; proclock:probhaiRx|fullspeed:fulsped|count[0] ; clk                                      ; clk         ; 1.000        ; 0.000      ; 4.598      ;
+; -3.927 ; proclock:probhaiRx|fullspeed:fulsped|count[3] ; proclock:probhaiRx|fullspeed:fulsped|count[1] ; clk                                      ; clk         ; 1.000        ; 0.000      ; 4.594      ;
+; -3.922 ; proclock:probhaiRx|fullspeed:fulsped|count[6] ; proclock:probhaiRx|fullspeed:fulsped|clk      ; clk                                      ; clk         ; 1.000        ; 0.000      ; 4.589      ;
+; -3.921 ; proclock:probhaiRx|fullspeed:fulsped|count[6] ; proclock:probhaiRx|fullspeed:fulsped|count[0] ; clk                                      ; clk         ; 1.000        ; 0.000      ; 4.588      ;
+; -3.919 ; proclock:probhaiRx|fullspeed:fulsped|count[6] ; proclock:probhaiRx|fullspeed:fulsped|count[3] ; clk                                      ; clk         ; 1.000        ; 0.000      ; 4.586      ;
+; -3.917 ; proclock:probhaiRx|fullspeed:fulsped|count[6] ; proclock:probhaiRx|fullspeed:fulsped|count[1] ; clk                                      ; clk         ; 1.000        ; 0.000      ; 4.584      ;
+; -3.770 ; proclock:probhaiRx|fullspeed:fulsped|count[4] ; proclock:probhaiRx|fullspeed:fulsped|count[4] ; clk                                      ; clk         ; 1.000        ; 0.000      ; 4.437      ;
+; -3.574 ; proclock:probhaiRx|fullspeed:fulsped|count[9] ; proclock:probhaiRx|fullspeed:fulsped|clk      ; clk                                      ; clk         ; 1.000        ; 0.000      ; 4.241      ;
+; -3.573 ; proclock:probhaiRx|fullspeed:fulsped|count[9] ; proclock:probhaiRx|fullspeed:fulsped|count[0] ; clk                                      ; clk         ; 1.000        ; 0.000      ; 4.240      ;
+; -3.571 ; proclock:probhaiRx|fullspeed:fulsped|count[9] ; proclock:probhaiRx|fullspeed:fulsped|count[3] ; clk                                      ; clk         ; 1.000        ; 0.000      ; 4.238      ;
+; -3.569 ; proclock:probhaiRx|fullspeed:fulsped|count[9] ; proclock:probhaiRx|fullspeed:fulsped|count[1] ; clk                                      ; clk         ; 1.000        ; 0.000      ; 4.236      ;
+; -3.562 ; proclock:probhaiRx|fullspeed:fulsped|count[9] ; proclock:probhaiRx|fullspeed:fulsped|count[7] ; clk                                      ; clk         ; 1.000        ; 0.000      ; 4.229      ;
+; -3.463 ; proclock:probhaiRx|fullspeed:fulsped|count[5] ; proclock:probhaiRx|fullspeed:fulsped|count[5] ; clk                                      ; clk         ; 1.000        ; 0.000      ; 4.130      ;
+; -3.422 ; proclock:probhaiRx|fullspeed:fulsped|count[2] ; proclock:probhaiRx|fullspeed:fulsped|clk      ; clk                                      ; clk         ; 1.000        ; 0.000      ; 4.089      ;
+; -3.421 ; proclock:probhaiRx|fullspeed:fulsped|count[2] ; proclock:probhaiRx|fullspeed:fulsped|count[0] ; clk                                      ; clk         ; 1.000        ; 0.000      ; 4.088      ;
+; -3.417 ; proclock:probhaiRx|fullspeed:fulsped|count[2] ; proclock:probhaiRx|fullspeed:fulsped|count[1] ; clk                                      ; clk         ; 1.000        ; 0.000      ; 4.084      ;
+; -3.222 ; proclock:probhaiRx|fullspeed:fulsped|count[6] ; proclock:probhaiRx|fullspeed:fulsped|count[6] ; clk                                      ; clk         ; 1.000        ; 0.000      ; 3.889      ;
+; -3.180 ; proclock:probhaiRx|fullspeed:fulsped|count[9] ; proclock:probhaiRx|fullspeed:fulsped|count[9] ; clk                                      ; clk         ; 1.000        ; 0.000      ; 3.847      ;
+; -2.463 ; proclock:probhaiRx|fullspeed:fulsped|count[4] ; proclock:probhaiRx|fullspeed:fulsped|clk      ; clk                                      ; clk         ; 1.000        ; 0.000      ; 3.130      ;
+; -2.462 ; proclock:probhaiRx|fullspeed:fulsped|count[4] ; proclock:probhaiRx|fullspeed:fulsped|count[0] ; clk                                      ; clk         ; 1.000        ; 0.000      ; 3.129      ;
+; -2.460 ; proclock:probhaiRx|fullspeed:fulsped|count[4] ; proclock:probhaiRx|fullspeed:fulsped|count[3] ; clk                                      ; clk         ; 1.000        ; 0.000      ; 3.127      ;
+; -2.458 ; proclock:probhaiRx|fullspeed:fulsped|count[4] ; proclock:probhaiRx|fullspeed:fulsped|count[1] ; clk                                      ; clk         ; 1.000        ; 0.000      ; 3.125      ;
+; -1.958 ; proclock:probhaiRx|fullspeed:fulsped|count[8] ; proclock:probhaiRx|fullspeed:fulsped|clk      ; clk                                      ; clk         ; 1.000        ; 0.000      ; 2.625      ;
+; -1.957 ; proclock:probhaiRx|fullspeed:fulsped|count[8] ; proclock:probhaiRx|fullspeed:fulsped|count[0] ; clk                                      ; clk         ; 1.000        ; 0.000      ; 2.624      ;
+; -1.955 ; proclock:probhaiRx|fullspeed:fulsped|count[8] ; proclock:probhaiRx|fullspeed:fulsped|count[3] ; clk                                      ; clk         ; 1.000        ; 0.000      ; 2.622      ;
+; -1.953 ; proclock:probhaiRx|fullspeed:fulsped|count[8] ; proclock:probhaiRx|fullspeed:fulsped|count[1] ; clk                                      ; clk         ; 1.000        ; 0.000      ; 2.620      ;
+; -1.946 ; proclock:probhaiRx|fullspeed:fulsped|count[8] ; proclock:probhaiRx|fullspeed:fulsped|count[7] ; clk                                      ; clk         ; 1.000        ; 0.000      ; 2.613      ;
+; 2.372  ; proclock:probhaiRx|fullspeed:fulsped|clk      ; proclock:probhaiRx|fullspeed:fulsped|clk      ; proclock:probhaiRx|fullspeed:fulsped|clk ; clk         ; 0.500        ; 3.699      ; 1.870      ;
+; 2.872  ; proclock:probhaiRx|fullspeed:fulsped|clk      ; proclock:probhaiRx|fullspeed:fulsped|clk      ; proclock:probhaiRx|fullspeed:fulsped|clk ; clk         ; 1.000        ; 3.699      ; 1.870      ;
++--------+-----------------------------------------------+-----------------------------------------------+------------------------------------------+-------------+--------------+------------+------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Setup: 'proclock:probhaiRx|fullspeed:fulsped|clk'                                                                                                                                                 ;
++--------+-----------------------------+-----------------------------+------------------------------------------+------------------------------------------+--------------+------------+------------+
+; Slack  ; From Node                   ; To Node                     ; Launch Clock                             ; Latch Clock                              ; Relationship ; Clock Skew ; Data Delay ;
++--------+-----------------------------+-----------------------------+------------------------------------------+------------------------------------------+--------------+------------+------------+
+; -4.559 ; proclock:probhaiRx|count[0] ; proclock:probhaiRx|count[6] ; proclock:probhaiRx|fullspeed:fulsped|clk ; proclock:probhaiRx|fullspeed:fulsped|clk ; 1.000        ; 0.000      ; 5.226      ;
+; -4.559 ; proclock:probhaiRx|count[0] ; proclock:probhaiRx|count[5] ; proclock:probhaiRx|fullspeed:fulsped|clk ; proclock:probhaiRx|fullspeed:fulsped|clk ; 1.000        ; 0.000      ; 5.226      ;
+; -4.559 ; proclock:probhaiRx|count[0] ; proclock:probhaiRx|count[4] ; proclock:probhaiRx|fullspeed:fulsped|clk ; proclock:probhaiRx|fullspeed:fulsped|clk ; 1.000        ; 0.000      ; 5.226      ;
+; -4.559 ; proclock:probhaiRx|count[0] ; proclock:probhaiRx|count[3] ; proclock:probhaiRx|fullspeed:fulsped|clk ; proclock:probhaiRx|fullspeed:fulsped|clk ; 1.000        ; 0.000      ; 5.226      ;
+; -4.559 ; proclock:probhaiRx|count[0] ; proclock:probhaiRx|count[2] ; proclock:probhaiRx|fullspeed:fulsped|clk ; proclock:probhaiRx|fullspeed:fulsped|clk ; 1.000        ; 0.000      ; 5.226      ;
+; -4.559 ; proclock:probhaiRx|count[0] ; proclock:probhaiRx|count[1] ; proclock:probhaiRx|fullspeed:fulsped|clk ; proclock:probhaiRx|fullspeed:fulsped|clk ; 1.000        ; 0.000      ; 5.226      ;
+; -4.559 ; proclock:probhaiRx|count[0] ; proclock:probhaiRx|count[0] ; proclock:probhaiRx|fullspeed:fulsped|clk ; proclock:probhaiRx|fullspeed:fulsped|clk ; 1.000        ; 0.000      ; 5.226      ;
+; -4.513 ; proclock:probhaiRx|count[3] ; proclock:probhaiRx|count[6] ; proclock:probhaiRx|fullspeed:fulsped|clk ; proclock:probhaiRx|fullspeed:fulsped|clk ; 1.000        ; 0.000      ; 5.180      ;
+; -4.513 ; proclock:probhaiRx|count[3] ; proclock:probhaiRx|count[5] ; proclock:probhaiRx|fullspeed:fulsped|clk ; proclock:probhaiRx|fullspeed:fulsped|clk ; 1.000        ; 0.000      ; 5.180      ;
+; -4.513 ; proclock:probhaiRx|count[3] ; proclock:probhaiRx|count[4] ; proclock:probhaiRx|fullspeed:fulsped|clk ; proclock:probhaiRx|fullspeed:fulsped|clk ; 1.000        ; 0.000      ; 5.180      ;
+; -4.513 ; proclock:probhaiRx|count[3] ; proclock:probhaiRx|count[3] ; proclock:probhaiRx|fullspeed:fulsped|clk ; proclock:probhaiRx|fullspeed:fulsped|clk ; 1.000        ; 0.000      ; 5.180      ;
+; -4.513 ; proclock:probhaiRx|count[3] ; proclock:probhaiRx|count[2] ; proclock:probhaiRx|fullspeed:fulsped|clk ; proclock:probhaiRx|fullspeed:fulsped|clk ; 1.000        ; 0.000      ; 5.180      ;
+; -4.513 ; proclock:probhaiRx|count[3] ; proclock:probhaiRx|count[1] ; proclock:probhaiRx|fullspeed:fulsped|clk ; proclock:probhaiRx|fullspeed:fulsped|clk ; 1.000        ; 0.000      ; 5.180      ;
+; -4.513 ; proclock:probhaiRx|count[3] ; proclock:probhaiRx|count[0] ; proclock:probhaiRx|fullspeed:fulsped|clk ; proclock:probhaiRx|fullspeed:fulsped|clk ; 1.000        ; 0.000      ; 5.180      ;
+; -4.367 ; proclock:probhaiRx|count[1] ; proclock:probhaiRx|count[6] ; proclock:probhaiRx|fullspeed:fulsped|clk ; proclock:probhaiRx|fullspeed:fulsped|clk ; 1.000        ; 0.000      ; 5.034      ;
+; -4.367 ; proclock:probhaiRx|count[1] ; proclock:probhaiRx|count[5] ; proclock:probhaiRx|fullspeed:fulsped|clk ; proclock:probhaiRx|fullspeed:fulsped|clk ; 1.000        ; 0.000      ; 5.034      ;
+; -4.367 ; proclock:probhaiRx|count[1] ; proclock:probhaiRx|count[4] ; proclock:probhaiRx|fullspeed:fulsped|clk ; proclock:probhaiRx|fullspeed:fulsped|clk ; 1.000        ; 0.000      ; 5.034      ;
+; -4.367 ; proclock:probhaiRx|count[1] ; proclock:probhaiRx|count[3] ; proclock:probhaiRx|fullspeed:fulsped|clk ; proclock:probhaiRx|fullspeed:fulsped|clk ; 1.000        ; 0.000      ; 5.034      ;
+; -4.367 ; proclock:probhaiRx|count[1] ; proclock:probhaiRx|count[2] ; proclock:probhaiRx|fullspeed:fulsped|clk ; proclock:probhaiRx|fullspeed:fulsped|clk ; 1.000        ; 0.000      ; 5.034      ;
+; -4.367 ; proclock:probhaiRx|count[1] ; proclock:probhaiRx|count[1] ; proclock:probhaiRx|fullspeed:fulsped|clk ; proclock:probhaiRx|fullspeed:fulsped|clk ; 1.000        ; 0.000      ; 5.034      ;
+; -4.367 ; proclock:probhaiRx|count[1] ; proclock:probhaiRx|count[0] ; proclock:probhaiRx|fullspeed:fulsped|clk ; proclock:probhaiRx|fullspeed:fulsped|clk ; 1.000        ; 0.000      ; 5.034      ;
+; -4.021 ; proclock:probhaiRx|count[5] ; proclock:probhaiRx|count[6] ; proclock:probhaiRx|fullspeed:fulsped|clk ; proclock:probhaiRx|fullspeed:fulsped|clk ; 1.000        ; 0.000      ; 4.688      ;
+; -4.021 ; proclock:probhaiRx|count[5] ; proclock:probhaiRx|count[5] ; proclock:probhaiRx|fullspeed:fulsped|clk ; proclock:probhaiRx|fullspeed:fulsped|clk ; 1.000        ; 0.000      ; 4.688      ;
+; -4.021 ; proclock:probhaiRx|count[5] ; proclock:probhaiRx|count[4] ; proclock:probhaiRx|fullspeed:fulsped|clk ; proclock:probhaiRx|fullspeed:fulsped|clk ; 1.000        ; 0.000      ; 4.688      ;
+; -4.021 ; proclock:probhaiRx|count[5] ; proclock:probhaiRx|count[3] ; proclock:probhaiRx|fullspeed:fulsped|clk ; proclock:probhaiRx|fullspeed:fulsped|clk ; 1.000        ; 0.000      ; 4.688      ;
+; -4.021 ; proclock:probhaiRx|count[5] ; proclock:probhaiRx|count[2] ; proclock:probhaiRx|fullspeed:fulsped|clk ; proclock:probhaiRx|fullspeed:fulsped|clk ; 1.000        ; 0.000      ; 4.688      ;
+; -4.021 ; proclock:probhaiRx|count[5] ; proclock:probhaiRx|count[1] ; proclock:probhaiRx|fullspeed:fulsped|clk ; proclock:probhaiRx|fullspeed:fulsped|clk ; 1.000        ; 0.000      ; 4.688      ;
+; -4.021 ; proclock:probhaiRx|count[5] ; proclock:probhaiRx|count[0] ; proclock:probhaiRx|fullspeed:fulsped|clk ; proclock:probhaiRx|fullspeed:fulsped|clk ; 1.000        ; 0.000      ; 4.688      ;
+; -3.841 ; proclock:probhaiRx|count[6] ; proclock:probhaiRx|count[6] ; proclock:probhaiRx|fullspeed:fulsped|clk ; proclock:probhaiRx|fullspeed:fulsped|clk ; 1.000        ; 0.000      ; 4.508      ;
+; -3.841 ; proclock:probhaiRx|count[6] ; proclock:probhaiRx|count[5] ; proclock:probhaiRx|fullspeed:fulsped|clk ; proclock:probhaiRx|fullspeed:fulsped|clk ; 1.000        ; 0.000      ; 4.508      ;
+; -3.841 ; proclock:probhaiRx|count[6] ; proclock:probhaiRx|count[4] ; proclock:probhaiRx|fullspeed:fulsped|clk ; proclock:probhaiRx|fullspeed:fulsped|clk ; 1.000        ; 0.000      ; 4.508      ;
+; -3.841 ; proclock:probhaiRx|count[6] ; proclock:probhaiRx|count[3] ; proclock:probhaiRx|fullspeed:fulsped|clk ; proclock:probhaiRx|fullspeed:fulsped|clk ; 1.000        ; 0.000      ; 4.508      ;
+; -3.841 ; proclock:probhaiRx|count[6] ; proclock:probhaiRx|count[2] ; proclock:probhaiRx|fullspeed:fulsped|clk ; proclock:probhaiRx|fullspeed:fulsped|clk ; 1.000        ; 0.000      ; 4.508      ;
+; -3.841 ; proclock:probhaiRx|count[6] ; proclock:probhaiRx|count[1] ; proclock:probhaiRx|fullspeed:fulsped|clk ; proclock:probhaiRx|fullspeed:fulsped|clk ; 1.000        ; 0.000      ; 4.508      ;
+; -3.841 ; proclock:probhaiRx|count[6] ; proclock:probhaiRx|count[0] ; proclock:probhaiRx|fullspeed:fulsped|clk ; proclock:probhaiRx|fullspeed:fulsped|clk ; 1.000        ; 0.000      ; 4.508      ;
+; -3.803 ; proclock:probhaiRx|count[2] ; proclock:probhaiRx|count[6] ; proclock:probhaiRx|fullspeed:fulsped|clk ; proclock:probhaiRx|fullspeed:fulsped|clk ; 1.000        ; 0.000      ; 4.470      ;
+; -3.803 ; proclock:probhaiRx|count[2] ; proclock:probhaiRx|count[5] ; proclock:probhaiRx|fullspeed:fulsped|clk ; proclock:probhaiRx|fullspeed:fulsped|clk ; 1.000        ; 0.000      ; 4.470      ;
+; -3.803 ; proclock:probhaiRx|count[2] ; proclock:probhaiRx|count[4] ; proclock:probhaiRx|fullspeed:fulsped|clk ; proclock:probhaiRx|fullspeed:fulsped|clk ; 1.000        ; 0.000      ; 4.470      ;
+; -3.803 ; proclock:probhaiRx|count[2] ; proclock:probhaiRx|count[3] ; proclock:probhaiRx|fullspeed:fulsped|clk ; proclock:probhaiRx|fullspeed:fulsped|clk ; 1.000        ; 0.000      ; 4.470      ;
+; -3.803 ; proclock:probhaiRx|count[2] ; proclock:probhaiRx|count[2] ; proclock:probhaiRx|fullspeed:fulsped|clk ; proclock:probhaiRx|fullspeed:fulsped|clk ; 1.000        ; 0.000      ; 4.470      ;
+; -3.803 ; proclock:probhaiRx|count[2] ; proclock:probhaiRx|count[1] ; proclock:probhaiRx|fullspeed:fulsped|clk ; proclock:probhaiRx|fullspeed:fulsped|clk ; 1.000        ; 0.000      ; 4.470      ;
+; -3.803 ; proclock:probhaiRx|count[2] ; proclock:probhaiRx|count[0] ; proclock:probhaiRx|fullspeed:fulsped|clk ; proclock:probhaiRx|fullspeed:fulsped|clk ; 1.000        ; 0.000      ; 4.470      ;
+; -3.683 ; proclock:probhaiRx|count[4] ; proclock:probhaiRx|count[6] ; proclock:probhaiRx|fullspeed:fulsped|clk ; proclock:probhaiRx|fullspeed:fulsped|clk ; 1.000        ; 0.000      ; 4.350      ;
+; -3.683 ; proclock:probhaiRx|count[4] ; proclock:probhaiRx|count[5] ; proclock:probhaiRx|fullspeed:fulsped|clk ; proclock:probhaiRx|fullspeed:fulsped|clk ; 1.000        ; 0.000      ; 4.350      ;
+; -3.683 ; proclock:probhaiRx|count[4] ; proclock:probhaiRx|count[4] ; proclock:probhaiRx|fullspeed:fulsped|clk ; proclock:probhaiRx|fullspeed:fulsped|clk ; 1.000        ; 0.000      ; 4.350      ;
+; -3.683 ; proclock:probhaiRx|count[4] ; proclock:probhaiRx|count[3] ; proclock:probhaiRx|fullspeed:fulsped|clk ; proclock:probhaiRx|fullspeed:fulsped|clk ; 1.000        ; 0.000      ; 4.350      ;
+; -3.683 ; proclock:probhaiRx|count[4] ; proclock:probhaiRx|count[2] ; proclock:probhaiRx|fullspeed:fulsped|clk ; proclock:probhaiRx|fullspeed:fulsped|clk ; 1.000        ; 0.000      ; 4.350      ;
+; -3.683 ; proclock:probhaiRx|count[4] ; proclock:probhaiRx|count[1] ; proclock:probhaiRx|fullspeed:fulsped|clk ; proclock:probhaiRx|fullspeed:fulsped|clk ; 1.000        ; 0.000      ; 4.350      ;
+; -3.683 ; proclock:probhaiRx|count[4] ; proclock:probhaiRx|count[0] ; proclock:probhaiRx|fullspeed:fulsped|clk ; proclock:probhaiRx|fullspeed:fulsped|clk ; 1.000        ; 0.000      ; 4.350      ;
+; -3.439 ; proclock:probhaiRx|count[0] ; proclock:probhaiRx|clk      ; proclock:probhaiRx|fullspeed:fulsped|clk ; proclock:probhaiRx|fullspeed:fulsped|clk ; 1.000        ; 0.000      ; 4.106      ;
+; -3.393 ; proclock:probhaiRx|count[3] ; proclock:probhaiRx|clk      ; proclock:probhaiRx|fullspeed:fulsped|clk ; proclock:probhaiRx|fullspeed:fulsped|clk ; 1.000        ; 0.000      ; 4.060      ;
+; -3.247 ; proclock:probhaiRx|count[1] ; proclock:probhaiRx|clk      ; proclock:probhaiRx|fullspeed:fulsped|clk ; proclock:probhaiRx|fullspeed:fulsped|clk ; 1.000        ; 0.000      ; 3.914      ;
+; -2.901 ; proclock:probhaiRx|count[5] ; proclock:probhaiRx|clk      ; proclock:probhaiRx|fullspeed:fulsped|clk ; proclock:probhaiRx|fullspeed:fulsped|clk ; 1.000        ; 0.000      ; 3.568      ;
+; -2.721 ; proclock:probhaiRx|count[6] ; proclock:probhaiRx|clk      ; proclock:probhaiRx|fullspeed:fulsped|clk ; proclock:probhaiRx|fullspeed:fulsped|clk ; 1.000        ; 0.000      ; 3.388      ;
+; -2.683 ; proclock:probhaiRx|count[2] ; proclock:probhaiRx|clk      ; proclock:probhaiRx|fullspeed:fulsped|clk ; proclock:probhaiRx|fullspeed:fulsped|clk ; 1.000        ; 0.000      ; 3.350      ;
+; -2.563 ; proclock:probhaiRx|count[4] ; proclock:probhaiRx|clk      ; proclock:probhaiRx|fullspeed:fulsped|clk ; proclock:probhaiRx|fullspeed:fulsped|clk ; 1.000        ; 0.000      ; 3.230      ;
+; 4.258  ; proclock:probhaiRx|clk      ; proclock:probhaiRx|clk      ; proclock:probhaiRx|clk                   ; proclock:probhaiRx|fullspeed:fulsped|clk ; 0.500        ; 5.852      ; 2.137      ;
+; 4.758  ; proclock:probhaiRx|clk      ; proclock:probhaiRx|clk      ; proclock:probhaiRx|clk                   ; proclock:probhaiRx|fullspeed:fulsped|clk ; 1.000        ; 5.852      ; 2.137      ;
++--------+-----------------------------+-----------------------------+------------------------------------------+------------------------------------------+--------------+------------+------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------+
+; Setup: 'proclock:probhaiRx|clk'                                                                                                       ;
++--------+-----------------+-----------------+------------------------+------------------------+--------------+------------+------------+
+; Slack  ; From Node       ; To Node         ; Launch Clock           ; Latch Clock            ; Relationship ; Clock Skew ; Data Delay ;
++--------+-----------------+-----------------+------------------------+------------------------+--------------+------------+------------+
+; -2.096 ; InternalData[2] ; InternalData[1] ; proclock:probhaiRx|clk ; proclock:probhaiRx|clk ; 1.000        ; 0.000      ; 2.763      ;
+; -1.886 ; present.Reead   ; present.vallid  ; proclock:probhaiRx|clk ; proclock:probhaiRx|clk ; 1.000        ; 0.000      ; 2.553      ;
+; -1.839 ; present.whait   ; present.Reead   ; proclock:probhaiRx|clk ; proclock:probhaiRx|clk ; 1.000        ; 0.000      ; 2.506      ;
+; -1.817 ; present.Reead   ; InternalData[8] ; proclock:probhaiRx|clk ; proclock:probhaiRx|clk ; 1.000        ; 0.000      ; 2.484      ;
+; -1.817 ; present.Reead   ; InternalData[7] ; proclock:probhaiRx|clk ; proclock:probhaiRx|clk ; 1.000        ; 0.000      ; 2.484      ;
+; -1.817 ; present.Reead   ; InternalData[6] ; proclock:probhaiRx|clk ; proclock:probhaiRx|clk ; 1.000        ; 0.000      ; 2.484      ;
+; -1.817 ; present.Reead   ; InternalData[5] ; proclock:probhaiRx|clk ; proclock:probhaiRx|clk ; 1.000        ; 0.000      ; 2.484      ;
+; -1.817 ; present.Reead   ; InternalData[4] ; proclock:probhaiRx|clk ; proclock:probhaiRx|clk ; 1.000        ; 0.000      ; 2.484      ;
+; -1.817 ; present.Reead   ; InternalData[3] ; proclock:probhaiRx|clk ; proclock:probhaiRx|clk ; 1.000        ; 0.000      ; 2.484      ;
+; -1.817 ; present.Reead   ; InternalData[2] ; proclock:probhaiRx|clk ; proclock:probhaiRx|clk ; 1.000        ; 0.000      ; 2.484      ;
+; -1.817 ; present.Reead   ; InternalData[1] ; proclock:probhaiRx|clk ; proclock:probhaiRx|clk ; 1.000        ; 0.000      ; 2.484      ;
+; -1.817 ; present.Reead   ; InternalData[0] ; proclock:probhaiRx|clk ; proclock:probhaiRx|clk ; 1.000        ; 0.000      ; 2.484      ;
+; -1.797 ; count[2]        ; count[3]        ; proclock:probhaiRx|clk ; proclock:probhaiRx|clk ; 1.000        ; 0.000      ; 2.464      ;
+; -1.786 ; present.vallid  ; present.whait   ; proclock:probhaiRx|clk ; proclock:probhaiRx|clk ; 1.000        ; 0.000      ; 2.453      ;
+; -1.730 ; count[0]        ; count[3]        ; proclock:probhaiRx|clk ; proclock:probhaiRx|clk ; 1.000        ; 0.000      ; 2.397      ;
+; -1.728 ; count[0]        ; count[2]        ; proclock:probhaiRx|clk ; proclock:probhaiRx|clk ; 1.000        ; 0.000      ; 2.395      ;
+; -1.679 ; present.Reead   ; present.Reead   ; proclock:probhaiRx|clk ; proclock:probhaiRx|clk ; 1.000        ; 0.000      ; 2.346      ;
+; -1.619 ; count[3]        ; present.vallid  ; proclock:probhaiRx|clk ; proclock:probhaiRx|clk ; 1.000        ; 0.000      ; 2.286      ;
+; -1.615 ; count[3]        ; count[3]        ; proclock:probhaiRx|clk ; proclock:probhaiRx|clk ; 1.000        ; 0.000      ; 2.282      ;
+; -1.584 ; count[3]        ; present.Reead   ; proclock:probhaiRx|clk ; proclock:probhaiRx|clk ; 1.000        ; 0.000      ; 2.251      ;
+; -1.500 ; count[1]        ; count[2]        ; proclock:probhaiRx|clk ; proclock:probhaiRx|clk ; 1.000        ; 0.000      ; 2.167      ;
+; -1.499 ; count[1]        ; count[3]        ; proclock:probhaiRx|clk ; proclock:probhaiRx|clk ; 1.000        ; 0.000      ; 2.166      ;
+; -1.490 ; count[1]        ; count[1]        ; proclock:probhaiRx|clk ; proclock:probhaiRx|clk ; 1.000        ; 0.000      ; 2.157      ;
+; -1.326 ; InternalData[8] ; InternalData[7] ; proclock:probhaiRx|clk ; proclock:probhaiRx|clk ; 1.000        ; 0.000      ; 1.993      ;
+; -1.323 ; InternalData[4] ; InternalData[3] ; proclock:probhaiRx|clk ; proclock:probhaiRx|clk ; 1.000        ; 0.000      ; 1.990      ;
+; -1.265 ; count[0]        ; count[1]        ; proclock:probhaiRx|clk ; proclock:probhaiRx|clk ; 1.000        ; 0.000      ; 1.932      ;
+; -1.255 ; count[0]        ; count[0]        ; proclock:probhaiRx|clk ; proclock:probhaiRx|clk ; 1.000        ; 0.000      ; 1.922      ;
+; -1.230 ; present.whait   ; present.whait   ; proclock:probhaiRx|clk ; proclock:probhaiRx|clk ; 1.000        ; 0.000      ; 1.897      ;
+; -1.224 ; count[2]        ; count[2]        ; proclock:probhaiRx|clk ; proclock:probhaiRx|clk ; 1.000        ; 0.000      ; 1.891      ;
+; -1.019 ; InternalData[3] ; InternalData[2] ; proclock:probhaiRx|clk ; proclock:probhaiRx|clk ; 1.000        ; 0.000      ; 1.686      ;
+; -1.007 ; InternalData[6] ; InternalData[5] ; proclock:probhaiRx|clk ; proclock:probhaiRx|clk ; 1.000        ; 0.000      ; 1.674      ;
+; -0.956 ; InternalData[5] ; InternalData[4] ; proclock:probhaiRx|clk ; proclock:probhaiRx|clk ; 1.000        ; 0.000      ; 1.623      ;
+; -0.950 ; InternalData[1] ; InternalData[0] ; proclock:probhaiRx|clk ; proclock:probhaiRx|clk ; 1.000        ; 0.000      ; 1.617      ;
+; -0.948 ; InternalData[7] ; InternalData[6] ; proclock:probhaiRx|clk ; proclock:probhaiRx|clk ; 1.000        ; 0.000      ; 1.615      ;
++--------+-----------------+-----------------+------------------------+------------------------+--------------+------------+------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Hold: 'proclock:probhaiRx|fullspeed:fulsped|clk'                                                                                                                                                  ;
++--------+-----------------------------+-----------------------------+------------------------------------------+------------------------------------------+--------------+------------+------------+
+; Slack  ; From Node                   ; To Node                     ; Launch Clock                             ; Latch Clock                              ; Relationship ; Clock Skew ; Data Delay ;
++--------+-----------------------------+-----------------------------+------------------------------------------+------------------------------------------+--------------+------------+------------+
+; -4.312 ; proclock:probhaiRx|clk      ; proclock:probhaiRx|clk      ; proclock:probhaiRx|clk                   ; proclock:probhaiRx|fullspeed:fulsped|clk ; 0.000        ; 5.852      ; 2.137      ;
+; -3.812 ; proclock:probhaiRx|clk      ; proclock:probhaiRx|clk      ; proclock:probhaiRx|clk                   ; proclock:probhaiRx|fullspeed:fulsped|clk ; -0.500       ; 5.852      ; 2.137      ;
+; 2.135  ; proclock:probhaiRx|count[6] ; proclock:probhaiRx|count[6] ; proclock:probhaiRx|fullspeed:fulsped|clk ; proclock:probhaiRx|fullspeed:fulsped|clk ; 0.000        ; 0.000      ; 2.356      ;
+; 2.144  ; proclock:probhaiRx|count[0] ; proclock:probhaiRx|count[0] ; proclock:probhaiRx|fullspeed:fulsped|clk ; proclock:probhaiRx|fullspeed:fulsped|clk ; 0.000        ; 0.000      ; 2.365      ;
+; 2.152  ; proclock:probhaiRx|count[1] ; proclock:probhaiRx|count[1] ; proclock:probhaiRx|fullspeed:fulsped|clk ; proclock:probhaiRx|fullspeed:fulsped|clk ; 0.000        ; 0.000      ; 2.373      ;
+; 2.232  ; proclock:probhaiRx|count[2] ; proclock:probhaiRx|count[2] ; proclock:probhaiRx|fullspeed:fulsped|clk ; proclock:probhaiRx|fullspeed:fulsped|clk ; 0.000        ; 0.000      ; 2.453      ;
+; 2.260  ; proclock:probhaiRx|count[4] ; proclock:probhaiRx|count[4] ; proclock:probhaiRx|fullspeed:fulsped|clk ; proclock:probhaiRx|fullspeed:fulsped|clk ; 0.000        ; 0.000      ; 2.481      ;
+; 2.262  ; proclock:probhaiRx|count[5] ; proclock:probhaiRx|count[5] ; proclock:probhaiRx|fullspeed:fulsped|clk ; proclock:probhaiRx|fullspeed:fulsped|clk ; 0.000        ; 0.000      ; 2.483      ;
+; 2.505  ; proclock:probhaiRx|count[3] ; proclock:probhaiRx|count[3] ; proclock:probhaiRx|fullspeed:fulsped|clk ; proclock:probhaiRx|fullspeed:fulsped|clk ; 0.000        ; 0.000      ; 2.726      ;
+; 2.976  ; proclock:probhaiRx|count[0] ; proclock:probhaiRx|count[1] ; proclock:probhaiRx|fullspeed:fulsped|clk ; proclock:probhaiRx|fullspeed:fulsped|clk ; 0.000        ; 0.000      ; 3.197      ;
+; 2.984  ; proclock:probhaiRx|count[1] ; proclock:probhaiRx|count[2] ; proclock:probhaiRx|fullspeed:fulsped|clk ; proclock:probhaiRx|fullspeed:fulsped|clk ; 0.000        ; 0.000      ; 3.205      ;
+; 3.009  ; proclock:probhaiRx|count[4] ; proclock:probhaiRx|clk      ; proclock:probhaiRx|fullspeed:fulsped|clk ; proclock:probhaiRx|fullspeed:fulsped|clk ; 0.000        ; 0.000      ; 3.230      ;
+; 3.087  ; proclock:probhaiRx|count[0] ; proclock:probhaiRx|count[2] ; proclock:probhaiRx|fullspeed:fulsped|clk ; proclock:probhaiRx|fullspeed:fulsped|clk ; 0.000        ; 0.000      ; 3.308      ;
+; 3.095  ; proclock:probhaiRx|count[1] ; proclock:probhaiRx|count[3] ; proclock:probhaiRx|fullspeed:fulsped|clk ; proclock:probhaiRx|fullspeed:fulsped|clk ; 0.000        ; 0.000      ; 3.316      ;
+; 3.129  ; proclock:probhaiRx|count[2] ; proclock:probhaiRx|clk      ; proclock:probhaiRx|fullspeed:fulsped|clk ; proclock:probhaiRx|fullspeed:fulsped|clk ; 0.000        ; 0.000      ; 3.350      ;
+; 3.167  ; proclock:probhaiRx|count[6] ; proclock:probhaiRx|clk      ; proclock:probhaiRx|fullspeed:fulsped|clk ; proclock:probhaiRx|fullspeed:fulsped|clk ; 0.000        ; 0.000      ; 3.388      ;
+; 3.172  ; proclock:probhaiRx|count[2] ; proclock:probhaiRx|count[3] ; proclock:probhaiRx|fullspeed:fulsped|clk ; proclock:probhaiRx|fullspeed:fulsped|clk ; 0.000        ; 0.000      ; 3.393      ;
+; 3.198  ; proclock:probhaiRx|count[0] ; proclock:probhaiRx|count[3] ; proclock:probhaiRx|fullspeed:fulsped|clk ; proclock:probhaiRx|fullspeed:fulsped|clk ; 0.000        ; 0.000      ; 3.419      ;
+; 3.200  ; proclock:probhaiRx|count[4] ; proclock:probhaiRx|count[5] ; proclock:probhaiRx|fullspeed:fulsped|clk ; proclock:probhaiRx|fullspeed:fulsped|clk ; 0.000        ; 0.000      ; 3.421      ;
+; 3.202  ; proclock:probhaiRx|count[5] ; proclock:probhaiRx|count[6] ; proclock:probhaiRx|fullspeed:fulsped|clk ; proclock:probhaiRx|fullspeed:fulsped|clk ; 0.000        ; 0.000      ; 3.423      ;
+; 3.311  ; proclock:probhaiRx|count[4] ; proclock:probhaiRx|count[6] ; proclock:probhaiRx|fullspeed:fulsped|clk ; proclock:probhaiRx|fullspeed:fulsped|clk ; 0.000        ; 0.000      ; 3.532      ;
+; 3.347  ; proclock:probhaiRx|count[5] ; proclock:probhaiRx|clk      ; proclock:probhaiRx|fullspeed:fulsped|clk ; proclock:probhaiRx|fullspeed:fulsped|clk ; 0.000        ; 0.000      ; 3.568      ;
+; 3.564  ; proclock:probhaiRx|count[1] ; proclock:probhaiRx|count[6] ; proclock:probhaiRx|fullspeed:fulsped|clk ; proclock:probhaiRx|fullspeed:fulsped|clk ; 0.000        ; 0.000      ; 3.785      ;
+; 3.564  ; proclock:probhaiRx|count[1] ; proclock:probhaiRx|count[5] ; proclock:probhaiRx|fullspeed:fulsped|clk ; proclock:probhaiRx|fullspeed:fulsped|clk ; 0.000        ; 0.000      ; 3.785      ;
+; 3.564  ; proclock:probhaiRx|count[1] ; proclock:probhaiRx|count[4] ; proclock:probhaiRx|fullspeed:fulsped|clk ; proclock:probhaiRx|fullspeed:fulsped|clk ; 0.000        ; 0.000      ; 3.785      ;
+; 3.641  ; proclock:probhaiRx|count[2] ; proclock:probhaiRx|count[6] ; proclock:probhaiRx|fullspeed:fulsped|clk ; proclock:probhaiRx|fullspeed:fulsped|clk ; 0.000        ; 0.000      ; 3.862      ;
+; 3.641  ; proclock:probhaiRx|count[2] ; proclock:probhaiRx|count[5] ; proclock:probhaiRx|fullspeed:fulsped|clk ; proclock:probhaiRx|fullspeed:fulsped|clk ; 0.000        ; 0.000      ; 3.862      ;
+; 3.641  ; proclock:probhaiRx|count[2] ; proclock:probhaiRx|count[4] ; proclock:probhaiRx|fullspeed:fulsped|clk ; proclock:probhaiRx|fullspeed:fulsped|clk ; 0.000        ; 0.000      ; 3.862      ;
+; 3.667  ; proclock:probhaiRx|count[0] ; proclock:probhaiRx|count[6] ; proclock:probhaiRx|fullspeed:fulsped|clk ; proclock:probhaiRx|fullspeed:fulsped|clk ; 0.000        ; 0.000      ; 3.888      ;
+; 3.667  ; proclock:probhaiRx|count[0] ; proclock:probhaiRx|count[5] ; proclock:probhaiRx|fullspeed:fulsped|clk ; proclock:probhaiRx|fullspeed:fulsped|clk ; 0.000        ; 0.000      ; 3.888      ;
+; 3.667  ; proclock:probhaiRx|count[0] ; proclock:probhaiRx|count[4] ; proclock:probhaiRx|fullspeed:fulsped|clk ; proclock:probhaiRx|fullspeed:fulsped|clk ; 0.000        ; 0.000      ; 3.888      ;
+; 3.693  ; proclock:probhaiRx|count[1] ; proclock:probhaiRx|clk      ; proclock:probhaiRx|fullspeed:fulsped|clk ; proclock:probhaiRx|fullspeed:fulsped|clk ; 0.000        ; 0.000      ; 3.914      ;
+; 3.765  ; proclock:probhaiRx|count[3] ; proclock:probhaiRx|count[6] ; proclock:probhaiRx|fullspeed:fulsped|clk ; proclock:probhaiRx|fullspeed:fulsped|clk ; 0.000        ; 0.000      ; 3.986      ;
+; 3.765  ; proclock:probhaiRx|count[3] ; proclock:probhaiRx|count[5] ; proclock:probhaiRx|fullspeed:fulsped|clk ; proclock:probhaiRx|fullspeed:fulsped|clk ; 0.000        ; 0.000      ; 3.986      ;
+; 3.765  ; proclock:probhaiRx|count[3] ; proclock:probhaiRx|count[4] ; proclock:probhaiRx|fullspeed:fulsped|clk ; proclock:probhaiRx|fullspeed:fulsped|clk ; 0.000        ; 0.000      ; 3.986      ;
+; 3.839  ; proclock:probhaiRx|count[3] ; proclock:probhaiRx|clk      ; proclock:probhaiRx|fullspeed:fulsped|clk ; proclock:probhaiRx|fullspeed:fulsped|clk ; 0.000        ; 0.000      ; 4.060      ;
+; 3.885  ; proclock:probhaiRx|count[0] ; proclock:probhaiRx|clk      ; proclock:probhaiRx|fullspeed:fulsped|clk ; proclock:probhaiRx|fullspeed:fulsped|clk ; 0.000        ; 0.000      ; 4.106      ;
+; 4.129  ; proclock:probhaiRx|count[4] ; proclock:probhaiRx|count[3] ; proclock:probhaiRx|fullspeed:fulsped|clk ; proclock:probhaiRx|fullspeed:fulsped|clk ; 0.000        ; 0.000      ; 4.350      ;
+; 4.129  ; proclock:probhaiRx|count[4] ; proclock:probhaiRx|count[2] ; proclock:probhaiRx|fullspeed:fulsped|clk ; proclock:probhaiRx|fullspeed:fulsped|clk ; 0.000        ; 0.000      ; 4.350      ;
+; 4.129  ; proclock:probhaiRx|count[4] ; proclock:probhaiRx|count[1] ; proclock:probhaiRx|fullspeed:fulsped|clk ; proclock:probhaiRx|fullspeed:fulsped|clk ; 0.000        ; 0.000      ; 4.350      ;
+; 4.129  ; proclock:probhaiRx|count[4] ; proclock:probhaiRx|count[0] ; proclock:probhaiRx|fullspeed:fulsped|clk ; proclock:probhaiRx|fullspeed:fulsped|clk ; 0.000        ; 0.000      ; 4.350      ;
+; 4.249  ; proclock:probhaiRx|count[2] ; proclock:probhaiRx|count[1] ; proclock:probhaiRx|fullspeed:fulsped|clk ; proclock:probhaiRx|fullspeed:fulsped|clk ; 0.000        ; 0.000      ; 4.470      ;
+; 4.249  ; proclock:probhaiRx|count[2] ; proclock:probhaiRx|count[0] ; proclock:probhaiRx|fullspeed:fulsped|clk ; proclock:probhaiRx|fullspeed:fulsped|clk ; 0.000        ; 0.000      ; 4.470      ;
+; 4.287  ; proclock:probhaiRx|count[6] ; proclock:probhaiRx|count[5] ; proclock:probhaiRx|fullspeed:fulsped|clk ; proclock:probhaiRx|fullspeed:fulsped|clk ; 0.000        ; 0.000      ; 4.508      ;
+; 4.287  ; proclock:probhaiRx|count[6] ; proclock:probhaiRx|count[4] ; proclock:probhaiRx|fullspeed:fulsped|clk ; proclock:probhaiRx|fullspeed:fulsped|clk ; 0.000        ; 0.000      ; 4.508      ;
+; 4.287  ; proclock:probhaiRx|count[6] ; proclock:probhaiRx|count[3] ; proclock:probhaiRx|fullspeed:fulsped|clk ; proclock:probhaiRx|fullspeed:fulsped|clk ; 0.000        ; 0.000      ; 4.508      ;
+; 4.287  ; proclock:probhaiRx|count[6] ; proclock:probhaiRx|count[2] ; proclock:probhaiRx|fullspeed:fulsped|clk ; proclock:probhaiRx|fullspeed:fulsped|clk ; 0.000        ; 0.000      ; 4.508      ;
+; 4.287  ; proclock:probhaiRx|count[6] ; proclock:probhaiRx|count[1] ; proclock:probhaiRx|fullspeed:fulsped|clk ; proclock:probhaiRx|fullspeed:fulsped|clk ; 0.000        ; 0.000      ; 4.508      ;
+; 4.287  ; proclock:probhaiRx|count[6] ; proclock:probhaiRx|count[0] ; proclock:probhaiRx|fullspeed:fulsped|clk ; proclock:probhaiRx|fullspeed:fulsped|clk ; 0.000        ; 0.000      ; 4.508      ;
+; 4.467  ; proclock:probhaiRx|count[5] ; proclock:probhaiRx|count[4] ; proclock:probhaiRx|fullspeed:fulsped|clk ; proclock:probhaiRx|fullspeed:fulsped|clk ; 0.000        ; 0.000      ; 4.688      ;
+; 4.467  ; proclock:probhaiRx|count[5] ; proclock:probhaiRx|count[3] ; proclock:probhaiRx|fullspeed:fulsped|clk ; proclock:probhaiRx|fullspeed:fulsped|clk ; 0.000        ; 0.000      ; 4.688      ;
+; 4.467  ; proclock:probhaiRx|count[5] ; proclock:probhaiRx|count[2] ; proclock:probhaiRx|fullspeed:fulsped|clk ; proclock:probhaiRx|fullspeed:fulsped|clk ; 0.000        ; 0.000      ; 4.688      ;
+; 4.467  ; proclock:probhaiRx|count[5] ; proclock:probhaiRx|count[1] ; proclock:probhaiRx|fullspeed:fulsped|clk ; proclock:probhaiRx|fullspeed:fulsped|clk ; 0.000        ; 0.000      ; 4.688      ;
+; 4.467  ; proclock:probhaiRx|count[5] ; proclock:probhaiRx|count[0] ; proclock:probhaiRx|fullspeed:fulsped|clk ; proclock:probhaiRx|fullspeed:fulsped|clk ; 0.000        ; 0.000      ; 4.688      ;
+; 4.813  ; proclock:probhaiRx|count[1] ; proclock:probhaiRx|count[0] ; proclock:probhaiRx|fullspeed:fulsped|clk ; proclock:probhaiRx|fullspeed:fulsped|clk ; 0.000        ; 0.000      ; 5.034      ;
+; 4.959  ; proclock:probhaiRx|count[3] ; proclock:probhaiRx|count[2] ; proclock:probhaiRx|fullspeed:fulsped|clk ; proclock:probhaiRx|fullspeed:fulsped|clk ; 0.000        ; 0.000      ; 5.180      ;
+; 4.959  ; proclock:probhaiRx|count[3] ; proclock:probhaiRx|count[1] ; proclock:probhaiRx|fullspeed:fulsped|clk ; proclock:probhaiRx|fullspeed:fulsped|clk ; 0.000        ; 0.000      ; 5.180      ;
+; 4.959  ; proclock:probhaiRx|count[3] ; proclock:probhaiRx|count[0] ; proclock:probhaiRx|fullspeed:fulsped|clk ; proclock:probhaiRx|fullspeed:fulsped|clk ; 0.000        ; 0.000      ; 5.180      ;
++--------+-----------------------------+-----------------------------+------------------------------------------+------------------------------------------+--------------+------------+------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Hold: 'clk'                                                                                                                                                                                              ;
++--------+-----------------------------------------------+-----------------------------------------------+------------------------------------------+-------------+--------------+------------+------------+
+; Slack  ; From Node                                     ; To Node                                       ; Launch Clock                             ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+-----------------------------------------------+-----------------------------------------------+------------------------------------------+-------------+--------------+------------+------------+
+; -2.426 ; proclock:probhaiRx|fullspeed:fulsped|clk      ; proclock:probhaiRx|fullspeed:fulsped|clk      ; proclock:probhaiRx|fullspeed:fulsped|clk ; clk         ; 0.000        ; 3.699      ; 1.870      ;
+; -1.926 ; proclock:probhaiRx|fullspeed:fulsped|clk      ; proclock:probhaiRx|fullspeed:fulsped|clk      ; proclock:probhaiRx|fullspeed:fulsped|clk ; clk         ; -0.500       ; 3.699      ; 1.870      ;
+; 1.646  ; proclock:probhaiRx|fullspeed:fulsped|count[8] ; proclock:probhaiRx|fullspeed:fulsped|count[9] ; clk                                      ; clk         ; 0.000        ; 0.000      ; 1.867      ;
+; 2.151  ; proclock:probhaiRx|fullspeed:fulsped|count[4] ; proclock:probhaiRx|fullspeed:fulsped|count[9] ; clk                                      ; clk         ; 0.000        ; 0.000      ; 2.372      ;
+; 2.392  ; proclock:probhaiRx|fullspeed:fulsped|count[8] ; proclock:probhaiRx|fullspeed:fulsped|count[7] ; clk                                      ; clk         ; 0.000        ; 0.000      ; 2.613      ;
+; 2.399  ; proclock:probhaiRx|fullspeed:fulsped|count[8] ; proclock:probhaiRx|fullspeed:fulsped|count[1] ; clk                                      ; clk         ; 0.000        ; 0.000      ; 2.620      ;
+; 2.401  ; proclock:probhaiRx|fullspeed:fulsped|count[8] ; proclock:probhaiRx|fullspeed:fulsped|count[3] ; clk                                      ; clk         ; 0.000        ; 0.000      ; 2.622      ;
+; 2.403  ; proclock:probhaiRx|fullspeed:fulsped|count[8] ; proclock:probhaiRx|fullspeed:fulsped|count[0] ; clk                                      ; clk         ; 0.000        ; 0.000      ; 2.624      ;
+; 2.404  ; proclock:probhaiRx|fullspeed:fulsped|count[8] ; proclock:probhaiRx|fullspeed:fulsped|clk      ; clk                                      ; clk         ; 0.000        ; 0.000      ; 2.625      ;
+; 2.897  ; proclock:probhaiRx|fullspeed:fulsped|count[4] ; proclock:probhaiRx|fullspeed:fulsped|count[7] ; clk                                      ; clk         ; 0.000        ; 0.000      ; 3.118      ;
+; 2.904  ; proclock:probhaiRx|fullspeed:fulsped|count[4] ; proclock:probhaiRx|fullspeed:fulsped|count[1] ; clk                                      ; clk         ; 0.000        ; 0.000      ; 3.125      ;
+; 2.906  ; proclock:probhaiRx|fullspeed:fulsped|count[4] ; proclock:probhaiRx|fullspeed:fulsped|count[3] ; clk                                      ; clk         ; 0.000        ; 0.000      ; 3.127      ;
+; 2.908  ; proclock:probhaiRx|fullspeed:fulsped|count[4] ; proclock:probhaiRx|fullspeed:fulsped|count[0] ; clk                                      ; clk         ; 0.000        ; 0.000      ; 3.129      ;
+; 2.909  ; proclock:probhaiRx|fullspeed:fulsped|count[4] ; proclock:probhaiRx|fullspeed:fulsped|clk      ; clk                                      ; clk         ; 0.000        ; 0.000      ; 3.130      ;
+; 3.110  ; proclock:probhaiRx|fullspeed:fulsped|count[2] ; proclock:probhaiRx|fullspeed:fulsped|count[9] ; clk                                      ; clk         ; 0.000        ; 0.000      ; 3.331      ;
+; 3.262  ; proclock:probhaiRx|fullspeed:fulsped|count[9] ; proclock:probhaiRx|fullspeed:fulsped|count[9] ; clk                                      ; clk         ; 0.000        ; 0.000      ; 3.483      ;
+; 3.610  ; proclock:probhaiRx|fullspeed:fulsped|count[6] ; proclock:probhaiRx|fullspeed:fulsped|count[9] ; clk                                      ; clk         ; 0.000        ; 0.000      ; 3.831      ;
+; 3.620  ; proclock:probhaiRx|fullspeed:fulsped|count[3] ; proclock:probhaiRx|fullspeed:fulsped|count[9] ; clk                                      ; clk         ; 0.000        ; 0.000      ; 3.841      ;
+; 3.668  ; proclock:probhaiRx|fullspeed:fulsped|count[6] ; proclock:probhaiRx|fullspeed:fulsped|count[6] ; clk                                      ; clk         ; 0.000        ; 0.000      ; 3.889      ;
+; 3.700  ; proclock:probhaiRx|fullspeed:fulsped|count[5] ; proclock:probhaiRx|fullspeed:fulsped|count[9] ; clk                                      ; clk         ; 0.000        ; 0.000      ; 3.921      ;
+; 3.856  ; proclock:probhaiRx|fullspeed:fulsped|count[2] ; proclock:probhaiRx|fullspeed:fulsped|count[7] ; clk                                      ; clk         ; 0.000        ; 0.000      ; 4.077      ;
+; 3.863  ; proclock:probhaiRx|fullspeed:fulsped|count[2] ; proclock:probhaiRx|fullspeed:fulsped|count[1] ; clk                                      ; clk         ; 0.000        ; 0.000      ; 4.084      ;
+; 3.865  ; proclock:probhaiRx|fullspeed:fulsped|count[2] ; proclock:probhaiRx|fullspeed:fulsped|count[3] ; clk                                      ; clk         ; 0.000        ; 0.000      ; 4.086      ;
+; 3.867  ; proclock:probhaiRx|fullspeed:fulsped|count[2] ; proclock:probhaiRx|fullspeed:fulsped|count[0] ; clk                                      ; clk         ; 0.000        ; 0.000      ; 4.088      ;
+; 3.868  ; proclock:probhaiRx|fullspeed:fulsped|count[2] ; proclock:probhaiRx|fullspeed:fulsped|clk      ; clk                                      ; clk         ; 0.000        ; 0.000      ; 4.089      ;
+; 3.909  ; proclock:probhaiRx|fullspeed:fulsped|count[5] ; proclock:probhaiRx|fullspeed:fulsped|count[5] ; clk                                      ; clk         ; 0.000        ; 0.000      ; 4.130      ;
+; 3.935  ; proclock:probhaiRx|fullspeed:fulsped|count[7] ; proclock:probhaiRx|fullspeed:fulsped|count[7] ; clk                                      ; clk         ; 0.000        ; 0.000      ; 4.156      ;
+; 4.008  ; proclock:probhaiRx|fullspeed:fulsped|count[9] ; proclock:probhaiRx|fullspeed:fulsped|count[7] ; clk                                      ; clk         ; 0.000        ; 0.000      ; 4.229      ;
+; 4.015  ; proclock:probhaiRx|fullspeed:fulsped|count[9] ; proclock:probhaiRx|fullspeed:fulsped|count[1] ; clk                                      ; clk         ; 0.000        ; 0.000      ; 4.236      ;
+; 4.017  ; proclock:probhaiRx|fullspeed:fulsped|count[9] ; proclock:probhaiRx|fullspeed:fulsped|count[3] ; clk                                      ; clk         ; 0.000        ; 0.000      ; 4.238      ;
+; 4.019  ; proclock:probhaiRx|fullspeed:fulsped|count[9] ; proclock:probhaiRx|fullspeed:fulsped|count[0] ; clk                                      ; clk         ; 0.000        ; 0.000      ; 4.240      ;
+; 4.020  ; proclock:probhaiRx|fullspeed:fulsped|count[9] ; proclock:probhaiRx|fullspeed:fulsped|clk      ; clk                                      ; clk         ; 0.000        ; 0.000      ; 4.241      ;
+; 4.157  ; proclock:probhaiRx|fullspeed:fulsped|count[0] ; proclock:probhaiRx|fullspeed:fulsped|count[9] ; clk                                      ; clk         ; 0.000        ; 0.000      ; 4.378      ;
+; 4.216  ; proclock:probhaiRx|fullspeed:fulsped|count[4] ; proclock:probhaiRx|fullspeed:fulsped|count[4] ; clk                                      ; clk         ; 0.000        ; 0.000      ; 4.437      ;
+; 4.351  ; proclock:probhaiRx|fullspeed:fulsped|count[1] ; proclock:probhaiRx|fullspeed:fulsped|count[9] ; clk                                      ; clk         ; 0.000        ; 0.000      ; 4.572      ;
+; 4.356  ; proclock:probhaiRx|fullspeed:fulsped|count[6] ; proclock:probhaiRx|fullspeed:fulsped|count[7] ; clk                                      ; clk         ; 0.000        ; 0.000      ; 4.577      ;
+; 4.363  ; proclock:probhaiRx|fullspeed:fulsped|count[6] ; proclock:probhaiRx|fullspeed:fulsped|count[1] ; clk                                      ; clk         ; 0.000        ; 0.000      ; 4.584      ;
+; 4.365  ; proclock:probhaiRx|fullspeed:fulsped|count[6] ; proclock:probhaiRx|fullspeed:fulsped|count[3] ; clk                                      ; clk         ; 0.000        ; 0.000      ; 4.586      ;
+; 4.366  ; proclock:probhaiRx|fullspeed:fulsped|count[3] ; proclock:probhaiRx|fullspeed:fulsped|count[7] ; clk                                      ; clk         ; 0.000        ; 0.000      ; 4.587      ;
+; 4.367  ; proclock:probhaiRx|fullspeed:fulsped|count[6] ; proclock:probhaiRx|fullspeed:fulsped|count[0] ; clk                                      ; clk         ; 0.000        ; 0.000      ; 4.588      ;
+; 4.368  ; proclock:probhaiRx|fullspeed:fulsped|count[6] ; proclock:probhaiRx|fullspeed:fulsped|clk      ; clk                                      ; clk         ; 0.000        ; 0.000      ; 4.589      ;
+; 4.373  ; proclock:probhaiRx|fullspeed:fulsped|count[3] ; proclock:probhaiRx|fullspeed:fulsped|count[1] ; clk                                      ; clk         ; 0.000        ; 0.000      ; 4.594      ;
+; 4.375  ; proclock:probhaiRx|fullspeed:fulsped|count[3] ; proclock:probhaiRx|fullspeed:fulsped|count[3] ; clk                                      ; clk         ; 0.000        ; 0.000      ; 4.596      ;
+; 4.377  ; proclock:probhaiRx|fullspeed:fulsped|count[3] ; proclock:probhaiRx|fullspeed:fulsped|count[0] ; clk                                      ; clk         ; 0.000        ; 0.000      ; 4.598      ;
+; 4.378  ; proclock:probhaiRx|fullspeed:fulsped|count[3] ; proclock:probhaiRx|fullspeed:fulsped|clk      ; clk                                      ; clk         ; 0.000        ; 0.000      ; 4.599      ;
+; 4.438  ; proclock:probhaiRx|fullspeed:fulsped|count[7] ; proclock:probhaiRx|fullspeed:fulsped|count[9] ; clk                                      ; clk         ; 0.000        ; 0.000      ; 4.659      ;
+; 4.446  ; proclock:probhaiRx|fullspeed:fulsped|count[5] ; proclock:probhaiRx|fullspeed:fulsped|count[7] ; clk                                      ; clk         ; 0.000        ; 0.000      ; 4.667      ;
+; 4.448  ; proclock:probhaiRx|fullspeed:fulsped|count[8] ; proclock:probhaiRx|fullspeed:fulsped|count[8] ; clk                                      ; clk         ; 0.000        ; 0.000      ; 4.669      ;
+; 4.449  ; proclock:probhaiRx|fullspeed:fulsped|count[5] ; proclock:probhaiRx|fullspeed:fulsped|count[6] ; clk                                      ; clk         ; 0.000        ; 0.000      ; 4.670      ;
+; 4.453  ; proclock:probhaiRx|fullspeed:fulsped|count[5] ; proclock:probhaiRx|fullspeed:fulsped|count[1] ; clk                                      ; clk         ; 0.000        ; 0.000      ; 4.674      ;
+; 4.455  ; proclock:probhaiRx|fullspeed:fulsped|count[5] ; proclock:probhaiRx|fullspeed:fulsped|count[3] ; clk                                      ; clk         ; 0.000        ; 0.000      ; 4.676      ;
+; 4.457  ; proclock:probhaiRx|fullspeed:fulsped|count[5] ; proclock:probhaiRx|fullspeed:fulsped|count[0] ; clk                                      ; clk         ; 0.000        ; 0.000      ; 4.678      ;
+; 4.458  ; proclock:probhaiRx|fullspeed:fulsped|count[5] ; proclock:probhaiRx|fullspeed:fulsped|clk      ; clk                                      ; clk         ; 0.000        ; 0.000      ; 4.679      ;
+; 4.471  ; proclock:probhaiRx|fullspeed:fulsped|count[1] ; proclock:probhaiRx|fullspeed:fulsped|count[1] ; clk                                      ; clk         ; 0.000        ; 0.000      ; 4.692      ;
+; 4.471  ; proclock:probhaiRx|fullspeed:fulsped|count[2] ; proclock:probhaiRx|fullspeed:fulsped|count[2] ; clk                                      ; clk         ; 0.000        ; 0.000      ; 4.692      ;
+; 4.472  ; proclock:probhaiRx|fullspeed:fulsped|count[0] ; proclock:probhaiRx|fullspeed:fulsped|count[0] ; clk                                      ; clk         ; 0.000        ; 0.000      ; 4.693      ;
+; 4.856  ; proclock:probhaiRx|fullspeed:fulsped|count[4] ; proclock:probhaiRx|fullspeed:fulsped|count[6] ; clk                                      ; clk         ; 0.000        ; 0.000      ; 5.077      ;
+; 4.903  ; proclock:probhaiRx|fullspeed:fulsped|count[0] ; proclock:probhaiRx|fullspeed:fulsped|count[7] ; clk                                      ; clk         ; 0.000        ; 0.000      ; 5.124      ;
+; 4.910  ; proclock:probhaiRx|fullspeed:fulsped|count[0] ; proclock:probhaiRx|fullspeed:fulsped|count[1] ; clk                                      ; clk         ; 0.000        ; 0.000      ; 5.131      ;
+; 4.912  ; proclock:probhaiRx|fullspeed:fulsped|count[0] ; proclock:probhaiRx|fullspeed:fulsped|count[3] ; clk                                      ; clk         ; 0.000        ; 0.000      ; 5.133      ;
+; 4.915  ; proclock:probhaiRx|fullspeed:fulsped|count[0] ; proclock:probhaiRx|fullspeed:fulsped|clk      ; clk                                      ; clk         ; 0.000        ; 0.000      ; 5.136      ;
+; 5.096  ; proclock:probhaiRx|fullspeed:fulsped|count[3] ; proclock:probhaiRx|fullspeed:fulsped|count[6] ; clk                                      ; clk         ; 0.000        ; 0.000      ; 5.317      ;
+; 5.097  ; proclock:probhaiRx|fullspeed:fulsped|count[1] ; proclock:probhaiRx|fullspeed:fulsped|count[7] ; clk                                      ; clk         ; 0.000        ; 0.000      ; 5.318      ;
+; 5.101  ; proclock:probhaiRx|fullspeed:fulsped|count[1] ; proclock:probhaiRx|fullspeed:fulsped|count[6] ; clk                                      ; clk         ; 0.000        ; 0.000      ; 5.322      ;
+; 5.106  ; proclock:probhaiRx|fullspeed:fulsped|count[1] ; proclock:probhaiRx|fullspeed:fulsped|count[3] ; clk                                      ; clk         ; 0.000        ; 0.000      ; 5.327      ;
+; 5.106  ; proclock:probhaiRx|fullspeed:fulsped|count[1] ; proclock:probhaiRx|fullspeed:fulsped|count[2] ; clk                                      ; clk         ; 0.000        ; 0.000      ; 5.327      ;
+; 5.108  ; proclock:probhaiRx|fullspeed:fulsped|count[1] ; proclock:probhaiRx|fullspeed:fulsped|count[0] ; clk                                      ; clk         ; 0.000        ; 0.000      ; 5.329      ;
+; 5.109  ; proclock:probhaiRx|fullspeed:fulsped|count[1] ; proclock:probhaiRx|fullspeed:fulsped|clk      ; clk                                      ; clk         ; 0.000        ; 0.000      ; 5.330      ;
+; 5.123  ; proclock:probhaiRx|fullspeed:fulsped|count[4] ; proclock:probhaiRx|fullspeed:fulsped|count[5] ; clk                                      ; clk         ; 0.000        ; 0.000      ; 5.344      ;
+; 5.136  ; proclock:probhaiRx|fullspeed:fulsped|count[7] ; proclock:probhaiRx|fullspeed:fulsped|count[8] ; clk                                      ; clk         ; 0.000        ; 0.000      ; 5.357      ;
+; 5.191  ; proclock:probhaiRx|fullspeed:fulsped|count[7] ; proclock:probhaiRx|fullspeed:fulsped|count[1] ; clk                                      ; clk         ; 0.000        ; 0.000      ; 5.412      ;
+; 5.193  ; proclock:probhaiRx|fullspeed:fulsped|count[7] ; proclock:probhaiRx|fullspeed:fulsped|count[3] ; clk                                      ; clk         ; 0.000        ; 0.000      ; 5.414      ;
+; 5.195  ; proclock:probhaiRx|fullspeed:fulsped|count[7] ; proclock:probhaiRx|fullspeed:fulsped|count[0] ; clk                                      ; clk         ; 0.000        ; 0.000      ; 5.416      ;
+; 5.196  ; proclock:probhaiRx|fullspeed:fulsped|count[7] ; proclock:probhaiRx|fullspeed:fulsped|clk      ; clk                                      ; clk         ; 0.000        ; 0.000      ; 5.417      ;
+; 5.216  ; proclock:probhaiRx|fullspeed:fulsped|count[0] ; proclock:probhaiRx|fullspeed:fulsped|count[6] ; clk                                      ; clk         ; 0.000        ; 0.000      ; 5.437      ;
+; 5.218  ; proclock:probhaiRx|fullspeed:fulsped|count[2] ; proclock:probhaiRx|fullspeed:fulsped|count[6] ; clk                                      ; clk         ; 0.000        ; 0.000      ; 5.439      ;
+; 5.221  ; proclock:probhaiRx|fullspeed:fulsped|count[0] ; proclock:probhaiRx|fullspeed:fulsped|count[2] ; clk                                      ; clk         ; 0.000        ; 0.000      ; 5.442      ;
+; 5.222  ; proclock:probhaiRx|fullspeed:fulsped|count[3] ; proclock:probhaiRx|fullspeed:fulsped|count[4] ; clk                                      ; clk         ; 0.000        ; 0.000      ; 5.443      ;
+; 5.227  ; proclock:probhaiRx|fullspeed:fulsped|count[1] ; proclock:probhaiRx|fullspeed:fulsped|count[4] ; clk                                      ; clk         ; 0.000        ; 0.000      ; 5.448      ;
+; 5.238  ; proclock:probhaiRx|fullspeed:fulsped|count[6] ; proclock:probhaiRx|fullspeed:fulsped|count[8] ; clk                                      ; clk         ; 0.000        ; 0.000      ; 5.459      ;
+; 5.323  ; proclock:probhaiRx|fullspeed:fulsped|count[5] ; proclock:probhaiRx|fullspeed:fulsped|count[8] ; clk                                      ; clk         ; 0.000        ; 0.000      ; 5.544      ;
+; 5.342  ; proclock:probhaiRx|fullspeed:fulsped|count[0] ; proclock:probhaiRx|fullspeed:fulsped|count[4] ; clk                                      ; clk         ; 0.000        ; 0.000      ; 5.563      ;
+; 5.344  ; proclock:probhaiRx|fullspeed:fulsped|count[2] ; proclock:probhaiRx|fullspeed:fulsped|count[4] ; clk                                      ; clk         ; 0.000        ; 0.000      ; 5.565      ;
+; 5.363  ; proclock:probhaiRx|fullspeed:fulsped|count[3] ; proclock:probhaiRx|fullspeed:fulsped|count[5] ; clk                                      ; clk         ; 0.000        ; 0.000      ; 5.584      ;
+; 5.368  ; proclock:probhaiRx|fullspeed:fulsped|count[1] ; proclock:probhaiRx|fullspeed:fulsped|count[5] ; clk                                      ; clk         ; 0.000        ; 0.000      ; 5.589      ;
+; 5.483  ; proclock:probhaiRx|fullspeed:fulsped|count[0] ; proclock:probhaiRx|fullspeed:fulsped|count[5] ; clk                                      ; clk         ; 0.000        ; 0.000      ; 5.704      ;
+; 5.485  ; proclock:probhaiRx|fullspeed:fulsped|count[2] ; proclock:probhaiRx|fullspeed:fulsped|count[5] ; clk                                      ; clk         ; 0.000        ; 0.000      ; 5.706      ;
+; 5.508  ; proclock:probhaiRx|fullspeed:fulsped|count[4] ; proclock:probhaiRx|fullspeed:fulsped|count[8] ; clk                                      ; clk         ; 0.000        ; 0.000      ; 5.729      ;
+; 5.748  ; proclock:probhaiRx|fullspeed:fulsped|count[3] ; proclock:probhaiRx|fullspeed:fulsped|count[8] ; clk                                      ; clk         ; 0.000        ; 0.000      ; 5.969      ;
+; 5.753  ; proclock:probhaiRx|fullspeed:fulsped|count[1] ; proclock:probhaiRx|fullspeed:fulsped|count[8] ; clk                                      ; clk         ; 0.000        ; 0.000      ; 5.974      ;
+; 5.868  ; proclock:probhaiRx|fullspeed:fulsped|count[0] ; proclock:probhaiRx|fullspeed:fulsped|count[8] ; clk                                      ; clk         ; 0.000        ; 0.000      ; 6.089      ;
+; 5.870  ; proclock:probhaiRx|fullspeed:fulsped|count[2] ; proclock:probhaiRx|fullspeed:fulsped|count[8] ; clk                                      ; clk         ; 0.000        ; 0.000      ; 6.091      ;
++--------+-----------------------------------------------+-----------------------------------------------+------------------------------------------+-------------+--------------+------------+------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------+
+; Hold: 'proclock:probhaiRx|clk'                                                                                                       ;
++-------+-----------------+-----------------+------------------------+------------------------+--------------+------------+------------+
+; Slack ; From Node       ; To Node         ; Launch Clock           ; Latch Clock            ; Relationship ; Clock Skew ; Data Delay ;
++-------+-----------------+-----------------+------------------------+------------------------+--------------+------------+------------+
+; 1.394 ; InternalData[7] ; InternalData[6] ; proclock:probhaiRx|clk ; proclock:probhaiRx|clk ; 0.000        ; 0.000      ; 1.615      ;
+; 1.396 ; InternalData[1] ; InternalData[0] ; proclock:probhaiRx|clk ; proclock:probhaiRx|clk ; 0.000        ; 0.000      ; 1.617      ;
+; 1.402 ; InternalData[5] ; InternalData[4] ; proclock:probhaiRx|clk ; proclock:probhaiRx|clk ; 0.000        ; 0.000      ; 1.623      ;
+; 1.453 ; InternalData[6] ; InternalData[5] ; proclock:probhaiRx|clk ; proclock:probhaiRx|clk ; 0.000        ; 0.000      ; 1.674      ;
+; 1.465 ; InternalData[3] ; InternalData[2] ; proclock:probhaiRx|clk ; proclock:probhaiRx|clk ; 0.000        ; 0.000      ; 1.686      ;
+; 1.670 ; count[2]        ; count[2]        ; proclock:probhaiRx|clk ; proclock:probhaiRx|clk ; 0.000        ; 0.000      ; 1.891      ;
+; 1.676 ; present.whait   ; present.whait   ; proclock:probhaiRx|clk ; proclock:probhaiRx|clk ; 0.000        ; 0.000      ; 1.897      ;
+; 1.701 ; count[0]        ; count[0]        ; proclock:probhaiRx|clk ; proclock:probhaiRx|clk ; 0.000        ; 0.000      ; 1.922      ;
+; 1.711 ; count[0]        ; count[1]        ; proclock:probhaiRx|clk ; proclock:probhaiRx|clk ; 0.000        ; 0.000      ; 1.932      ;
+; 1.769 ; InternalData[4] ; InternalData[3] ; proclock:probhaiRx|clk ; proclock:probhaiRx|clk ; 0.000        ; 0.000      ; 1.990      ;
+; 1.772 ; InternalData[8] ; InternalData[7] ; proclock:probhaiRx|clk ; proclock:probhaiRx|clk ; 0.000        ; 0.000      ; 1.993      ;
+; 1.936 ; count[1]        ; count[1]        ; proclock:probhaiRx|clk ; proclock:probhaiRx|clk ; 0.000        ; 0.000      ; 2.157      ;
+; 1.945 ; count[1]        ; count[3]        ; proclock:probhaiRx|clk ; proclock:probhaiRx|clk ; 0.000        ; 0.000      ; 2.166      ;
+; 1.946 ; count[1]        ; count[2]        ; proclock:probhaiRx|clk ; proclock:probhaiRx|clk ; 0.000        ; 0.000      ; 2.167      ;
+; 2.030 ; count[3]        ; present.Reead   ; proclock:probhaiRx|clk ; proclock:probhaiRx|clk ; 0.000        ; 0.000      ; 2.251      ;
+; 2.061 ; count[3]        ; count[3]        ; proclock:probhaiRx|clk ; proclock:probhaiRx|clk ; 0.000        ; 0.000      ; 2.282      ;
+; 2.065 ; count[3]        ; present.vallid  ; proclock:probhaiRx|clk ; proclock:probhaiRx|clk ; 0.000        ; 0.000      ; 2.286      ;
+; 2.125 ; present.Reead   ; present.Reead   ; proclock:probhaiRx|clk ; proclock:probhaiRx|clk ; 0.000        ; 0.000      ; 2.346      ;
+; 2.174 ; count[0]        ; count[2]        ; proclock:probhaiRx|clk ; proclock:probhaiRx|clk ; 0.000        ; 0.000      ; 2.395      ;
+; 2.176 ; count[0]        ; count[3]        ; proclock:probhaiRx|clk ; proclock:probhaiRx|clk ; 0.000        ; 0.000      ; 2.397      ;
+; 2.232 ; present.vallid  ; present.whait   ; proclock:probhaiRx|clk ; proclock:probhaiRx|clk ; 0.000        ; 0.000      ; 2.453      ;
+; 2.243 ; count[2]        ; count[3]        ; proclock:probhaiRx|clk ; proclock:probhaiRx|clk ; 0.000        ; 0.000      ; 2.464      ;
+; 2.263 ; present.Reead   ; InternalData[8] ; proclock:probhaiRx|clk ; proclock:probhaiRx|clk ; 0.000        ; 0.000      ; 2.484      ;
+; 2.263 ; present.Reead   ; InternalData[7] ; proclock:probhaiRx|clk ; proclock:probhaiRx|clk ; 0.000        ; 0.000      ; 2.484      ;
+; 2.263 ; present.Reead   ; InternalData[6] ; proclock:probhaiRx|clk ; proclock:probhaiRx|clk ; 0.000        ; 0.000      ; 2.484      ;
+; 2.263 ; present.Reead   ; InternalData[5] ; proclock:probhaiRx|clk ; proclock:probhaiRx|clk ; 0.000        ; 0.000      ; 2.484      ;
+; 2.263 ; present.Reead   ; InternalData[4] ; proclock:probhaiRx|clk ; proclock:probhaiRx|clk ; 0.000        ; 0.000      ; 2.484      ;
+; 2.263 ; present.Reead   ; InternalData[3] ; proclock:probhaiRx|clk ; proclock:probhaiRx|clk ; 0.000        ; 0.000      ; 2.484      ;
+; 2.263 ; present.Reead   ; InternalData[2] ; proclock:probhaiRx|clk ; proclock:probhaiRx|clk ; 0.000        ; 0.000      ; 2.484      ;
+; 2.263 ; present.Reead   ; InternalData[1] ; proclock:probhaiRx|clk ; proclock:probhaiRx|clk ; 0.000        ; 0.000      ; 2.484      ;
+; 2.263 ; present.Reead   ; InternalData[0] ; proclock:probhaiRx|clk ; proclock:probhaiRx|clk ; 0.000        ; 0.000      ; 2.484      ;
+; 2.285 ; present.whait   ; present.Reead   ; proclock:probhaiRx|clk ; proclock:probhaiRx|clk ; 0.000        ; 0.000      ; 2.506      ;
+; 2.332 ; present.Reead   ; present.vallid  ; proclock:probhaiRx|clk ; proclock:probhaiRx|clk ; 0.000        ; 0.000      ; 2.553      ;
+; 2.542 ; InternalData[2] ; InternalData[1] ; proclock:probhaiRx|clk ; proclock:probhaiRx|clk ; 0.000        ; 0.000      ; 2.763      ;
++-------+-----------------+-----------------+------------------------+------------------------+--------------+------------+------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------+
+; Recovery: 'proclock:probhaiRx|clk'                                                                                           ;
++--------+---------------+----------+------------------------+------------------------+--------------+------------+------------+
+; Slack  ; From Node     ; To Node  ; Launch Clock           ; Latch Clock            ; Relationship ; Clock Skew ; Data Delay ;
++--------+---------------+----------+------------------------+------------------------+--------------+------------+------------+
+; -5.988 ; present.Reead ; count[2] ; proclock:probhaiRx|clk ; proclock:probhaiRx|clk ; 1.000        ; 0.000      ; 6.655      ;
+; -5.988 ; present.Reead ; count[1] ; proclock:probhaiRx|clk ; proclock:probhaiRx|clk ; 1.000        ; 0.000      ; 6.655      ;
+; -5.988 ; present.Reead ; count[0] ; proclock:probhaiRx|clk ; proclock:probhaiRx|clk ; 1.000        ; 0.000      ; 6.655      ;
+; -5.988 ; present.Reead ; count[3] ; proclock:probhaiRx|clk ; proclock:probhaiRx|clk ; 1.000        ; 0.000      ; 6.655      ;
++--------+---------------+----------+------------------------+------------------------+--------------+------------+------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------+
+; Removal: 'proclock:probhaiRx|clk'                                                                                           ;
++-------+---------------+----------+------------------------+------------------------+--------------+------------+------------+
+; Slack ; From Node     ; To Node  ; Launch Clock           ; Latch Clock            ; Relationship ; Clock Skew ; Data Delay ;
++-------+---------------+----------+------------------------+------------------------+--------------+------------+------------+
+; 6.434 ; present.Reead ; count[2] ; proclock:probhaiRx|clk ; proclock:probhaiRx|clk ; 0.000        ; 0.000      ; 6.655      ;
+; 6.434 ; present.Reead ; count[1] ; proclock:probhaiRx|clk ; proclock:probhaiRx|clk ; 0.000        ; 0.000      ; 6.655      ;
+; 6.434 ; present.Reead ; count[0] ; proclock:probhaiRx|clk ; proclock:probhaiRx|clk ; 0.000        ; 0.000      ; 6.655      ;
+; 6.434 ; present.Reead ; count[3] ; proclock:probhaiRx|clk ; proclock:probhaiRx|clk ; 0.000        ; 0.000      ; 6.655      ;
++-------+---------------+----------+------------------------+------------------------+--------------+------------+------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------+
+; Setup Transfers                                                                                                                 ;
++------------------------------------------+------------------------------------------+----------+----------+----------+----------+
+; From Clock                               ; To Clock                                 ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------------------------------------+------------------------------------------+----------+----------+----------+----------+
+; clk                                      ; clk                                      ; 155      ; 0        ; 0        ; 0        ;
+; proclock:probhaiRx|fullspeed:fulsped|clk ; clk                                      ; 1        ; 1        ; 0        ; 0        ;
+; proclock:probhaiRx|clk                   ; proclock:probhaiRx|clk                   ; 34       ; 0        ; 0        ; 0        ;
+; proclock:probhaiRx|clk                   ; proclock:probhaiRx|fullspeed:fulsped|clk ; 1        ; 1        ; 0        ; 0        ;
+; proclock:probhaiRx|fullspeed:fulsped|clk ; proclock:probhaiRx|fullspeed:fulsped|clk ; 102      ; 0        ; 0        ; 0        ;
++------------------------------------------+------------------------------------------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++---------------------------------------------------------------------------------------------------------------------------------+
+; Hold Transfers                                                                                                                  ;
++------------------------------------------+------------------------------------------+----------+----------+----------+----------+
+; From Clock                               ; To Clock                                 ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------------------------------------+------------------------------------------+----------+----------+----------+----------+
+; clk                                      ; clk                                      ; 155      ; 0        ; 0        ; 0        ;
+; proclock:probhaiRx|fullspeed:fulsped|clk ; clk                                      ; 1        ; 1        ; 0        ; 0        ;
+; proclock:probhaiRx|clk                   ; proclock:probhaiRx|clk                   ; 34       ; 0        ; 0        ; 0        ;
+; proclock:probhaiRx|clk                   ; proclock:probhaiRx|fullspeed:fulsped|clk ; 1        ; 1        ; 0        ; 0        ;
+; proclock:probhaiRx|fullspeed:fulsped|clk ; proclock:probhaiRx|fullspeed:fulsped|clk ; 102      ; 0        ; 0        ; 0        ;
++------------------------------------------+------------------------------------------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++---------------------------------------------------------------------------------------------+
+; Recovery Transfers                                                                          ;
++------------------------+------------------------+----------+----------+----------+----------+
+; From Clock             ; To Clock               ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------------------+------------------------+----------+----------+----------+----------+
+; proclock:probhaiRx|clk ; proclock:probhaiRx|clk ; 4        ; 0        ; 0        ; 0        ;
++------------------------+------------------------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++---------------------------------------------------------------------------------------------+
+; Removal Transfers                                                                           ;
++------------------------+------------------------+----------+----------+----------+----------+
+; From Clock             ; To Clock               ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------------------+------------------------+----------+----------+----------+----------+
+; proclock:probhaiRx|clk ; proclock:probhaiRx|clk ; 4        ; 0        ; 0        ; 0        ;
++------------------------+------------------------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
+---------------
+; Report TCCS ;
+---------------
+No dedicated SERDES Transmitter circuitry present in device or used in design
+
+
+---------------
+; Report RSKM ;
+---------------
+No non-DPA dedicated SERDES Receiver circuitry present in device or used in design
+
+
++------------------------------------------------+
+; Unconstrained Paths Summary                    ;
++---------------------------------+-------+------+
+; Property                        ; Setup ; Hold ;
++---------------------------------+-------+------+
+; Illegal Clocks                  ; 0     ; 0    ;
+; Unconstrained Clocks            ; 0     ; 0    ;
+; Unconstrained Input Ports       ; 1     ; 1    ;
+; Unconstrained Input Port Paths  ; 3     ; 3    ;
+; Unconstrained Output Ports      ; 9     ; 9    ;
+; Unconstrained Output Port Paths ; 17    ; 17   ;
++---------------------------------+-------+------+
+
+
++----------------------------------------------------------------------------------------------------------+
+; Clock Status Summary                                                                                     ;
++------------------------------------------+------------------------------------------+------+-------------+
+; Target                                   ; Clock                                    ; Type ; Status      ;
++------------------------------------------+------------------------------------------+------+-------------+
+; clk                                      ; clk                                      ; Base ; Constrained ;
+; proclock:probhaiRx|clk                   ; proclock:probhaiRx|clk                   ; Base ; Constrained ;
+; proclock:probhaiRx|fullspeed:fulsped|clk ; proclock:probhaiRx|fullspeed:fulsped|clk ; Base ; Constrained ;
++------------------------------------------+------------------------------------------+------+-------------+
+
+
++---------------------------------------------------------------------------------------------------+
+; Unconstrained Input Ports                                                                         ;
++------------+--------------------------------------------------------------------------------------+
+; Input Port ; Comment                                                                              ;
++------------+--------------------------------------------------------------------------------------+
+; Rx         ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
++------------+--------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------+
+; Unconstrained Output Ports                                                                          ;
++-------------+---------------------------------------------------------------------------------------+
+; Output Port ; Comment                                                                               ;
++-------------+---------------------------------------------------------------------------------------+
+; data_out[0] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; data_out[1] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; data_out[2] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; data_out[3] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; data_out[4] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; data_out[5] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; data_out[6] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; data_out[7] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; valid       ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
++-------------+---------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------+
+; Unconstrained Input Ports                                                                         ;
++------------+--------------------------------------------------------------------------------------+
+; Input Port ; Comment                                                                              ;
++------------+--------------------------------------------------------------------------------------+
+; Rx         ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
++------------+--------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------+
+; Unconstrained Output Ports                                                                          ;
++-------------+---------------------------------------------------------------------------------------+
+; Output Port ; Comment                                                                               ;
++-------------+---------------------------------------------------------------------------------------+
+; data_out[0] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; data_out[1] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; data_out[2] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; data_out[3] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; data_out[4] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; data_out[5] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; data_out[6] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; data_out[7] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; valid       ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
++-------------+---------------------------------------------------------------------------------------+
+
+
++--------------------------+
+; Timing Analyzer Messages ;
++--------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Timing Analyzer
+    Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
+    Info: Processing started: Tue Aug 10 15:31:28 2021
+Info: Command: quartus_sta Rx -c Rx
+Info: qsta_default_script.tcl version: #1
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
+Info (21077): Low junction temperature is 0 degrees C
+Info (21077): High junction temperature is 85 degrees C
+Info (334003): Started post-fitting delay annotation
+Info (334004): Delay annotation completed successfully
+Critical Warning (332012): Synopsys Design Constraints File file not found: 'Rx.sdc'. A Synopsys Design Constraints File is required by the Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
+Info (332142): No user constrained base clocks found in the design. Calling "derive_clocks -period 1.0"
+Info (332105): Deriving Clocks
+    Info (332105): create_clock -period 1.000 -name proclock:probhaiRx|clk proclock:probhaiRx|clk
+    Info (332105): create_clock -period 1.000 -name proclock:probhaiRx|fullspeed:fulsped|clk proclock:probhaiRx|fullspeed:fulsped|clk
+    Info (332105): create_clock -period 1.000 -name clk clk
+Info: Found TIMING_ANALYZER_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
+Info: Can't run Report Timing Closure Recommendations. The current device family is not supported.
+Critical Warning (332148): Timing requirements not met
+Info (332146): Worst-case setup slack is -5.471
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -5.471             -54.863 clk 
+    Info (332119):    -4.559             -35.352 proclock:probhaiRx|fullspeed:fulsped|clk 
+    Info (332119):    -2.096             -28.413 proclock:probhaiRx|clk 
+Info (332146): Worst-case hold slack is -4.312
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -4.312              -4.312 proclock:probhaiRx|fullspeed:fulsped|clk 
+    Info (332119):    -2.426              -2.426 clk 
+    Info (332119):     1.394               0.000 proclock:probhaiRx|clk 
+Info (332146): Worst-case recovery slack is -5.988
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -5.988             -23.952 proclock:probhaiRx|clk 
+Info (332146): Worst-case removal slack is 6.434
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):     6.434               0.000 proclock:probhaiRx|clk 
+Info (332146): Worst-case minimum pulse width slack is -2.289
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -2.289              -2.289 clk 
+    Info (332119):     0.234               0.000 proclock:probhaiRx|clk 
+    Info (332119):     0.234               0.000 proclock:probhaiRx|fullspeed:fulsped|clk 
+Info (332001): The selected device family is not supported by the report_metastability command.
+Info (332102): Design is not fully constrained for setup requirements
+Info (332102): Design is not fully constrained for hold requirements
+Info: Quartus Prime Timing Analyzer was successful. 0 errors, 3 warnings
+    Info: Peak virtual memory: 4669 megabytes
+    Info: Processing ended: Tue Aug 10 15:31:30 2021
+    Info: Elapsed time: 00:00:02
+    Info: Total CPU time (on all processors): 00:00:01
+
+

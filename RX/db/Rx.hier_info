@@ -1,0 +1,42 @@
+|ModuleRx
+Rx => Selector0.IN2
+Rx => Selector1.IN1
+Rx => InternalData[8].DATAIN
+clk => proclock:probhaiRx.inclk
+data_out[0] << data_out.DB_MAX_OUTPUT_PORT_TYPE
+data_out[1] << data_out.DB_MAX_OUTPUT_PORT_TYPE
+data_out[2] << data_out.DB_MAX_OUTPUT_PORT_TYPE
+data_out[3] << data_out.DB_MAX_OUTPUT_PORT_TYPE
+data_out[4] << data_out.DB_MAX_OUTPUT_PORT_TYPE
+data_out[5] << data_out.DB_MAX_OUTPUT_PORT_TYPE
+data_out[6] << data_out.DB_MAX_OUTPUT_PORT_TYPE
+data_out[7] << data_out.DB_MAX_OUTPUT_PORT_TYPE
+valid << valid.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ModuleRx|proclock:probhaiRx
+inclk => fullspeed:fulsped.iclk
+latch => latchedPre[0].LATCH_ENABLE
+latch => latchedPre[1].LATCH_ENABLE
+latch => latchedPre[2].LATCH_ENABLE
+prescaler[0] => latchedPre[0].DATAIN
+prescaler[1] => latchedPre[1].DATAIN
+prescaler[2] => latchedPre[2].DATAIN
+clk <= clk~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ModuleRx|proclock:probhaiRx|fullspeed:fulsped
+iclk => count[0].CLK
+iclk => count[1].CLK
+iclk => count[2].CLK
+iclk => count[3].CLK
+iclk => count[4].CLK
+iclk => count[5].CLK
+iclk => count[6].CLK
+iclk => count[7].CLK
+iclk => count[8].CLK
+iclk => count[9].CLK
+iclk => clk~reg0.CLK
+clk <= clk~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+

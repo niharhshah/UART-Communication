@@ -1,0 +1,49 @@
+------------------------------------------------------------
+Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Setup 'clk'
+Slack : -5.471
+TNS   : -54.863
+
+Type  : Setup 'proclock:probhaiRx|fullspeed:fulsped|clk'
+Slack : -4.559
+TNS   : -35.352
+
+Type  : Setup 'proclock:probhaiRx|clk'
+Slack : -2.096
+TNS   : -28.413
+
+Type  : Hold 'proclock:probhaiRx|fullspeed:fulsped|clk'
+Slack : -4.312
+TNS   : -4.312
+
+Type  : Hold 'clk'
+Slack : -2.426
+TNS   : -2.426
+
+Type  : Hold 'proclock:probhaiRx|clk'
+Slack : 1.394
+TNS   : 0.000
+
+Type  : Recovery 'proclock:probhaiRx|clk'
+Slack : -5.988
+TNS   : -23.952
+
+Type  : Removal 'proclock:probhaiRx|clk'
+Slack : 6.434
+TNS   : 0.000
+
+Type  : Minimum Pulse Width 'clk'
+Slack : -2.289
+TNS   : -2.289
+
+Type  : Minimum Pulse Width 'proclock:probhaiRx|clk'
+Slack : 0.234
+TNS   : 0.000
+
+Type  : Minimum Pulse Width 'proclock:probhaiRx|fullspeed:fulsped|clk'
+Slack : 0.234
+TNS   : 0.000
+
+------------------------------------------------------------

@@ -1,0 +1,170 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dD:/Semester2/UART/UART/RX/simulation/modelsim
+Edemo
+Z1 w1628506612
+Z2 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z3 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
+R0
+Z4 8D:/Semester2/UART/UART/RX/Testbench.vhd
+Z5 FD:/Semester2/UART/UART/RX/Testbench.vhd
+l0
+L4
+VnSPCSk3WO47THV4NNXPKQ0
+!s100 Mja3Gm7Z`bYbhMKlGM6kZ0
+Z6 OV;C;10.5b;63
+31
+Z7 !s110 1628592886
+!i10b 1
+Z8 !s108 1628592886.000000
+Z9 !s90 -reportprogress|300|-93|-work|work|D:/Semester2/UART/UART/RX/Testbench.vhd|
+Z10 !s107 D:/Semester2/UART/UART/RX/Testbench.vhd|
+!i113 1
+Z11 o-93 -work work
+Z12 tExplicit 1 CvgOpt 0
+Aone
+R2
+R3
+DEx4 work 4 demo 0 22 nSPCSk3WO47THV4NNXPKQ0
+l32
+L7
+V?_DzXzDH0nP6FdW>=H>Oc1
+!s100 3lETj=Sd;NlQ2cJTY_4z33
+R6
+31
+R7
+!i10b 1
+R8
+R9
+R10
+!i113 1
+R11
+R12
+Efullspeed
+Z13 w1628159900
+Z14 DPx4 ieee 11 numeric_std 0 22 :ASDNFgHXf_ih3J@9F3Ze1
+R2
+R3
+R0
+Z15 8D:/Semester2/UART/UART/RX/proclock.vhd
+Z16 FD:/Semester2/UART/UART/RX/proclock.vhd
+l0
+L4
+V7Y7mXbTfSE3GZM=[_B?ZK3
+!s100 AP?bYoC?TKTTnMWh?<@E63
+R6
+31
+R7
+!i10b 1
+Z17 !s108 1628592885.000000
+Z18 !s90 -reportprogress|300|-93|-work|work|D:/Semester2/UART/UART/RX/proclock.vhd|
+Z19 !s107 D:/Semester2/UART/UART/RX/proclock.vhd|
+!i113 1
+R11
+R12
+Afs
+R14
+R2
+R3
+DEx4 work 9 fullspeed 0 22 7Y7mXbTfSE3GZM=[_B?ZK3
+l10
+L8
+VI5j^^lE2hCLWEWeMfP5oR0
+!s100 TQ>R8zLX8i3N3Wig>NcdS0
+R6
+31
+R7
+!i10b 1
+R17
+R18
+R19
+!i113 1
+R11
+R12
+Emodulerx
+Z20 w1628500345
+R2
+R3
+R0
+Z21 8D:/Semester2/UART/UART/RX/Rx.vhd
+Z22 FD:/Semester2/UART/UART/RX/Rx.vhd
+l0
+L4
+V2VQaS1FNQmAOf;nZ61XOU2
+!s100 6@IEQMM;`FTIR6V^=cN6d1
+R6
+31
+R7
+!i10b 1
+R8
+Z23 !s90 -reportprogress|300|-93|-work|work|D:/Semester2/UART/UART/RX/Rx.vhd|
+Z24 !s107 D:/Semester2/UART/UART/RX/Rx.vhd|
+!i113 1
+R11
+R12
+Arxfsm
+R2
+R3
+DEx4 work 8 modulerx 0 22 2VQaS1FNQmAOf;nZ61XOU2
+l37
+L13
+Vge`47JEEZciZA79h9;E9e2
+!s100 FD2fClI;4CFT:8FkNN8KD1
+R6
+31
+R7
+!i10b 1
+R8
+R23
+R24
+!i113 1
+R11
+R12
+Eproclock
+R13
+R14
+R2
+R3
+R0
+R15
+R16
+l0
+L27
+VJaHPl4]GZhMPO3V8NW<DN1
+!s100 i>7kSMo?^6Hm^E<^W05GZ2
+R6
+31
+R7
+!i10b 1
+R17
+R18
+R19
+!i113 1
+R11
+R12
+Apro
+R14
+R2
+R3
+DEx4 work 8 proclock 0 22 JaHPl4]GZhMPO3V8NW<DN1
+l43
+L35
+VS@alF3=f=NglVVFfU?dio1
+!s100 4nJ3@lbXOj2YUm@TV2jzQ3
+R6
+31
+R7
+!i10b 1
+R17
+R18
+R19
+!i113 1
+R11
+R12
